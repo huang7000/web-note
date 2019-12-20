@@ -1,5 +1,5 @@
-const KMarkdownSnippet = require("./webpack/hv-markdown-snippet");
-const KMarkdownSnippetCode = require("./webpack/hv-markdown-snippet-code");
+const HvMarkdownSnippet = require("./webpack/hv-markdown-snippet");
+const HvMarkdownSnippetCode = require("./webpack/hv-markdown-snippet-code");
 const PrerenderSPAPlugin = require("./webpack/prerender-spa-plugin.js");
 
 module.exports = {
@@ -29,7 +29,7 @@ module.exports = {
             return `---snippet ${value.replace(/```/g, "")} \n---\n ${value}`;
           });
         },
-        use: [KMarkdownSnippet, KMarkdownSnippetCode]
+        use: [HvMarkdownSnippet, HvMarkdownSnippetCode]
       });
   },
   // 配置【plugins】插件属性
