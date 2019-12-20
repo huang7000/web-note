@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript" defer="defer"  src="./demo01.js" >
+      //在html 中的defer无效， 还是dom没有加载完整的bug。
+     let app2 = new Vue({
+            el: '#app2',
+            data: {
+                message: 'Hello Vue!'
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        {{message}}
+    </div>
+
+    <div id="app2">
+            {{message}}
+        </div>
+</body>
+
+</html>

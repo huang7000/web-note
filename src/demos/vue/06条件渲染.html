@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        window.onload = function () {
+            fun01();
+            // fun02();
+            // fun03();
+            // fun04();
+            // fun05();
+            // fun06();
+
+            // fun07();
+
+
+        }
+
+        function fun01() {
+            let app01data = {
+                ok: true
+            }
+            let app01 = new Vue({
+                el: "#app01",
+                data: {
+                    ok: true
+                },
+
+            })
+            //app01.ok = false;
+            let app02 = new Vue({
+                el: "#app02",
+                data: {
+                    ok: true
+                },
+
+            })
+            let app03 = new Vue({
+                el: "#app03",
+                data: {
+                    ok: true
+                }
+            })
+            app03.ok = true;
+
+            let app04 = new Vue({
+                el: "#app04",
+                data: {
+                    type: '神'
+                }
+            })
+            let app05 = new Vue({
+                el: "#app05",
+                data: {
+                    loginType: 'name'
+                },
+                methods: {
+                    toggleLoginType: function () {
+                        return this.loginType = this.loginType === 'name' ? 'email' : 'name'
+                    }
+                }
+            })
+            let app06 = new Vue({
+                el: "#app06",
+                data: {
+                    ok: true
+                }
+            })
+            app06.ok=false;
+        }
+    </script>
+</head>
+
+<body>
+
+    <div id="app01">
+        <h1 v-if="ok">Yes</h1>
+        <h1 v-else>No</h1>
+    </div>
+    <div id="app02">
+        <div v-if="Math.random() > 0.5">
+            Now you see me
+        </div>
+        <div v-else>
+            Now you don't
+        </div>
+    </div>
+    <div id="app03">
+        <template v-if="ok">
+            <p>Paragraph 1</p>
+            <p>Paragraph 2</p>
+        </template>
+        <template v-else>
+            <p>template 1</p>
+            <p>template 2</p>
+        </template>
+    </div>
+    <div id="app04">
+        <p v-if="type === '神'">
+            神
+        </p>
+        <p v-else-if="type === '魔'">
+            魔
+        </p>
+        <p v-else="type === 'B'">
+            神魔非我
+        </p>
+    </div>
+    <div id="app05">
+        <template v-if="loginType=='name'">
+            <label>
+                name
+            </label>
+            <input placeholder=" enter your name" key='name-input'>
+        </template>
+        <template v-else>
+            <label>
+                email
+            </label>
+            <input placeholder=" enter your email" key='email-input'>
+        </template>
+        <button @click="toggleLoginType">Toggle login type</button>
+    </div>
+    <div id="app06">
+        <template v-show="ok">
+            <p>Paragraph 1</p>
+            <p>Paragraph 2</p>
+        </template>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let app01;
+        let app02;
+        let app03;
+        let app04;
+        let app05;
+        let app06;
+        let app07;
+        let app08;
+        let app09;
+        let app10;
+        let app11;
+        let app12;
+        window.onload = function () {
+
+
+
+            funA();
+        }
+
+        function funA() {
+
+            app01 = new Vue({
+                el: "#app01",
+                data: {
+                    count: 0
+                },
+            })
+            app02 = new Vue({
+                el: "#app02",
+                data: {
+                    name: 'Vue.js'
+                },
+                methods: {
+                    Addfun: function (event) {
+                        // `this` 在方法里指向当前 Vue 实例
+                        alert('Hello ' + this.name + '!')
+                        // `event` 是原生 DOM 事件
+                        if (event) {
+                            alert(event.target.tagName)
+                        }
+                    }
+                }
+            })
+            app03 = new Vue({
+                el: "#app03",
+                data: {
+                    name: 'Vue.js'
+                },
+                methods: {
+                    say: function (message) {
+
+                        // `this` 在方法里指向当前 Vue 实例
+                        alert('Hello ' + this.name + '! ' + message + '!')
+                        // `event` 是原生 DOM 事件
+                    },
+                    warn: function (message, event) {
+                        // 现在我们可以访问原生事件对象
+                        if (event)
+                            event.preventDefault()
+                        alert(message)
+                    },
+                    submit: function () {
+
+                        alert('wad')
+                    }
+                }
+            })
+            
+            console.log(Vue.config.keyCodes.f1 = 112)
+        }
+    </script>
+</head>
+
+<body>
+    <div id="app01">
+        <button v-on:click="count=count+1"> Add 1</button>
+        <p>The button above has been clicked {{ count }} times.</p>
+    </div>
+    <div id="app02">
+        <button v-on:click="Addfun">Addfun</button>
+    </div>
+    <P></P>
+    <div id="app03">
+        <button v-on:click="say('Say hi')">Say hi</button>
+        <button v-on:click="warn('Form cannot be submitted yet.', $event)">
+            Submit
+        </button>
+        <a v-on:click.once="say('dw')">da</a>
+        <input v-on:keyup.13="submit">
+    </div>
+</body>
+
+</html>

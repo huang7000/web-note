@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let app01;
+        let app02;
+        let app03;
+        let app04;
+        let app05;
+        let app06;
+        let app07;
+        let app08;
+        let app09;
+        let app10;
+        let app11;
+        let app12;
+        window.onload = function () {
+
+
+
+            funComponent();
+        }
+
+        function funA() {
+
+            app01 = new Vue({
+                el: "#app01",
+                data: {
+                    parentMessage: 'Parent',
+                    items: [{
+                            message: 'Foo',
+                            tiltle: 'ceshi001'
+                        },
+                        {
+                            message: 'Bar',
+                            tiltle: 'ceshi002'
+                        }
+                    ]
+                }
+            })
+
+            app02 = new Vue({
+                el: "#app02",
+                data: {
+                    parentMessage: 'Parent',
+                    obj: {
+                        name: 'xihuang',
+                        age: 18,
+                        phone: '88888'
+                    }
+                }
+            })
+            app03 = new Vue({
+                el: "#app03",
+                data: {
+                    items: [{
+                            id: 1,
+                            name: '小强',
+                            age: 18,
+                            phone: '11111'
+
+                        },
+                        {
+                            id: 8,
+                            name: '小白',
+                            age: 19,
+                            phone: '22222'
+                        }
+                    ]
+                }
+            })
+
+            app04 = new Vue({
+                el: "#app04",
+                data: {
+                    items: ['a', 'b', 'c']
+                }
+            })
+            app04.items[1] = 'x' // 不是响应性的
+            app04.items.length = 2 // 不是响应性的
+
+            Vue.set(app04.items, 1, 'x') //响应性的
+            app04.$set(app04.items, 1, 'cc')
+
+            app04.items.splice(1, 1, 'aaa') //响应性的 先删除x 再 添加 'aaa'
+            app04.items.splice(2) //响应性的 vm.items.length = newLength
+            app05 = new Vue({
+                el: "#app05",
+                data: {
+                    items: [{
+                            id: 1,
+                            name: '小强',
+                            age: 18,
+                            phone: '11111'
+                        },
+                        {
+                            id: 8,
+                            name: '小白',
+                            age: 19,
+                            phone: '22222'
+                        }
+                    ]
+                }
+            })
+            app06 = new Vue({
+                el: "#app06",
+                data: {
+                    name: 'xihuang',
+                }
+            })
+            //app06.age = 18 // 不是响应性的
+            // Vue.set(app06, 'age', 27) //不是响应性的
+
+            app07 = new Vue({
+                el: "#app07",
+                data: {
+                    student: {
+                        name: 'xihuang'
+                    }
+                }
+            })
+            //嵌套对象添加响应式属性
+            app07.student.age = 18 // 不是响应性的
+            Vue.set(app07.student, 'age', 27) //响应性的
+            app07.$set(app07.student, 'age', 27) //响应性的
+            app07.student = Object.assign({}, app07.student, {
+                age: 28,
+                favoriteColor: 'Vue Green'
+            })
+
+            app08 = new Vue({
+                el: "#app08",
+                data: {
+                    numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                },
+                computed: {
+                    evenNumbers: function () {
+                        return this.numbers.filter(function (number) {
+                            return number % 2 === 0
+                        })
+                    }
+                },
+                methods: {
+                    even: function (numbers) {
+                        return numbers.filter(function (number) {
+                            return number % 3 === 0
+                        })
+                    }
+                }
+            })
+            app09 = new Vue({
+                el: "#app09",
+            })
+            app10 = new Vue({
+                el: "#app10",
+                data: {
+                    items: [{
+                            msg: 'shenme',
+                            id: 1
+                        },
+                        {
+                            msg: 'dongxi',
+                            id: 11
+                        }
+                    ]
+                }
+            })
+            app11 = new Vue({
+                el: "#app11",
+                data: {
+                    items: [{
+                            msg: 'shenme',
+                            id: 1,
+                            isshow: true
+                        },
+                        {
+                            msg: 'dongxi',
+                            id: 2,
+                            isshow: true
+                        },
+                        {
+                            msg: 'nubi',
+                            id: 4,
+                            isshow: false
+                        },
+                        {
+                            msg: 'laji',
+                            id: 5,
+                            isshow: false
+                        },
+                        {
+                            msg: 'sb',
+                            id: 8,
+                            isshow: true
+                        },
+                    ]
+                }
+            })
+        }
+
+        function funComponent() {
+            Vue.component('component-first', {
+                props: ['post'],
+                data: function () {
+                    return {
+                        items: this.post
+                    }
+                },
+                template: '<ul > <li v-for="(value,key) in post">{{key}}:{{value}}</li> </ul>'
+            })
+            app12 = new Vue({
+                el: '#app12',
+                data: {
+                    posts: [{
+                            id: 1,
+                            title: 'My journey with Vue',
+                            name: 'ceshi '
+                        },
+                        {
+                            id: 2,
+                            title: 'Blogging with Vue',
+                            name: '测试'
+                        },
+                        {
+                            id: 3,
+                            title: 'Why Vue is so fun',
+                            name: '随便'
+                        }
+                    ]
+                }
+            })
+            Vue.component('node-item', {
+                template: '\ <li>\ {{ title }}\ <button v-on:click="$emit(\'remove\')">Remove</button>\ </li>\ ',
+                props: ['title']
+            })
+            app13 = new Vue({
+                el: '#app13',
+                data: {
+                    newNodeText: '',
+                    nodes: [{
+                            id: 1,
+                            title: 'Do the dishes',
+                        },
+                        {
+                            id: 2,
+                            title: 'Take out the trash',
+                        },
+                        {
+                            id: 3,
+                            title: 'Mow the lawn'
+                        }
+                    ],
+                    nextNodeId: 4
+                },
+                methods: {
+                    addNewNode: function () {
+                        if (this.newNodeText == '') {
+                            alert('不能为空');
+                            return;
+                        }
+                        let newNodeTextValue=this.newNodeText;
+                        let someResult =this.nodes.some(function (item, index, array) {
+                            return (item.title ==newNodeTextValue);
+                        });
+                        if(someResult){
+                            alert('已存在');
+                            return;
+                        }  
+                        this.nodes.push({
+                            id: this.nextNodeId++,
+                            title: this.newNodeText
+                        })
+                        this.newNodeText = ''
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div01" style="display: none;">
+        <h3>app01</h3>
+        <ul id="app01">
+            <li v-for="item in items">
+                {{ item }}
+            </li>
+            <li v-for="item in items">
+                {{ item.message }}
+            </li>
+            <li v-for="(item, index) in items">
+                {{ parentMessage }} - {{ index }} - {{ item.message }}
+            </li>
+        </ul>
+        <h3>app02</h3>
+        <ul id="app02">
+            <li v-for="value in obj">
+                {{ value }}
+            </li>
+            <li>
+                ...............
+            </li>
+            <li v-for="(value, key) in obj">
+                {{ key }} : {{ value }}
+            </li>
+            <li>
+                ...............
+            </li>
+            <li v-for="(value, key, index) in obj">
+                {{ index }}. {{ key }}: {{ value }}
+            </li>
+        </ul>
+        <h3>app03</h3>
+        <ul id="app03">
+            <li v-for="item in items" :key="item.id">
+                {{ item }}
+            </li>
+
+        </ul>
+        <h3>app04</h3>
+        <ul id="app04">
+            <li v-for="item in items">
+                {{item}}
+            </li>
+        </ul>
+        <h3>app05</h3>
+        <ul id="app05">
+            <li v-for="item in items">
+                <p v-for="value in item">{{value}}</P>
+            </li>
+        </ul>
+        <h3>app06</h3>
+        <ul id="app06">
+            <li>
+                <div>
+                    <P>{{name}}</P>
+                    <!-- <P>{{age}}</P> -->
+                </div>
+
+            </li>
+
+        </ul>
+        <h3>app07</h3>
+        <ul id="app07">
+            <li v-for="item in student">
+                {{item}}
+            </li>
+
+        </ul>
+        <h3>app08</h3>
+        <ul id="app08">
+            <li v-for="item in evenNumbers">
+                {{item}}
+            </li>
+            <li v-for="item in even(numbers)">
+                {{item}}
+            </li>
+        </ul>
+        <h3>app09</h3>
+        <ul id="app09">
+            <li v-for="item in 9">
+                {{item}}
+            </li>
+        </ul>
+        <h3>app10</h3>
+        <ul id="app10">
+            <template v-for="item in items">
+                <li>{{ item.msg }}</li>
+                <li class="divider" role="presentation"></li>
+            </template>
+        </ul>
+        <div id="app11">
+            <ul v-if="items.length">
+                <li v-for="item in items" v-if="item.isshow">
+                    {{ item }}
+                </li>
+            </ul>
+            <p v-else>No items left!</p>
+
+        </div>
+    </div>
+    <div id="app12">
+        <component-first v-for="post in posts" v-bind:key="post.id" v-bind:post="post"></component-first>
+    </div>
+    <div id="app13">
+        <form v-on:submit.prevent="addNewNode">
+            <label for="new-Node"> Add a Node</label>
+            <input v-model="newNodeText" id="newNode" placeholder="Enter A Node"></input>
+            <button> Add </button>
+        </form>
+        <ul>
+            <li is="node-item" v-for="(node, index) in nodes" v-bind:key="node.id" v-bind:title="node.title"
+                v-on:remove="nodes.splice(index, 1)"></li>
+        </ul>
+    </div>
+</body>
+
+</html>
