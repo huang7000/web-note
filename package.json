@@ -1,0 +1,82 @@
+{
+  "name": "web-note",
+  "version": "0.3.0",
+  "title": "Study Notes",
+  "description": "vue+markdown 学习笔记编译成网站",
+  "homepage": "http://www.huang7000.com",
+  "keywords": [
+    "vue",
+    "markdown",
+    "blog",
+    "web",
+    "frontend"
+  ],
+  "author": "huang7000",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/huang7000/web-note"
+  },
+  "bugs": {
+    "url": "https://github.com/huang7000/web-note/issues"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --gh-pages",
+    "prerender": "vue-cli-service build --prerender",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "dayjs": "^1.7.7",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.2.0",
+    "@vue/cli-plugin-eslint": "^3.2.1",
+    "@vue/cli-service": "^3.2.0",
+    "@vue/eslint-config-prettier": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0-0",
+    "markdown-it": "^8.4.2",
+    "markdown-it-container": "^2.0.0",
+    "node-sass": "^4.11.0",
+    "prerender-spa-plugin": "^3.4.0",
+    "sass-loader": "^7.0.1",
+    "vue-markdown-loader": "^2.4.1",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "babel": {
+    "presets": [
+      "@vue/app"
+    ]
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/prettier"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "eslintIgnore": [
+    "**/*.md"
+  ],
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ]
+}
