@@ -7,11 +7,17 @@
 typora-copy-images-to: media/05JavaScriptAPI
 ---
 
-# Web API
+:::
 
-## Web API介绍
+:::snippet Web API
 
-### API的概念
+:::
+
+:::snippet Web API介绍
+
+:::
+
+:::snippet API的概念
 
 API（Application Programming Interface,应用程序编程接口）是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，而又无需访问源码，或理解内部工作机制的细节。
 
@@ -19,54 +25,76 @@ API（Application Programming Interface,应用程序编程接口）是一些预�
 - API的特征输入和输出(I/O)
 - API的使用方法(console.log())
 
-### Web API的概念
+:::
+
+:::snippet Web API的概念
 
 浏览器提供的一套操作浏览器功能和页面元素的API(BOM和DOM)
 此处的Web API特指浏览器提供的API(一组方法)，Web API在后面的课程中有其它含义
 
-### 掌握常见的浏览器提供的API的调用方式
+:::
+
+:::snippet 掌握常见的浏览器提供的API的调用方式
 
 MDN-Web API：[https://developer.mozilla.org/zh-CN/docs/Web/API](https://developer.mozilla.org/zh-CN/docs/Web/API)
 
-### JavaScript的组成
+:::
+
+:::snippet JavaScript的组成
 
 ![JavaScript的组成](media/05JavaScriptAPI/JavaScript.png)
 
-#### ECMAScript - JavaScript的核心
+:::
+
+:::snippet ECMAScript - JavaScript的核心
 
 定义了javascript的语法规范
 JavaScript的核心，描述了语言的基本语法和数据类型，ECMAScript是一套标准，定义了一种语言的标准与具体实现无关
 
-#### BOM - 浏览器对象模型
+:::
+
+:::snippet BOM - 浏览器对象模型
 
 一套操作浏览器功能的API
 通过BOM可以操作浏览器窗口，比如：弹出框、控制浏览器跳转、获取分辨率等
 
-#### DOM - 文档对象模型
+:::
+
+:::snippet DOM - 文档对象模型
 
 一套操作页面元素的API
 DOM可以把HTML看做是文档树，通过DOM提供的API可以对树上的节点进行操作
 
-## BOM
+:::
 
-### BOM的概念
+:::snippet BOM
+
+:::
+
+:::snippet BOM的概念
 
 BOM(Browser Object Model) 是指浏览器对象模型，浏览器对象模型提供了独立于内容的、可以与浏览器窗口进行互动的对象结构。BOM由多个对象组成，其中代表浏览器窗口的Window对象是BOM的顶层对象，其他对象都是该对象的子对象。
 我们在浏览器中的一些操作都可以使用BOM的方式进行编程处理，
 比如：刷新浏览器、后退、前进、在浏览器中输入URL等
 
-### BOM的顶级对象window
+:::
+
+:::snippet BOM的顶级对象window
 
 window是浏览器的顶级对象，当调用window下的属性和方法时，可以省略window
 注意：window下一个特殊的属性 window.name
 
-### 对话框
+:::
+
+:::snippet 对话框
 
 - alert()
 - prompt()
 - confirm()
 
-### 页面加载事件
+:::
+
+:::snippet 页面加载事件
 
 - onload和onunload
 
@@ -80,9 +108,13 @@ window.onunload = function () {
 }
 ```
 
-### 定时器
+:::
 
-#### setTimeout()和clearTimeout()
+:::snippet 定时器
+
+:::
+
+:::snippet setTimeout()和clearTimeout()
 
 在指定的毫秒数到达之后执行指定的函数，只执行一次
 
@@ -96,7 +128,9 @@ var timerId = setTimeout(function () {
 clearTimeout(timerId);
 ```
 
-#### setInterval()和clearInterval()
+:::
+
+:::snippet setInterval()和clearInterval()
 
 定时调用的函数，可以按照给定的时间(单位毫秒)周期调用函数
 
@@ -111,12 +145,16 @@ var timerId = setInterval(function () {
 clearInterval(timerId);
 ```
 
-### location对象
+:::
+
+:::snippet location对象
 
 location对象是window对象下的一个属性，时候的时候可以省略window对象
 location可以获取或者设置浏览器地址栏的URL
 
-#### URL
+:::
+
+:::snippet URL
 
 统一资源定位符 (Uniform Resource Locator, URL)
 
@@ -131,13 +169,17 @@ query:查询, 可选，用于给动态网页传递参数，可有多个参数，
 fragment:信息片断, 字符串，锚点.
 ```
 
-#### location有哪些成员？
+:::
+
+:::snippet location有哪些成员？
 
 - 使用chrome的控制台查看
 - 查MDN [(https://developer.mozilla.org/zh-CN/](https://developer.mozilla.org/zh-CN/)
 - 成员:assign()/reload()/replace()、hash/host/hostname/search/href……
 
-#### 案例
+:::
+
+:::snippet 案例
 
 解析URL中的query，并返回对象的形式
 
@@ -161,16 +203,24 @@ console.log(getQuery(location.search));
 console.log(getQuery(location.href));
 ```
 
-### history对象 back()、forward()、go()
+:::
 
-### navigator对象
+:::snippet history对象 back()、forward()、go()
+
+:::
+
+:::snippet navigator对象
 
 - userAgent:通过userAgent可以判断用户浏览器的类型
 - platform:通过platform可以判断浏览器所在的系统平台类型.
 
-## DOM
+:::
 
-### DOM的概念
+:::snippet DOM
+
+:::
+
+:::snippet DOM的概念
 
 文档对象模型（Document Object Model，简称DOM），是[W3C](http://baike.baidu.com/item/W3C)组织推荐的处理可扩展标志语言的标准编程接口。在网页上，组织页面（或文档）的对象被组织在一个树形结构中，用来表示文档中对象的标准模型就称为DOM。Document Object Model的历史可以追溯至1990年代后期微软与[Netscape](http://baike.baidu.com/item/Netscape)的“浏览器大战”，双方为了在[JavaScript](http://baike.baidu.com/item/JavaScript)与[JScript](http://baike.baidu.com/item/JScript)一决生死，于是大规模的赋予浏览器强大的功能。微软在网页技术上加入了不少专属事物，既有[VBScript](http://baike.baidu.com/item/VBScript)、[ActiveX](http://baike.baidu.com/item/ActiveX)、以及微软自家的[DHTML](http://baike.baidu.com/item/DHTML)格式等，使不少网页使用非微软平台及浏览器无法正常显示。DOM即是当时蕴酿出来的杰作。
 DOM又称为文档树模型
@@ -181,7 +231,9 @@ DOM又称为文档树模型
 - 元素：网页中的标签
 - 属性：标签的属性
 
-### 模拟文档树结构
+:::
+
+:::snippet 模拟文档树结构
 
 ![文档树结构](media/05JavaScriptAPI/file-tree.png)
 
@@ -228,18 +280,24 @@ function getChildren(ele) {
 getChildren(doc);
 ```
 
-### DOM经常进行的操作
+:::
+
+:::snippet DOM经常进行的操作
 
 - 获取元素
 - 动态创建元素
 - 对元素进行操作(设置其属性或调用其方法)
 - 事件(什么时机做相应的操作)
 
-## 获取页面元素
+:::
+
+:::snippet 获取页面元素
 
 - 根据id获取元素
 
-### 根据id获取元素
+:::
+
+:::snippet 根据id获取元素
 
 ```javascript
 //根据id获取元素
@@ -283,18 +341,24 @@ for (var i = 0; i < boxes.length; i++) {
 //了解getElementsByName()、getElementsByClassName()、querySelector()、querySelectorAll()
 ```
 
-## 事件
+:::
+
+:::snippet 事件
 
 事件：触发-响应机制
 Event接口表示在DOM中发生的任何事件，一些是用户生成的（例如鼠标或键盘事件），而其他由API生成。
 
-### 事件三要素
+:::
+
+:::snippet 事件三要素
 
 - 事件源:触发(被)事件的元素
 - 事件类型:事件的触发方式(例如鼠标点击或键盘点击)
 - 事件处理程序:事件触发后要执行的代码(函数形式)
 
-### 事件的基本使用
+:::
+
+:::snippet 事件的基本使用
 
 ```javascript
 var box = document.getElementById('box');
@@ -303,9 +367,13 @@ box.onclick = function() {
 };
 ```
 
-## 属性操作
+:::
 
-### 非表单元素的属性
+:::snippet 属性操作
+
+:::
+
+:::snippet 非表单元素的属性
 
 href、title、id、src、className
 
@@ -343,7 +411,9 @@ console.log(box.innerText);
 - innerHTML和innerText的区别
 - innerText的兼容性处理
 
-### 表单元素属性
+:::
+
+:::snippet 表单元素属性
 
 - value 用于大部分表单元素的内容获取(option除外)
 - type 可以获取input标签的类型(输入框或复选框等)
@@ -351,14 +421,18 @@ console.log(box.innerText);
 - checked 复选框选中属性
 - selected 下拉菜单选中属性
 
-### 自定义属性操作
+:::
+
+:::snippet 自定义属性操作
 
 - getAttribute() 获取标签行内属性
 - setAttribute() 设置标签行内属性
 - removeAttribute() 移除标签行内属性
 - 与element.属性的区别: 上述三个方法用于获取任意的行内属性。
 
-### 样式操作 使用style方式设置的样式显示在标签行内
+:::
+
+:::snippet 样式操作 使用style方式设置的样式显示在标签行内
 
 ```javascript
 var box = document.getElementById('box');
@@ -370,42 +444,56 @@ box.style.backgroundColor = 'red';
 - 注意
   通过样式属性设置宽高、位置的属性类型是字符串，需要加上px
 
-### 类名操作 修改标签的className属性相当于直接修改标签的类名
+:::
+
+:::snippet 类名操作 修改标签的className属性相当于直接修改标签的类名
 
 ```javascript
 var box = document.getElementById('box');
 box.className = 'clearfix';
 ```
 
-## 创建元素的三种方式
+:::
 
-### document.write()
+:::snippet 创建元素的三种方式
+
+:::
+
+:::snippet document.write()
 
 ```javascript
 document.write('新设置的内容<p>标签也可以生成</p>');
 ```
 
-### innerHTML
+:::
+
+:::snippet innerHTML
 
 ```javascript
 var box = document.getElementById('box');
 box.innerHTML = '新内容<p>新标签</p>';
 ```
 
-### document.createElement()
+:::
+
+:::snippet document.createElement()
 
 ```javascript
 var div = document.createElement('div');
 document.body.appendChild(div);
 ```
 
-### 性能问题
+:::
+
+:::snippet 性能问题
 
 - innerHTML方法由于会对字符串进行解析，需要避免在循环内多次使用。
 - 可以借助字符串或数组的方式进行替换，再设置给innerHTML
 - 优化后与document.createElement性能相近
 
-## 节点操作
+:::
+
+:::snippet 节点操作
 
 ```javascript
 var body = document.body;
@@ -421,7 +509,9 @@ var text = document.createElement('p');
 body.replaceChild(text, div);
 ```
 
-### 节点层级
+:::
+
+:::snippet 节点层级
 
 ```javascript
 var box = document.getElementById('box');
@@ -454,9 +544,13 @@ console.log(box.lastChild);
     firstChild/lastChild
 ```
 
-## 事件详解
+:::
 
-### 注册/移除事件的三种方式
+:::snippet 事件详解
+
+:::
+
+:::snippet 注册/移除事件的三种方式
 
 ```javascript
 var box = document.getElementById('box');
@@ -476,7 +570,9 @@ function eventCode() {
 }
 ```
 
-### 兼容代码
+:::
+
+:::snippet 兼容代码
 
 ```javascript
 function addEventListener(element, type, fn) {
@@ -500,14 +596,18 @@ function removeEventListener(element, type, fn) {
 }
 ```
 
-### 事件的三个阶段
+:::
+
+:::snippet 事件的三个阶段
 
 1. 捕获阶段
 2. 当前目标阶段
 3. 冒泡阶段
    事件对象.eventPhase属性可以查看事件触发时所处的阶段
 
-### 事件对象的属性和方法
+:::
+
+:::snippet 事件对象的属性和方法
 
 - event.type 获取事件类型
 - clientX/clientY     所有浏览器都支持，窗口位置
@@ -515,12 +615,16 @@ function removeEventListener(element, type, fn) {
 - event.target || event.srcElement 用于获取触发事件的元素
 - event.preventDefault() 取消默认行为
 
-### 阻止事件传播的方式
+:::
+
+:::snippet 阻止事件传播的方式
 
 - 标准方式 event.stopPropagation();
 - IE低版本 event.cancelBubble = true; 标准中已废弃
 
-### 常用的鼠标和键盘事件
+:::
+
+:::snippet 常用的鼠标和键盘事件
 
 - onmouseup 鼠标按键放开时触发
 - onmousedown 鼠标按键按下触发
@@ -528,9 +632,13 @@ function removeEventListener(element, type, fn) {
 - onkeyup 键盘按键按下触发
 - onkeydown 键盘按键抬起触发
 
-## 特效
+:::
 
-### 偏移量
+:::snippet 特效
+
+:::
+
+:::snippet 偏移量
 
 - offsetParent用于获取定位的父级元素
 - offsetParent和parentNode的区别
@@ -546,7 +654,9 @@ console.log(box.offsetHeight);
 
 ![偏移量](media/05JavaScriptAPI/offsetParent.png)
 
-### 客户区大小
+:::
+
+:::snippet 客户区大小
 
 ```javascript
 var box = document.getElementById('box');
@@ -558,7 +668,9 @@ console.log(box.clientHeight);
 
 ![客户区大小](media/05JavaScriptAPI/client-area.png)
 
-### 滚动偏移
+:::
+
+:::snippet 滚动偏移
 
 ```javascript
 var box = document.getElementById('box');
@@ -570,8 +682,12 @@ console.log(box.scrollHeight)
 
 ![滚动偏移](media/05JavaScriptAPI/scroll.png)
 
-## 附录
+:::
 
-### 元素的类型
+:::snippet 附录
+
+:::
+
+:::snippet 元素的类型
 
 ![元素的类型](media/05JavaScriptAPI/type-element.png)

@@ -5,23 +5,23 @@
 
 ```html
 <div id="app01">
-    <blog-post post-title="hello!"></blog-post>
+  <blog-post post-title="hello!"></blog-post>
 </div>
 <div id="app02"></div>
 ```
 
 ```javascript
-Vue.component('blog-post', {
-    // 在 JavaScript 中是 camelCase 的
-    props: ['PostTitle'],
-    template: '<h3>{{ PostTitle }}</h3>'
+Vue.component("blog-post", {
+  // 在 JavaScript 中是 camelCase 的
+  props: ["PostTitle"],
+  template: "<h3>{{ PostTitle }}</h3>"
 });
 new Vue({
-    el: '#app01'
+  el: "#app01"
 });
 new Vue({
-    el: '#app02',
-    template: '<blog-post PostTitle="hello 字符串模板!"></blog-post>'
+  el: "#app02",
+  template: '<blog-post PostTitle="hello 字符串模板!"></blog-post>'
 });
 ```
 
@@ -98,7 +98,7 @@ props: {
 <!-- 即便对象是静态的，我们仍然需要 `v-bind` 来告诉 Vue -->
 <!-- 这是一个 JavaScript 表达式而不是一个字符串。-->
 <blog-post
-    v-bind:author="{ name: 'Veronica', company: 'Veridian Dynamics' }"
+  v-bind:author="{ name: 'Veronica', company: 'Veridian Dynamics' }"
 ></blog-post>
 
 <!-- 用一个变量进行动态赋值。-->
@@ -114,7 +114,7 @@ props: {
 
 > 所有的 prop 都使得其父子 prop 之间形成了一个单向下行绑定：父级 prop 的更新会向下流动到子组件中，但是反过来则不行。
 
-1.  这个 prop 用来传递一个初始值；这个子组件接下来希望将其作为一个本地的 prop 数据来使用。
+1. 这个 prop 用来传递一个初始值；这个子组件接下来希望将其作为一个本地的 prop 数据来使用。
 
 ```javascript
 props: ['initialCounter'],
@@ -125,7 +125,7 @@ data: function () {
 }
 ```
 
-2.  这个 prop 以一种原始的值传入且需要进行转换。
+2. 这个 prop 以一种原始的值传入且需要进行转换。
 
 ```javascript
 props: ['size'],
@@ -156,19 +156,19 @@ computed: {
 > 不希望组件的根元素继承特性，你可以在组件的选项中设置 inheritAttrs: false。
 
 ```javascript
-Vue.component('my-component', {
-    inheritAttrs: false
-    // ...
+Vue.component("my-component", {
+  inheritAttrs: false
+  // ...
 });
 ```
 
 > 适合配合实例的 \$attrs 属性使用，该属性包含了传递给一个组件的特性名和特性值
 
 ```javascript
-Vue.component('base-input', {
-    inheritAttrs: false,
-    props: ['label', 'value'],
-    template: `
+Vue.component("base-input", {
+  inheritAttrs: false,
+  props: ["label", "value"],
+  template: `
     <label>
       {{ label }}
       <input
@@ -183,9 +183,9 @@ Vue.component('base-input', {
 
 ```html
 <base-input
-    v-model="username"
-    class="username-input"
-    placeholder="Enter your username"
+  v-model="username"
+  class="username-input"
+  placeholder="Enter your username"
 ></base-input>
 ```
 

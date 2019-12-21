@@ -1,15 +1,15 @@
 :::snippet 主要学习内容 ES6+vus+node
 
--   javascript 文档地址：[https://wangdoc.com/javascript/index.html](https://wangdoc.com/javascript/index.html)
--   ES6 文档地址：[http://es6.ruanyifeng.com/](http://es6.ruanyifeng.com/)
--   webpack 文档地址：[https://www.webpackjs.com/concepts/](https://www.webpackjs.com/concepts/)
--   npmjs 文档：[https://www.npmjs.com.cn/](https://www.npmjs.com.cn/)
--   vue 文档地址：[https://vuejs.bootcss.com/v2/guide/](https://vuejs.bootcss.com/v2/guide/)
--   vuex 文档地址：[https://vuex.vuejs.org/zh/guide/](https://vuex.vuejs.org/zh/guide/)
--   vuex router 文档地址：[https://router.vuejs.org/zh/](https://router.vuejs.org/zh/)
--   在线编译 web：[https://jsfiddle.net/](https://jsfiddle.net/)
--   东东笔记地址：[http://www.kitorv.com/](http://www.kitorv.com/)
--   笔记地址：[https://ghostnonego.github.io/study-notes/](https://ghostnonego.github.io/study-notes/)
+- javascript 文档地址：[https://wangdoc.com/javascript/index.html](https://wangdoc.com/javascript/index.html)
+- ES6 文档地址：[http://es6.ruanyifeng.com/](http://es6.ruanyifeng.com/)
+- webpack 文档地址：[https://www.webpackjs.com/concepts/](https://www.webpackjs.com/concepts/)
+- npmjs 文档：[https://www.npmjs.com.cn/](https://www.npmjs.com.cn/)
+- vue 文档地址：[https://vuejs.bootcss.com/v2/guide/](https://vuejs.bootcss.com/v2/guide/)
+- vuex 文档地址：[https://vuex.vuejs.org/zh/guide/](https://vuex.vuejs.org/zh/guide/)
+- vuex router 文档地址：[https://router.vuejs.org/zh/](https://router.vuejs.org/zh/)
+- 在线编译 web：[https://jsfiddle.net/](https://jsfiddle.net/)
+- 东东笔记地址：[http://www.kitorv.com/](http://www.kitorv.com/)
+- 笔记地址：[https://ghostnonego.github.io/study-notes/](https://ghostnonego.github.io/study-notes/)
 
 :::
 

@@ -7,30 +7,30 @@
 typora-copy-images-to media/06JavaScriptProfessional
 ---
 
-# JavaScript 高级
+:::snippet JavaScript 高级
 
-## 课程介绍
+:::snippet 课程介绍
 
-### 目标
+:::snippet 目标
 
 - 理解面向对象开发思想
 - 掌握 JavaScript 面向对象开发相关模式
 - 掌握在 JavaScript 中使用正则表达式
 
-## 基本概念复习
+:::snippet 基本概念复习
 
 > 由于 JavaScript 高级还是针对 JavaScript 语言本身的一个进阶学习，所以在开始之前我们先对以前所学过的 JavaScript 相关知识点做一个快速复习总结。
 
-### 重新介绍 JavaScript
+:::snippet 重新介绍 JavaScript
 
-#### JavaScript 是什么
+:::snippet JavaScript 是什么
 
 - 解析执行：轻量级解释型的，或是 JIT 编译型的程序设计语言
 - 语言特点：动态，头等函数 (First-class Function) 又称函数是 JavaScript 中的一等公民
 - 执行环境：在宿主环境（host environment）下运行，浏览器是最常见的 JavaScript 宿主环境。但是在很多非浏览器环境中也使用 JavaScript ，例如 node.js
 - 编程范式：基于原型、多范式的动态脚本语言，并且支持面向对象、命令式和声明式（如：函数式编程）编程风格
 
-#### JavaScript 的组成
+:::snippet JavaScript 的组成
 
 | 组成部分       | 说明                |
 | ---------- | ----------------- |
@@ -38,7 +38,7 @@ typora-copy-images-to media/06JavaScriptProfessional
 | DOM        | 描述了处理网页内容的方法和接口   |
 | BOM        | 描述了与浏览器进行交互的方法和接口 |
 
-#### 基本类型（值类型）
+:::snippet 基本类型（值类型）
 
 - Undefined
 - Null
@@ -46,7 +46,7 @@ typora-copy-images-to media/06JavaScriptProfessional
 - Number
 - String
 
-#### 复杂类型（引用类型）
+:::snippet 复杂类型（引用类型）
 
 - Object
 - Array
@@ -56,13 +56,13 @@ typora-copy-images-to media/06JavaScriptProfessional
 - 基本包装类型：Boolean、Number、String
 - 单体内置对象： Global、Math
 
-#### 类型检测
+:::snippet 类型检测
 
 - `typeof`
 - `instanceof`
 - `Object.prototype.toString.call()`
 
-#### 值类型和引用类型
+:::snippet 值类型和引用类型
 
 - 在内存中的存储方式
   值类型按值存储
@@ -74,7 +74,7 @@ typora-copy-images-to media/06JavaScriptProfessional
   值类型按值传递
   引用类型按引用传递
 
-#### 值类型与引用类型的差别
+:::snippet 值类型与引用类型的差别
 
 - 基本类型在内存中占据固定大小的空间，因此被保存在栈内存中
 - 从一个变量向另一个变量复制基本类型的值，复制的是值的副本
@@ -82,7 +82,7 @@ typora-copy-images-to media/06JavaScriptProfessional
 - 包含引用类型值的变量实际上包含的并不是对象本身，而是一个指向该对象的指针
 - 从一个变量向另一个变量复制引用类型的值的时候，复制是引用指针，因此两个变量最终都指向同一个对象
 
-### JavaScript 执行过程
+:::snippet JavaScript 执行过程
 
 JavaScript 运行分为两个阶段：
 
@@ -95,11 +95,11 @@ JavaScript 运行分为两个阶段：
 
 ---
 
-## JavaScript 面向对象编程
+:::snippet JavaScript 面向对象编程
 
-### 面向对象介绍
+:::snippet 面向对象介绍
 
-#### 什么是对象
+:::snippet 什么是对象
 
 > Everything is object （万物皆对象）
 
@@ -112,7 +112,7 @@ ECMAScript-262 把对象定义为：**无序属性的集合，其属性可以包
 严格来讲，这就相当于说对象是一组没有特定顺序的值。对象的每个属性或方法都有一个名字，而每个名字都
 映射到一个值。
 
-#### 什么是面向对象
+:::snippet 什么是面向对象
 
 > 面向对象是过程式代码的一种高度封装，目的在于提高代码的开发效率和可维护性。
 
@@ -132,7 +132,7 @@ ECMAScript-262 把对象定义为：**无序属性的集合，其属性可以包
 
 面向对象的特性：封装性、继承性、多态性
 
-#### 程序中面向对象的基本体现
+:::snippet 程序中面向对象的基本体现
 
 在 JavaScript 中，所有数据类型都可以视为对象，当然也可以自定义对象。
 自定义的对象数据类型就是面向对象中的类（ Class ）的概念。
@@ -179,9 +179,9 @@ Class 是一种抽象概念，比如我们定义的 Class——Student ，是指
 
 面向对象的抽象程度又比函数要高，因为一个 Class 既包含数据，又包含操作数据的方法。
 
-### 创建对象
+:::snippet 创建对象
 
-#### 简单方式
+:::snippet 简单方式
 
 我们可以直接通过 `new Object()` 创建：
 
@@ -210,7 +210,7 @@ var person = {
 对于上面的写法固然没有问题，但是假如我们要生成两个 `person` 实例对象呢？
 通过上面的代码我们不难看出，这样写的代码太过冗余，重复性太高。
 
-#### 简单方式的改进：工厂函数
+:::snippet 简单方式的改进：工厂函数
 
 我们可以写一个函数，解决代码重复问题：
 
@@ -236,7 +236,7 @@ var p2 = createPerson('Mike', 18)
 这样封装确实爽多了，通过工厂模式我们解决了创建多个相似对象代码冗余的问题，
 但却没有解决对象识别的问题（即怎样知道一个对象的类型）。
 
-### 构造函数
+:::snippet 构造函数
 
 内容引导：
 
@@ -248,7 +248,7 @@ var p2 = createPerson('Mike', 18)
 - 构造函数的静态成员和实例成员：函数也是对象、实例成员、静态成员
 - 构造函数的问题
 
-#### 更优雅的工厂函数：构造函数
+:::snippet 更优雅的工厂函数：构造函数
 
 一种更优雅的工厂函数就是下面这样，构造函数：
 
@@ -268,7 +268,7 @@ var p2 = new Person('Mike', 23)
 p2.sayName() // => Mike
 ```
 
-#### 解析构造函数代码的执行
+:::snippet 解析构造函数代码的执行
 
 在上面的示例中，`Person()` 函数取代了 `createPerson()` 函数，但是实现效果是一样的。
 这是为什么呢？
@@ -308,7 +308,7 @@ function Person (name, age) {
 }
 ```
 
-#### 构造函数和实例对象的关系
+:::snippet 构造函数和实例对象的关系
 
 使用构造函数的好处不仅仅在于代码的简洁性，更重要的是我们可以识别对象的具体类型了。
 在每一个实例对象中的\__proto\__中同时有一个 `constructor` 属性，该属性指向创建该实例的构造函数：
@@ -336,7 +336,7 @@ console.log(p2 instanceof Person) // => true
 - 可以通过实例的 `constructor` 属性判断实例和构造函数之间的关系
   注意：这种方式不严谨，推荐使用 `instanceof` 操作符，后面学原型会解释为什么
 
-#### 构造函数的问题
+:::snippet 构造函数的问题
 
 使用构造函数带来的最大的好处就是创建对象更方便了，但是其本身也存在一个浪费内存的问题：
 
@@ -413,14 +413,14 @@ console.log(p1.sayAge === p2.sayAge) // => true
 至此，我们利用自己的方式基本上解决了构造函数的内存浪费问题。
 但是代码看起来还是那么的格格不入，那有没有更好的方式呢？
 
-#### 构造函数小结
+:::snippet 构造函数小结
 
 - 构造函数语法
 - 分析构造函数
 - 构造函数和实例对象的关系：实例的 constructor 属性、instanceof 操作符
 - 构造函数的问题
 
-### 原型
+:::snippet 原型
 
 内容引导：
 
@@ -433,7 +433,7 @@ console.log(p1.sayAge === p2.sayAge) // => true
 - 原型对象的问题
 - 构造的函数和原型对象使用建议
 
-#### 更好的解决方案： `prototype`
+:::snippet 更好的解决方案： `prototype`
 
 Javascript 规定，每一个构造函数都有一个 `prototype` 属性，指向另一个对象。
 这个对象的所有属性和方法，都会被构造函数的实例继承。
@@ -460,7 +460,7 @@ console.log(p1.sayName === p2.sayName) // => true
 这时所有实例的 `type` 属性和 `sayName()` 方法，
 其实都是同一个内存地址，指向 `prototype` 对象，因此就提高了运行效率。
 
-#### 构造函数、实例、原型三者之间的关系
+:::snippet 构造函数、实例、原型三者之间的关系
 
 ![构造函数、实例、原型三者之间的关系](media/06JavaScriptProfessional/Constructor.png)
 任何函数都具有一个 `prototype` 属性，该属性是一个对象。
@@ -504,7 +504,7 @@ instance.sayHi() // => hi!
 - 通过构造函数得到的实例对象内部会包含一个指向构造函数的 `prototype` 对象的指针 `__proto__`
 - 所有实例都直接或间接继承了原型对象的成员
 
-#### 属性成员的搜索原则：原型链
+:::snippet 属性成员的搜索原则：原型链
 
 了解了 **构造函数-实例-原型对象** 三者之间的关系后，接下来我们来解释一下为什么实例对象可以访问原型对象中的成员。
 每当代码读取某个对象的某个属性时，都会执行一次搜索，目标是具有给定名字的属性
@@ -528,7 +528,7 @@ instance.sayHi() // => hi!
 - 自己身上找不到，则沿着原型链向上查找，找到即返回
 - 如果一直到原型链的末端还没有找到，则返回 `undefined`
 
-#### 实例对象读写原型对象成员
+:::snippet 实例对象读写原型对象成员
 
 读取：
 
@@ -551,7 +551,7 @@ instance.sayHi() // => hi!
 - 如果自己身上找不到，则沿着原型链继续查找，如果找到则修改
 - 如果一直到原型链的末端还没有找到该成员，则报错（`实例对象.undefined.xx = xx`）
 
-#### 更简单的原型语法
+:::snippet 更简单的原型语法
 
 我们注意到，前面例子中每添加一个属性和方法就要敲一遍 `Person.prototype` 。
 为减少不必要的输入，更常见的做法是用一个包含所有属性和方法的对象字面量来重写整个原型对象：
@@ -590,7 +590,7 @@ Person.prototype = {
 }
 ```
 
-#### 原生对象的原型
+:::snippet 原生对象的原型
 
 <p class="tip">
   所有函数都有 prototype 属性对象。
@@ -606,7 +606,7 @@ Person.prototype = {
 
 练习：为数组对象和字符串对象扩展原型方法。
 
-#### 原型对象的问题
+:::snippet 原型对象的问题
 
 - 共享数组
 - 共享对象
@@ -614,13 +614,13 @@ Person.prototype = {
 如果真的希望可以被实例对象之间共享和修改这些共享数据那就不是问题。但是如果不希望实例之间共享和修改这些共享数据则就是问题。
 一个更好的建议是，最好不要让实例之间互相共享这些数组或者对象成员，一旦修改的话会导致数据的走向很不明确而且难以维护。
 
-#### 原型对象使用建议
+:::snippet 原型对象使用建议
 
 - 私有成员（一般就是非函数成员）放到构造函数中
 - 共享成员（一般就是函数）放到原型对象中
 - 如果重置了 `prototype` 记得修正 `constructor` 的指向
 
-#### 搭建页面
+:::snippet 搭建页面
 
 放一个容器盛放游戏场景 div#map，设置样式
 
@@ -633,13 +633,13 @@ Person.prototype = {
 }
 ```
 
-#### 分析对象
+:::snippet 分析对象
 
 - 游戏对象
 - 蛇对象
 - 食物对象
 
-#### 创建食物对象
+:::snippet 创建食物对象
 
 - Food
   - 属性
@@ -696,7 +696,7 @@ Food.prototype.render = function (map) {
 window.Food = Food;
 ```
 
-#### 创建蛇对象
+:::snippet 创建蛇对象
 
 - Snake
 - 属性
@@ -750,7 +750,7 @@ Snake.prototype.render = function(map) {
 window.Snake = Snake;
 ```
 
-#### 创建游戏对象
+:::snippet 创建游戏对象
 
 游戏对象，用来管理游戏中的所有对象和开始游戏
 
@@ -780,9 +780,9 @@ Game.prototype.start = function () {
 }
 ```
 
-### 游戏的逻辑
+:::snippet 游戏的逻辑
 
-#### 写蛇的move方法
+:::snippet 写蛇的move方法
 
 - 在蛇对象(snake.js)中，在Snake的原型上新增move方法
 
@@ -822,7 +822,7 @@ this.snake.move(this.food, this.map);
 this.snake.render(this.map);
 ```
 
-#### 让蛇自己动起来
+:::snippet 让蛇自己动起来
 
 - 私有方法
 
@@ -909,7 +909,7 @@ function bindKey() {
 bindKey();
 ```
 
-#### 判断蛇是否吃到食物
+:::snippet 判断蛇是否吃到食物
 
 ```js
 // 在Snake的move方法中
@@ -932,13 +932,13 @@ if (headX === food.x && headY === food.y) {
 }
 ```
 
-### 其它处理
+:::snippet 其它处理
 
-#### 把html中的js代码放到index.js中
+:::snippet 把html中的js代码放到index.js中
 
 避免html中出现js代码
 
-#### 自调用函数的参数
+:::snippet 自调用函数的参数
 
 ```js
 (function (window, undefined) {
@@ -953,7 +953,7 @@ if (headX === food.x && headY === food.y) {
   在将来会看到别人写的代码中会把undefined作为函数的参数(当前案例没有使用)
   因为在有的老版本的浏览器中 undefined可以被重新赋值，防止undefined 被重新赋值
 
-#### 整理代码
+:::snippet 整理代码
 
 现在的代码结构清晰，谁出问题就找到对应的js文件即可。
 通过自调用函数，已经防止了变量命名污染的问题
@@ -996,14 +996,14 @@ var a = function () {
 
 ---
 
-## 继承
+:::snippet 继承
 
-### 什么是继承
+:::snippet 什么是继承
 
 - 现实生活中的继承
 - 程序中的继承
 
-### 构造函数的属性继承：借用构造函数
+:::snippet 构造函数的属性继承：借用构造函数
 
 ```javascript
 function Person (name, age) {
@@ -1021,7 +1021,7 @@ var s1 = Student('张三', 18)
 console.log(s1.type, s1.name, s1.age) // => human 张三 18
 ```
 
-### 构造函数的原型方法继承：拷贝继承（for-in）
+:::snippet 构造函数的原型方法继承：拷贝继承（for-in）
 
 ```javascript
 function Person (name, age) {
@@ -1048,7 +1048,7 @@ var s1 = Student('张三', 18)
 s1.sayName() // => hello 张三
 ```
 
-### 另一种继承方式：原型继承
+:::snippet 另一种继承方式：原型继承
 
 ```javascript
 function Person (name, age) {
@@ -1077,15 +1077,15 @@ s1.sayName() // => hello 张三
 
 ---
 
-## 函数进阶
+:::snippet 函数进阶
 
-### 函数的定义方式
+:::snippet 函数的定义方式
 
 - 函数声明
 - 函数表达式
 - `new Function`
 
-#### 函数声明
+:::snippet 函数声明
 
 ```javascript
 function foo () {
@@ -1093,7 +1093,7 @@ function foo () {
 }
 ```
 
-#### 函数表达式
+:::snippet 函数表达式
 
 ```javascript
 var foo = function () {
@@ -1101,7 +1101,7 @@ var foo = function () {
 }
 ```
 
-#### 函数声明与函数表达式的区别
+:::snippet 函数声明与函数表达式的区别
 
 - 函数声明必须有名字
 - 函数声明会函数提升，在预解析阶段就已创建，声明前后都可以调用
@@ -1140,13 +1140,13 @@ if (true) {
 }
 ```
 
-### 函数的调用方式
+:::snippet 函数的调用方式
 
 - 普通函数
 - 构造函数
 - 对象方法
 
-### 函数内 `this` 指向的不同场景
+:::snippet 函数内 `this` 指向的不同场景
 
 函数的调用方式决定了 `this` 指向的不同：
 
@@ -1160,18 +1160,18 @@ if (true) {
 
 这就是对函数内部 this 指向的基本整理，写代码写多了自然而然就熟悉了。
 
-### 函数也是对象
+:::snippet 函数也是对象
 
 - 所有函数都是 `Function` 的实例
 
-### call、apply、bind
+:::snippet call、apply、bind
 
 那了解了函数 this 指向的不同场景之后，我们知道有些情况下我们为了使用某种特定环境的 this 引用，
 这时候时候我们就需要采用一些特殊手段来处理了，例如我们经常在定时器外部备份 this 引用，然后在定时器函数内部使用外部 this 的引用。
 然而实际上对于这种做法我们的 JavaScript 为我们专门提供了一些函数方法用来帮我们更优雅的处理函数内部 this 指向问题。
 这就是接下来我们要学习的 call、apply、bind 三个函数方法。
 
-#### call
+:::snippet call
 
 `call()` 方法调用一个函数, 其具有一个指定的 `this` 值和分别地提供的参数(参数的列表)。
 
@@ -1193,7 +1193,7 @@ fun.call(thisArg[, arg1[, arg2[, ...]]])
 - `arg1, arg2, ...`
   指定的参数列表
 
-#### apply
+:::snippet apply
 
 `apply()` 方法调用一个函数, 其具有一个指定的 `this` 值，以及作为一个数组（或类似数组的对象）提供的参数。
 
@@ -1219,7 +1219,7 @@ fun.apply(thisArg, [argsArray])
 fun.apply(this, ['eat', 'bananas'])
 ```
 
-#### bind
+:::snippet bind
 
 bind() 函数会创建一个新函数（称为绑定函数），新函数与被调函数（绑定函数的目标函数）具有相同的函数体（在 ECMAScript 5 规范中内置的call属性）。
 当目标函数被调用时 this 值绑定到 bind() 的第一个参数，该参数不能被重写。绑定函数被调用时，bind() 也接受预设的参数提供给原函数。
@@ -1280,7 +1280,7 @@ var flower = new LateBloomer();
 flower.bloom();  // 一秒钟后, 调用'declare'方法
 ```
 
-#### 小结
+:::snippet 小结
 
 - call 和 apply 特性一样
   都是用来调用函数，而且是立即调用
@@ -1298,7 +1298,7 @@ flower.bloom();  // 一秒钟后, 调用'declare'方法
     那到底以谁 bind 的时候传递的参数为准呢还是以调用的时候传递的参数为准
     两者合并：bind 的时候传递的参数和调用的时候传递的参数会合并到一起，传递到函数内部
 
-### 函数的其它成员
+:::snippet 函数的其它成员
 
 - arguments: 实参集合
 - caller: 函数的调用者
@@ -1321,12 +1321,12 @@ function f() {
 f()
 ```
 
-### 高阶函数
+:::snippet 高阶函数
 
 - 函数可以作为参数
 - 函数可以作为返回值
 
-#### 作为参数
+:::snippet 作为参数
 
 ```javascript
 function eat (callback) {
@@ -1341,7 +1341,7 @@ eat(function () {
 })
 ```
 
-#### 作为返回值
+:::snippet 作为返回值
 
 ```javascript
 function genFun (type) {
@@ -1357,7 +1357,7 @@ console.log(isArray([])) // => true
 console.log(isArray({})) // => true
 ```
 
-### 函数闭包
+:::snippet 函数闭包
 
 ```javascript
 function fn () {
@@ -1379,7 +1379,7 @@ fns.setCount()
 fns.getCount() // => 1
 ```
 
-#### 作用域、作用域链、预解析
+:::snippet 作用域、作用域链、预解析
 
 - 全局作用域
 - 函数作用域
@@ -1423,7 +1423,7 @@ function fn () {
 
 - 内层作用域可以访问外层作用域，反之不行
 
-#### 什么是闭包
+:::snippet 什么是闭包
 
 闭包就是能够读取其他函数内部变量的函数，
 由于在 Javascript 语言中，只有函数内部的子函数才能读取局部变量，
@@ -1434,7 +1434,7 @@ function fn () {
 - 可以在函数外部读取函数内部成员
 - 让函数内成员始终存活在内存中
 
-#### 一些关于闭包的例子
+:::snippet 一些关于闭包的例子
 
 示例1：
 
@@ -1460,7 +1460,7 @@ for(var i = 0; i < 3; i++) {
 console.log(222)
 ```
 
-#### 闭包的思考题
+:::snippet 闭包的思考题
 
 思考题 1：
 
@@ -1494,9 +1494,9 @@ var object = {
 console.log(object.getNameFunc()())
 ```
 
-### 函数递归
+:::snippet 函数递归
 
-#### 递归执行模型
+:::snippet 递归执行模型
 
 ```javascript
 function fn1 () {
@@ -1525,7 +1525,7 @@ function fn4 () {
 fn1()
 ```
 
-#### 举个栗子：计算阶乘的递归函数
+:::snippet 举个栗子：计算阶乘的递归函数
 
 ```javascript
 function factorial (num) {
@@ -1537,36 +1537,36 @@ function factorial (num) {
 }
 ```
 
-## 正则表达式
+:::snippet 正则表达式
 
 - 了解正则表达式基本语法
 - 能够使用JavaScript的正则对象
 
-### 正则表达式简介
+:::snippet 正则表达式简介
 
-#### 什么是正则表达式
+:::snippet 什么是正则表达式
 
 正则表达式：用于匹配规律规则的表达式，正则表达式最初是科学家对人类神经系统的工作原理的早期研究，现在在编程语言中有广泛的应用。正则表通常被用来检索、替换那些符合某个模式(规则)的文本。
 正则表达式是对字符串操作的一种逻辑公式，就是用事先定义好的一些特定字符、及这些特定字符的组合，组成一个“规则字符串”，这个“规则字符串”用来表达对字符串的一种过滤逻辑。
 
-#### 正则表达式的作用
+:::snippet 正则表达式的作用
 
 1. 给定的字符串是否符合正则表达式的过滤逻辑(匹配)
 2. 可以通过正则表达式，从字符串中获取我们想要的特定部分(提取)
 3. 强大的字符串替换能力(替换)
 
-#### 正则表达式的特点
+:::snippet 正则表达式的特点
 
 1. 灵活性、逻辑性和功能性非常的强
 2. 可以迅速地用极简单的方式达到字符串的复杂控制
 3. 对于刚接触的人来说，比较晦涩难懂
 
-### 正则表达式的测试
+:::snippet 正则表达式的测试
 
 - [在线测试正则](https://c.runoob.com/front-end/854)
 - 工具中使用正则表达式：sublime/vscode/word、 演示替换所有的数字
 
-### 正则表达式的组成
+:::snippet 正则表达式的组成
 
 - 普通字符
 - 特殊字符(元字符)：正则表达式中有特殊意义的字符
@@ -1576,11 +1576,11 @@ function factorial (num) {
 - `\d` 匹配数字
 - `ab\d` 匹配 ab1、ab2
 
-### 元字符串
+:::snippet 元字符串
 
 通过测试工具演示下面元字符的使用
 
-#### 常用元字符串
+:::snippet 常用元字符串
 
 | 元字符  | 说明              |
 | ---- | --------------- |
@@ -1594,7 +1594,7 @@ function factorial (num) {
 | ^    | 表示匹配行首的文本(以谁开始) |
 | $    | 表示匹配行尾的文本(以谁结束) |
 
-#### 限定符
+:::snippet 限定符
 
 | 限定符   | 说明       |
 | ----- | -------- |
@@ -1605,7 +1605,7 @@ function factorial (num) {
 | {n,}  | 重复n次或更多次 |
 | {n,m} | 重复n到m次   |
 
-#### 其它
+:::snippet 其它
 
 ```html
 [] 字符串用中括号括起来，表示匹配其中的任一字符，相当于或的意思
@@ -1617,7 +1617,7 @@ function factorial (num) {
 [\u4e00-\u9fa5]  匹配汉字
 ```
 
-### 正则表达式案例
+:::snippet 正则表达式案例
 
 ```javascript
 //验证手机号：
@@ -1636,9 +1636,9 @@ function factorial (num) {
 ^\d{1,3}\(.\d{1,3}){3}$
 ```
 
-## JavaScript 中使用正则表达式
+:::snippet JavaScript 中使用正则表达式
 
-### 创建正则对象
+:::snippet 创建正则对象
 
 方式：
 
@@ -1649,7 +1649,7 @@ var reg = /\d/i;
 var reg = /\d/gi;
 ```
 
-#### 参数
+:::snippet 参数
 
 | 标志   | 说明         |
 | ---- | ---------- |
@@ -1657,7 +1657,7 @@ var reg = /\d/gi;
 | g    | 全局匹配       |
 | gi   | 全局匹配+忽略大小写 |
 
-### 正则匹配
+:::snippet 正则匹配
 
 ```javascript
 // 匹配日期
@@ -1666,7 +1666,7 @@ var reg = /^\d{4}-\d{1,2}-\d{1,2}$/
 console.log(reg.test(dateStr));
 ```
 
-### 匹配正则表达式
+:::snippet 匹配正则表达式
 
 //        console.log(/./.test("除了回车换行以为的任意字符"));//true
 //        console.log(/.*/.test("0个到多个"));//true
@@ -1690,13 +1690,13 @@ console.log(reg.test(dateStr));
         console.log(/\w/.test("_"));//true
         console.log(/\W/.test("_"));//true
 
-### 正则表达式具体案例
+:::snippet 正则表达式具体案例
 
 1.验证密码强弱
 2.验证邮箱：[0-9a-zA-Z_.-]+[@][0-9a-zA-Z._-]+([.][a-zA-Z]+){1,2}
 3.验证中文名字[\u4e00-\u9fa5]
 
-### 正则提取
+:::snippet 正则提取
 
 ```javascript
 // 1. 提取工资
@@ -1728,7 +1728,7 @@ if (reg.test(str)) {
 }
 ```
 
-### 正则替换
+:::snippet 正则替换
 
 ```javascript
 // 1. 替换所有空白
@@ -1742,7 +1742,7 @@ str = str.replace(/,|，/g, ".");
 console.log(str);
 ```
 
-### 案例：表单验证
+:::snippet 案例：表单验证
 
 ```html
 QQ号：<input type="text" id="txtQQ"><span></span><br>
@@ -1909,13 +1909,13 @@ function getRuleByRuleName(rules, ruleName) {
 }
 ```
 
-## 补充
+:::snippet 补充
 
-### 伪数组和数组
+:::snippet 伪数组和数组
 
 在JavaScript中，除了5种原始数据类型之外，其他所有的都是对象，包括函数（Function）。
 
-#### 对象与数组的关系
+:::snippet 对象与数组的关系
 
 在说区别之前，需要先提到另外一个知识，就是 JavaScript 的原型继承。
 所有 JavaScript 的内置构造函数都是继承自 `Object.prototype` 。
@@ -1930,7 +1930,7 @@ var arr = [];
 
 可以得到对象和数组的第一个区别：对象没有数组 Array.prototype 的属性值。
 
-#### 什么是数组
+:::snippet 什么是数组
 
 数组具有一个最基本特征：索引，这是对象所没有的，下面来看一段代码：
 
@@ -1952,7 +1952,7 @@ console.log(arr.length); // => 3
 - 为什么arr.length输出3，而不是1
    在给数组添加元素时，并没有按照连续的索引添加，所以导致数组的索引不连续，那么就导致索引长度大于元素个数
 
-#### 什么是伪数组
+:::snippet 什么是伪数组
 
 1. 拥有 length 属性，其它属性（索引）为非负整数(对象中的索引会被当做字符串来处理，这里你可以当做是个非负整数串来理解)
 2. 不具有数组所具有的方法
@@ -2017,26 +2017,26 @@ console.log([].slice.call(obj))
 })
 ```
 
-#### 伪数组和数组小结
+:::snippet 伪数组和数组小结
 
 - 对象没有数组 Array.prototype 的属性值，类型是 Object ，而数组类型是 Array
 - 数组是基于索引的实现， length 会自动更新，而对象是键值对
 - 使用对象可以创建伪数组，伪数组可以正常使用数组的大部分方法
 
-### JavaScript 垃圾回收机制
+:::snippet JavaScript 垃圾回收机制
 
-### JavaScript 运行机制：Event Loop
+:::snippet JavaScript 运行机制：Event Loop
 
-### Object
+:::snippet Object
 
-#### 静态成员
+:::snippet 静态成员
 
 - Object.assign()
 - Object.create()
 - Object.keys()
 - Object.defineProperty()
 
-#### 实例成员
+:::snippet 实例成员
 
 - constructor
 - hasOwnProperty()
@@ -2047,24 +2047,24 @@ console.log([].slice.call(obj))
 
 ---
 
-## 附录
+:::snippet 附录
 
-### A 代码规范
+:::snippet A 代码规范
 
-#### 代码风格
+:::snippet 代码风格
 
 - [JavaScript Standard Style](https://github.com/feross/standard)
 - [Airbnb JavaScript Style Guide()](https://github.com/airbnb/javascript)
 
-#### 校验工具
+:::snippet 校验工具
 
 - [JSLint](https://github.com/douglascrockford/JSLint)
 - [JSHint](https://github.com/jshint/jshint)
 - [ESLint](https://github.com/eslint/eslint)
 
-### B Chrome 开发者工具
+:::snippet B Chrome 开发者工具
 
-### C 文档相关工具
+:::snippet C 文档相关工具
 
 - 电子文档制作工具: [docute](https://github.com/egoist/docute)
 - 流程图工具：[DiagramDesigner](http://logicnet.dk/DiagramDesigner/)

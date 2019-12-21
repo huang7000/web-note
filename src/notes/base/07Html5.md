@@ -1,16 +1,26 @@
-# Html5
+:::
 
-## html5介绍
+:::snippet Html5
 
-### html5设计目的
+:::
+
+:::snippet html5介绍
+
+:::
+
+:::snippet html5设计目的
 
    HTML5的设计目的是为了在移动设备上支持多媒体。新的语法特征被引进以支持这一点，如video、audio和canvas 标记。HTML5还引进了新的功能，可以真正改变用户与文档的交互方式
 
-### html5新特性
+:::
+
+:::snippet html5新特性
 
    增加了新特性：语义特性，本地存储特性，设备兼容特性，连接特性，网页多媒体特性，三维、图形及特效特性，性能与集成特性，CSS3特性
 
-### html5优缺点
+:::
+
+:::snippet html5优缺点
 
 - 优点
    a、提高可用性和改进用户的友好体验；
@@ -23,7 +33,9 @@
 - 缺点
     该标准并未能很好的被Pc端浏览器所支持。因新标签的引入，各浏览器之间将缺少一种统一的数据描述格式，造成用户体验不佳。
 
-## Html5新增的标签
+:::
+
+:::snippet Html5新增的标签
 
 |     类别    |   标签            |            描述                                    |
 |----------|----------------|----------------------------------------------|
@@ -55,7 +67,9 @@
 |  语义和结构  |  &lt;time>    |定义日期或时间。   |
 |  语义和结构  |  &lt;wbr>    |规定在文本中的何处适合添加换行符。   |
 
-## html5移除的标签
+:::
+
+:::snippet html5移除的标签
 
 以下的 HTML 4.01 元素在HTML5中已经被删除:
 &lt;acronym> 字体兼容
@@ -70,12 +84,14 @@
 &lt;noframes>
 &lt;strike>
 
-## Html的语义标签
+:::
+
+:::snippet Html的语义标签
 
 - 传统页面的标签使用
 - HTML5页面中的标签使用
 
-~~~html
+```html
 <body>
     <header>定义了文档的头部区域</header>
     <div>
@@ -84,27 +100,35 @@
     </div>
     <footer>定义 section 或 document 的页脚</footer>
 </body>
-~~~
+```
 
-## hml5兼容处理
+:::
+
+:::snippet hml5兼容处理
 
 1.在不支持HTML5新标签的浏览器里，会将这些新的标签解析成行内元素(inline)对待，所以我们只需要将其转换成块元素(block)即可使用，但是在IE9版本以下，并不能正常解析这些新标签，但是却可以识别通过document.createElement('tagName')创建的自定义标签，于是我们的解决方案就是将HTML5的新标签全部通过document.createElement('tagName')来创建一遍，这样IE低版本也能正常解析HTML5新标签了。
 2.处理方式：在实际开发中我们更多采用的是通过检测IE浏览器的版本来加载三方的一个JS库来解决兼容问题（测试在IE下面的兼容性：ieTester软件的使用）
 
-~~~html
+```html
 <script src="../js/html5shiv.min.js"></script>
-~~~
+```
 
-## html5表单
+:::
 
-### html5表单中新增的标签
+:::snippet html5表单
+
+:::
+
+:::snippet html5表单中新增的标签
 
 - &lt;datalist>:与input配合使用：类似于拥有输入功能的下拉列表
 - &lt;keygen>:提供一种验证用户数据的可靠方法。在提交表单数据的时候，会生成两个键，一个私钥，一个公钥。私钥存储在本地，公钥发送到服务器。在需要做验证的时候，我们可以从服务器下载一个客户端证书，通过私钥和证书来实现相关的验证操作。
 - &lt;meter>:度量器，可用于标示级别
 - &lt;output>:用于展示内容，只能展示，不能进行编辑
 
-### html5表单中新增的属性
+:::
+
+:::snippet html5表单中新增的属性
 
 - placeholder 占位符
 - autofocus 获取焦点
@@ -115,7 +139,7 @@
 - required 验证条件，必填项
 - pattern 正则表达式 验证表单
 
-~~~html
+```html
 autocomplete:属性规定表单是否应该启用自动完成功能。autocomplete 属性适用于 <form>，以及下面的 input 类型：text, search, url, telephone, email, password, datepickers, range 以及 color。<br>
 <form action="" autocomplete="on">
     autofocus定位文本框焦点：<input type="text" autofocus> <br>
@@ -126,9 +150,11 @@ autocomplete:属性规定表单是否应该启用自动完成功能。autocomple
     multiple多文件选择：<input type="file" multiple><br>
     <input type="submit" value="提交"/>
 </form>
-~~~
+```
 
-### html5表单输入类型
+:::
+
+:::snippet html5表单输入类型
 
 - email： 输入email格式
 - tel： 手机号码  
@@ -144,12 +170,14 @@ autocomplete:属性规定表单是否应该启用自动完成功能。autocomple
 - week： 星期
   说明：部分类型是针对移动设备生效的，且具有一定的兼容性，在实际应用当中可选择性的使用
 
-### html5表单新增事件
+:::
+
+:::snippet html5表单新增事件
 
 - oninput 用户输入内容时触发，可用于移动端输入字数统计
 - oninvalid 验证不通过时触发
 
-~~~html
+```html
 <script>
     /*oninput可以监听用户的每一次输入*/
     document.getElementById("name").oninput=function(){
@@ -165,16 +193,18 @@ autocomplete:属性规定表单是否应该启用自动完成功能。autocomple
     }
 </script>
 
-~~~
+```
 
-### html5表单案例
+:::
+
+:::snippet html5表单案例
 
 说明：
 
 - &lt;fieldset> 标签将表单内容的一部分打包，生成一组相关表单的字段。当一组表单元素放到 &lt;fieldset> 标签内时，浏览器会以特殊方式来显示它们，它们可能有特殊的边界、3D 效果，或者甚至可创建一个子表单来处理这些元素.
 - legend 元素为 fieldset 元素定义标题（caption）。
 
-~~~html
+```html
 <style>
     *{
         margin: 0;
@@ -251,11 +281,15 @@ autocomplete:属性规定表单是否应该启用自动完成功能。autocomple
     }
 </script>
 </body>
-~~~
+```
 
-## html5多媒体
+:::
 
-### 音频播放：audio标签的使用
+:::snippet html5多媒体
+
+:::
+
+:::snippet 音频播放：audio标签的使用
 
 - 属性
   autoplay：如果出现该属性，则音频在就绪后马上播放。
@@ -264,11 +298,13 @@ autocomplete:属性规定表单是否应该启用自动完成功能。autocomple
   preload：如果出现该属性，则音频在页面加载时进行加载，并预备播放。如果使用 "autoplay"，则忽略该属性。
   src： 要播放的音频的 URL。
 
-  ~~~html
+  ```html
   <audio src="../mp3/See.mp3" controls autoplay></audio>
-  ~~~
+  ```
 
-### 视频播放：video标签的使用
+:::
+
+:::snippet 视频播放：video标签的使用
 
 - 属性
 
@@ -281,39 +317,49 @@ preload：如果出现该属性，则视频在页面加载时进行加载，并�
 src：要播放的视频的 URL。
 width：设置视频播放器的宽度。
 
-  ~~~html
+  ```html
   <video src="../mp3/561902ae6ac6e6649.mp4" controls></video>
-  ~~~
+  ```
 
 - 说明：由于版权等原因，不同的浏览器可支持播放的格式是不一样的
    ![浏览器视频](media/07Html5/browser-video.png)
 
-## DOM扩展
+:::
 
-### DOM扩展获取元素：
+:::snippet DOM扩展
+
+:::
+
+:::snippet DOM扩展获取元素：
 
 - document.getElementsByClassName ('class') 通过类名获取元素，以类数组形式存在。getElementsByTagName
 - document.querySelector('selector') 通过CSS选择器获取元素，符合匹配条件的第1个元素。
 - document.querySelectorAll('selector') 通过CSS选择器获取元素，以类数组形式存在。
 
-### DOM扩展类名操作：
+:::
+
+:::snippet DOM扩展类名操作：
 
 - Node.classList.add('class') 添加class
 - Node.classList.remove('class') 移除class
 - Node.classList.toggle('class') 切换class，有则移除，无则添加
 - Node.classList.contains('class') 检测是否存在class
 
-### DOM扩展自定义属性：
+:::
+
+:::snippet DOM扩展自定义属性：
 
 - 在HTML5中我们可以自定义属性，其格式如下data-*=""，例如：data-info="我是自定义属性"，通过Node.dataset['info'] 我们便可以获取到自定义的属性值。
 - 当我们如下格式设置时，则需要以驼峰格式才能正确获取：data-my-name="itcast"，获取Node.dataset['myName']
 
-### DOM扩展案例：tab标签页
+:::
+
+:::snippet DOM扩展案例：tab标签页
 
 - 效果图
      ![效果图](media/07Html5/dom-demo.png)
 
-~~~html
+```html
 <div class="tabs">
     <div>
         <a href="javascript:;" data-target="local">国内新闻</a>
@@ -398,9 +444,11 @@ width：设置视频播放器的宽度。
         }
     })(0);
 </script>
-~~~
+```
 
-## 多媒体实际运用
+:::
+
+:::snippet 多媒体实际运用
 
 - API地址：[http://www.w3school.com.cn/tags/html_ref_audio_video_dom.asp](http://www.w3school.com.cn/tags/html_ref_audio_video_dom.asp)
 - 常用方法：load() 加载、  play() 播放、  pause() 暂停
@@ -415,7 +463,7 @@ width：设置视频播放器的宽度。
    onended:播放完时触发—重置
 - 案例：
 
-~~~html
+```html
 <h3 class="playerTitle">视频播放器</h3>
 <div class="player">
     <video src="../mp3/test.mp4"></video>
@@ -497,9 +545,11 @@ width：设置视频播放器的宽度。
         }
     }
 </script>
-~~~
+```
 
-## 地理定位（了解）
+:::
+
+:::snippet 地理定位（了解）
 
 - 在HTML规范中，增加了获取用户地理信息的API，这样使得我们可以基于用户位置开发互联网应用，即基于位置服务 (Location Base Service)
 - 获取地理信息方式
@@ -519,7 +569,9 @@ width：设置视频播放器的宽度。
 如下图对不同获取方式的优缺点进行了比较，浏览器会自动以最优方式去获取用户地理信息。
    ![浏览器视频](media/07Html5/geolocation.png)
 
-## html5拖拽
+:::
+
+:::snippet html5拖拽
 
 - 定义和用法：拖放是 HTML5 中非常常见的功能。
 - 在拖放的过程中会触发以下事件：
@@ -540,7 +592,7 @@ width：设置视频播放器的宽度。
    事件源：触发事件的源，一般情况下我们会将相同操作的多个对象绑定到同一个处理事件，同时传递当前的对象到处理方法，这就是事件源参数
 - 案例
 
-~~~html
+```html
 标记是否可以拖动，true表示可以拖动-
 <div class="div1">
     <p draggable="true" id="pe">试着把我拖过去</p>
@@ -601,9 +653,11 @@ width：设置视频播放器的宽度。
         }
     });
 </script>
-~~~
+```
 
-## web存储
+:::
+
+:::snippet web存储
 
 - 传统方式我们以document.cookie来进行存储的，但是由于其存储大小只有4k左右，并且解析也相当的复杂，给开发带来诸多不便
 - HTML5提供的解决方案：
@@ -624,7 +678,7 @@ width：设置视频播放器的宽度。
    clear():清空所有存储内容
 - Window.sessionStorage案例：
 
-~~~html
+```html
 <script>
     var userData=document.getElementById("userName");
     //存储数据
@@ -637,7 +691,7 @@ width：设置视频播放器的宽度。
         alert(value);
     }
 </script>
-~~~
+```
 
 - Window.localStorage的
   特点：
@@ -645,7 +699,7 @@ width：设置视频播放器的宽度。
   可以多窗口共享。但是不能跨浏览器
 - Window.localStorage案例
 
-~~~html
+```html
 <script>
     var userData=document.getElementById("userName");
     //存储数据
@@ -662,9 +716,11 @@ width：设置视频播放器的宽度。
         window.localStorage.removeItem("userName");
     }
 </script>
-~~~
+```
 
-## 应用缓存
+:::
+
+:::snippet 应用缓存
 
 - 概念：使用 HTML5，通过创建 cache manifest 文件，可以轻松地创建 web 应用的离线版本
 - 优势：
@@ -719,14 +775,16 @@ width：设置视频播放器的宽度。
 
 - Cache Manifest案例
 
-~~~html
+```html
 <!DOCTYPE HTML>
 <html manifest="demo.appcache">
 ...
 </html>
-~~~
+```
 
-## 网络状态
+:::
+
+:::snippet 网络状态
 
 我们可以通过window.onLine来检测，用户当前的网络状况，事件参数可以返回一个布尔值
 
@@ -734,7 +792,7 @@ width：设置视频播放器的宽度。
 - window.offline用户网络断开时被调用
 - 案例
 
-~~~javascript
+```javascript
 /*网络连接时调用*/
 window.addEventListener("online",function(e){
     console.log("ok");
@@ -745,11 +803,13 @@ window.addEventListener("offline",function(e){
     console.log("no");
     console.log(e.returnValue);
 });
-~~~
+```
 
-## 全屏
+:::
 
-~~~javascript
+:::snippet 全屏
+
+```javascript
 btn.onclick=function() {
     /*能力测试*/
     if(docuEle.requestFullScreen){
@@ -762,4 +822,4 @@ btn.onclick=function() {
         document.getElementById("img").mozRequestFullScreen();
     }
 }
-~~~
+```

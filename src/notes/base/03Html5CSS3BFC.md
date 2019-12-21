@@ -1,22 +1,32 @@
-# HTMl5CSS3
+:::
 
-## HTML5新标签与特性
+:::snippet HTMl5CSS3
 
-### 文档类型设定
+:::
+
+:::snippet HTML5新标签与特性
+
+:::
+
+:::snippet 文档类型设定
 
 - document
   - HTML:        sublime 输入  html:4s
   - XHTML:      sublime 输入  html:xt
   - HTML5        sublime 输入  html:5       <!DOCTYPE html>
 
-### 字符设定
+:::
 
-~~~css
+:::snippet 字符设定
+
+```css
  <meta http-equiv="charset" content="utf-8">：HTML与XHTML中建议这样去写
  <meta charset="utf-8">：HTML5的标签中建议这样去写
-~~~
+```
 
-### 常用新标签
+:::
+
+:::snippet 常用新标签
 
  w3c  手册中文官网     :  [http://w3school.com.cn/](http://w3school.com.cn/)
 
@@ -62,7 +72,9 @@
 
   ​
 
-### 新增的input type属性值：
+:::
+
+:::snippet 新增的input type属性值
 
 | **类型******       | **使用示例******            | **含义****** |
 | ---------------- | ----------------------- | ---------- |
@@ -78,7 +90,9 @@
 | **month******    | <input type="month">    | 月年         |
 | **week******     | <input type="week">     | 星期 年       |
 
-### 常用新属性
+:::
+
+:::snippet 常用新属性
 
 | **属性******           | **用法******                               | **含义******                               |
 | -------------------- | ---------------------------------------- | ---------------------------------------- |
@@ -89,7 +103,9 @@
 | **required******     | <input type="text" required>             | 必填项  内容不能为空                              |
 | **accesskey******    | <input type="text" accesskey="s">        | 规定激活（使元素获得焦点）元素的快捷键   采用 alt + s的形式      |
 
-### 综合案例
+:::
+
+:::snippet 综合案例
 
 ```html
 <form action="">
@@ -141,13 +157,17 @@
 </form>
 ```
 
-### 多媒体标签
+:::
+
+:::snippet 多媒体标签
 
 - embed：标签定义嵌入的内容
 - audio：播放音频
 - video：播放视频
 
-#### 多媒体 embed（会使用）
+:::
+
+:::snippet 多媒体 embed（会使用）
 
 embed可以用来插入各种多媒体，格式可以是 Midi、Wav、AIFF、AU、MP3等等。url为音频或视频文件及其路径，可以是相对路径或绝对路径。
 因为兼容性问题，我们这里只讲解 插入网络视频， 后面H5会讲解 audio 和video 视频多媒体。
@@ -162,7 +182,9 @@ embed可以用来插入各种多媒体，格式可以是 Midi、Wav、AIFF、AU�
 1. 先上传
 2. 在分享
 
-#### 多媒体 audio
+:::
+
+:::snippet 多媒体 audio
 
 HTML5通过 &lt;audio> 标签来解决音频播放的问题。
 使用相当简单，如下图所示
@@ -177,7 +199,9 @@ loop 循环播放    如果这个属性不写 默认播放一次        loop  �
 &lt;source> 标签允许您规定可替换的视频/音频文件供浏览器根据它对媒体类型或者编解码器的支持进行选择
 ![audio-source](media/03Html5CSS3BFC/audio-source.png)
 
-#### 多媒体 video
+:::
+
+:::snippet 多媒体 video
 
 HTML5通过&lt;audio>标签来解决音频播放的问题。
 同音频播放一样，&lt;video>使用也相当简单，如下图
@@ -193,9 +217,13 @@ height 设置播放窗口的高度
 **多浏览器支持的方案，如下图******
 ![video-source](media/03Html5CSS3BFC/video-source.png)
 
-## CSS3
+:::
 
-### 结构(位置)伪类选择器（CSS3)  
+:::snippet CSS3
+
+:::
+
+:::snippet 结构(位置)伪类选择器（CSS3)  
 
 - :first-child :选取属于其父元素的首个子元素的指定选择器
 - :last-child :选取属于其父元素的最后一个子元素的指定选择器
@@ -215,7 +243,9 @@ li:nth-child(4) {   /* 选择第4个孩子  n  代表 第几个的意思 */
             }
 ```
 
-### 属性选择器
+:::
+
+:::snippet 属性选择器
 
 选取标签带有某些特殊属性的选择器 我们成为属性选择器
 
@@ -250,7 +280,9 @@ input[type=text]
 
 div[class*=tao]
 
-### 伪元素选择器（CSS3)
+:::
+
+:::snippet 伪元素选择器（CSS3)
 
 1. E::first-letter文本的第一个单词或字（如中文、日文、韩文等）
 2. E::first-line 文本第一行；
@@ -295,7 +327,9 @@ E:after、E:before 在旧版本里是伪元素，CSS3的规范里“:”用来�
 **注意**
 伪元素:before和:after添加的内容默认是inline元素**；这个两个伪元素的`content`属性，表示伪元素的内容,设置:before和:after时必须设置其`content`属性，否则伪元素就不起作用。
 
-### CSS3盒模型
+:::
+
+:::snippet CSS3盒模型
 
 CSS3中可以通过box-sizing 来指定盒模型，即可指定为content-box、border-box，这样我们计算盒子大小的方式就发生了改变。
 
@@ -329,7 +363,9 @@ div:last-child {
 }
 ```
 
-### 转换ico图标
+:::
+
+:::snippet 转换ico图标
 
 我们可以自己做的图片，转换为 ico图标，以便放到我们站点里面。 [http://www.bitbug.net/](http://www.bitbug.net/)
 
@@ -339,7 +375,9 @@ div:last-child {
 
 cuttman  官网     [http://www.cutterman.cn/zh](http://www.cutterman.cn/zh)
 
-### 过渡(transition)
+:::
+
+:::snippet 过渡(transition)
 
 过渡（transition)是CSS3中具有颠覆性的特征之一，我们可以在不使用 Flash 动画或 JavaScript 的情况下，当元素从一种样式变换为另一种样式时为元素添加效果。
 
@@ -352,10 +390,10 @@ cuttman  官网     [http://www.cutterman.cn/zh](http://www.cutterman.cn/zh)
 在CSS3里使用transition可以实现补间动画（过渡效果），并且当前元素只要有“属性”发生变化时即存在两种状态(我们用A和B代指），就可以实现平滑的过渡，为了方便演示采用hover切换两种状态，但是并不仅仅局限于hover状态来实现过渡。
 语法格式:
 
-~~~TXT
+```TXT
 transition: 要过渡的属性  花费时间  运动曲线  何时开始;
 如果有多组属性变化，还是用逗号隔开。
-~~~
+```
 
 | 属性                         | 描述                      | CSS  |
 | -------------------------- | ----------------------- | ---- |
@@ -372,7 +410,7 @@ transition-duration  花费时间  单位是  秒     s    比如 0.5s    这个
 运动曲线示意图：
 ![motion-curve](media/03Html5CSS3BFC/motion-curve.png)
 
-~~~css
+```css
 div {
     width: 200px;
     height: 100px;
@@ -387,17 +425,21 @@ div:hover {  /* 鼠标经过盒子，我们的宽度变为400 */
 }
 
 /* transition: all 0.6s;  所有属性都变化用all 就可以了  后面俩个属性可以省略 */
-~~~
+```
 
 transition: all 0.5s;
 
-### 2D变形(CSS3) transform
+:::
+
+:::snippet 2D变形(CSS3) transform
 
 transform是CSS3中具有颠覆性的特征之一，可以实现元素的位移、旋转、倾斜、缩放，甚至支持矩阵方式，配合过渡和即将学习的动画知识，可以取代大量之前只能靠Flash才可以实现的效果。
 
 变形转换 transform    transform  变换 变形的意思             《 transformers 变形金刚》
 
-### 移动 translate(x, y)
+:::
+
+:::snippet 移动 translate(x, y)
 
 translate 移动平移的意思
 
@@ -422,7 +464,9 @@ translate(50px,50px);
 
 ```
 
-### 缩放 scale(x, y)
+:::
+
+:::snippet 缩放 scale(x, y)
 
 ![scale](media/03Html5CSS3BFC/scale.png)
 
@@ -436,19 +480,23 @@ transform:scale(0.8,1);
 可以对元素进行水平和垂直方向的缩放。该语句使用scale方法使该元素在水平方向上缩小了20%，垂直方向上不缩放。
  scale()的取值默认的值为1，当值设置为0.01到0.99之间的任何值，作用使一个元素缩小；而任何大于或等于1.01的值，作用是让元素放大 1.
 
-### 旋转 rotate(deg)
+:::
+
+:::snippet 旋转 rotate(deg)
 
 可以对元素进行旋转，正值为顺时针，负值为逆时针；
 
 ![1498443651293](media/03Html5CSS3BFC/rotate.png)
 
-~~~css
+```css
 transform:rotate(45deg);
-~~~
+```
 
  注意单位是 deg 度数
 
-#### transform-origin可以调整元素转换变形的原点
+:::
+
+:::snippet transform-origin可以调整元素转换变形的原点
 
 ![transform-origin](media/03Html5CSS3BFC/transform-origin.png)
 
@@ -458,13 +506,13 @@ transform:rotate(45deg);
 
  如果是4个角，可以用 left top这些，如果想要精确的位置， 可以用  px 像素。
 
-~~~css
+```css
  div{transform-origin: 10px 10px;transform: rotate(45deg); }  /* 改变元素原点到x 为10  y 为10，然后进行顺时旋转45度 */
-~~~
+```
 
 案例旋转楚乔传
 
-~~~css
+```css
 div {
     width: 250px;
     height: 170px;
@@ -500,9 +548,11 @@ div:hover img:nth-child(5) {
 div:hover img:nth-child(6) {  
     transform: rotate(360deg);
 }
-~~~
+```
 
-#### 倾斜 skew(deg, deg)
+:::
+
+:::snippet 倾斜 skew(deg, deg)
 
 ![transform-skew](media/03Html5CSS3BFC/transform-skew.png)
 
@@ -514,7 +564,9 @@ transform:skew(30deg,0deg);
 
 可以使元素按一定的角度进行倾斜，可为负值，第二个参数不写默认为0。
 
-#### 3D变形(CSS3) transform
+:::
+
+:::snippet 3D变形(CSS3) transform
 
 2d    x  y  
 
@@ -538,11 +590,13 @@ y 上面是负的， 下面是正的
 
 z 里面是负的， 外面是正的
 
-#### rotateX()
+:::
+
+:::snippet rotateX()
 
  就是沿着 x 立体旋转.
 
-~~~css
+```css
 img {
   transition:all 0.5s ease 0s;
 }
@@ -550,13 +604,15 @@ img:hove {
 
   transform:rotateX(180deg);
 }
-~~~
+```
 
-#### rotateY()
+:::
+
+:::snippet rotateY()
 
 沿着y轴进行旋转
 
-~~~css
+```css
 img {
   transition:all 0.5s ease 0s;
 }
@@ -564,13 +620,15 @@ img:hove {
 
   transform:rotateX(180deg);
 }
-~~~
+```
 
-### rotateZ()
+:::
+
+:::snippet rotateZ()
 
 沿着z轴进行旋转
 
-~~~css
+```css
 img {
   transition:all .25s ease-in 0s;
 }
@@ -580,9 +638,11 @@ img:hover {
   /* transform:rotateZ(180deg); */
   /* transform:rotateX(45deg) rotateY(180deg) rotateZ(90deg) skew(0,10deg); */
 }
-~~~
+```
 
-### 透视(perspective)
+:::
+
+:::snippet 透视(perspective)
 
 电脑显示屏是一个2D平面，图像之所以具有立体感（3D效果），其实只是一种视觉呈现，通过透视可以实现此目的。
 
@@ -598,7 +658,9 @@ perspective 一般作为一个属性，设置给父元素，作用于所有3D转
 
 ![1498446715314](media/03Html5CSS3BFC/perspective.png)
 
-### 浏览器前缀
+:::
+
+:::snippet 浏览器前缀
 
 | 浏览器前缀    | 浏览器                                    |
 | -------- | -------------------------------------- |
@@ -610,9 +672,13 @@ perspective 一般作为一个属性，设置给父元素，作用于所有3D转
 
 后面我们会有 常用的解决H5和C3 的兼容解决文件， 我们这里暂且不涉及。
 
-### translate移动
+:::
 
-#### translateX(x)
+:::snippet translate移动
+
+:::
+
+:::snippet translateX(x)
 
 仅水平方向移动**（X轴移动）
 
@@ -620,27 +686,37 @@ perspective 一般作为一个属性，设置给父元素，作用于所有3D转
 
 主要目的实现移动效果
 
-#### translateY(y)
+:::
+
+:::snippet translateY(y)
 
 仅垂直方向移动（Y轴移动）
 
 ![translate-Y](media/03Html5CSS3BFC/translate-Y.png)
 
-#### translateZ(z)
+:::
+
+:::snippet translateZ(z)
 
 transformZ的直观表现形式就是大小变化，实质是XY平面相对于视点的远近变化（说远近就一定会说到离什么参照物远或近，在这里参照物就是perspective属性）。比如设置了perspective为200px;那么transformZ的值越接近200，就是离的越近，看上去也就越大，超过200就看不到了，因为相当于跑到后脑勺去了，我相信你正常情况下，是看不到自己的后脑勺的。
 
-#### translate3d(x,y,z)
+:::
+
+:::snippet translate3d(x,y,z)
 
 [注意]其中，x和y可以是长度值，也可以是百分比，百分比是相对于其本身元素水平方向的宽度和垂直方向的高度和；z只能设置长度值
 
-### backface-visibility
+:::
+
+:::snippet backface-visibility
 
 backface-visibility 属性定义当元素不面向屏幕时是否可见。
 
-### 翻转盒子案例
+:::
 
-~~~css
+:::snippet 翻转盒子案例
+
+```css
 div {
         width: 224px;
         height: 224px;
@@ -660,38 +736,42 @@ div img:first-child {
 div:hover img {
         transform: rotateY(180deg);
 }
-~~~
+```
 
-### 动画(CSS3) animation
+:::
+
+:::snippet 动画(CSS3) animation
 
 动画是CSS3中具有颠覆性的特征之一，可通过设置多个节点来精确控制一个或一组动画，常用来实现复杂的动画效果。
 语法格式：
 
-~~~css
+```css
 animation:动画名称 花费时间 运动曲线  何时开始  播放次数  是否反方向;
-~~~
+```
 
 ![animation](media/03Html5CSS3BFC/animation.png)
 关于几个值，除了名字，动画时间，延时有严格顺序要求其它随意r
 
-~~~css
+```css
 @keyframes 动画名称 {
   from{ 开始位置 }  0%
   to{  结束  }  100%
 }
-~~~
+```
 
-~~~CSS
+```CSS
 animation-iteration-count:infinite;  无限循环播放    默认是1次
 animation-direction： alternate   动画应该轮流反向播放    默认是 normal
 animation-play-state:paused;   暂停动画"
-~~~
+```
 
-#### 小汽车案例
+:::
+
+:::snippet 小汽车案例
 
 心跳案例      大海波涛
 
-~~~css
+```css
 body {
   background: white;
 }
@@ -719,9 +799,11 @@ img {
     transform: translateX(0) rotateY(0deg);
   }
 }
-~~~
+```
 
-### 伸缩布局(CSS3)
+:::
+
+:::snippet 伸缩布局(CSS3)
 
 CSS3在布局方面做了非常大的改进，使得我们对块级元素的布局排列变得十分灵活，适应性非常强，其强大的伸缩性，在响应式开中可以发挥极大的作用。
 主轴：Flex容器的主轴主要用来配置Flex项目，默认是水平方向
@@ -741,7 +823,9 @@ flex-direction: column 垂直排列
 flex-direction: row  水平排列
  [http://m.ctrip.com/html5/](http://m.ctrip.com/html5/)   携程网手机端地址
 
-### 文字阴影(CSS3)
+:::
+
+:::snippet 文字阴影(CSS3)
 
 以后我们可以给我们的文字添加阴影效果了  Shadow  影子  
 
@@ -753,7 +837,9 @@ text-shadow:水平位置 垂直位置 模糊距离 阴影颜色;
    ![text-shadow](media/03Html5CSS3BFC/text-shadow.png)
    ![text-shadow-demo](media/03Html5CSS3BFC/text-shadow-demo.png)
 
-### 背景渐变
+:::
+
+:::snippet 背景渐变
 
 在线性渐变过程中，颜色沿着一条直线过渡：从左侧到右侧、从右侧到左侧、从顶部到底部、从底部到顶部或着沿任何任意轴。如果你曾使用过制作图件，比如说Photoshop，你对线性渐变并不会陌生。
 兼容性问题很严重，我们这里之讲解线性渐变
@@ -765,7 +851,9 @@ background:-webkit-linear-gradient(渐变的起始位置， 起始颜色， 结�
 background:-webkit-linear-gradient(渐变的起始位置， 颜色 位置， 颜色位置....)；
 ```
 
-### 背景缩放(CSS3)
+:::
+
+:::snippet 背景缩放(CSS3)
 
 通过background-size设置背景图片的尺寸，就像我们设置img的尺寸一样，在移动Web开发中做屏幕适配应用非常广泛。
 其参数设置如下：
@@ -780,7 +868,9 @@ background-size: 300px 100px;
 /* background-size: cover; */
 ```
 
-### 多背景(CSS3)
+:::
+
+:::snippet 多背景(CSS3)
 
 以逗号分隔可以设置多背景，可用于自适应布局  做法就是 用逗号隔开就好了。
 
@@ -792,7 +882,9 @@ background:url(test1.jpg) no-repeat scroll 10px 20px/50px 60px  ,
 url(test1.jpg) no-repeat scroll 10px 20px/70px 90px ,
 url(test1.jpg) no-repeat scroll 10px 20px/110px 130px c #aaa;
 
-### 优雅降级和渐进增强（取决于客户需求）
+:::
+
+:::snippet 优雅降级和渐进增强（取决于客户需求）
 
 什么是渐进增强（progressive enhancement）、优雅降级（graceful degradation）呢？
 渐进增强 progressive enhancement：
@@ -806,18 +898,24 @@ url(test1.jpg) no-repeat scroll 10px 20px/110px 130px c #aaa;
 　　区别：渐进增强是向上兼容，优雅降级是向下兼容。
 个人建议： 现在互联网发展很快， 连微软公司都抛弃了ie浏览器，转而支持 edge这样的高版本浏览器，我们很多情况下没有必要再时刻想着低版本浏览器了，而是一开始就构建完整的效果，根据实际情况，修补低版本浏览器问题。
 
-## BFC(块级格式化上下文)
+:::
+
+:::snippet BFC(块级格式化上下文)
 
 BFC(Block formatting context)
 直译为"块级格式化上下文"。
 
-### 元素的显示模式
+:::
+
+:::snippet 元素的显示模式
 
 我们前面讲过 元素的显示模式 display。
 分为 块级元素   行内元素  行内块元素 ，其实，它还有很多其他显示模式。
 ![display-mode](media/03Html5CSS3BFC/display-mode.png)
 
-### 那些元素会具有BFC的条件
+:::
+
+:::snippet 那些元素会具有BFC的条件
 
 不是所有的元素模式都能产生BFC，w3c 规范：
 display 属性为 block, list-item, table 的元素，会产生BFC.
@@ -827,7 +925,9 @@ display 属性为 block, list-item, table 的元素，会产生BFC.
 ![BFC](media/03Html5CSS3BFC/BFC.gif)
 有宽度和高度 ， 有 外边距margin  有内边距padding 有边框 border。
 
-### 什么情况下可以让元素产生BFC
+:::
+
+:::snippet 什么情况下可以让元素产生BFC
 
 以上盒子具有BFC条件了，就是说有资质了，但是怎样触发才会产生BFC，从而创造这个封闭的环境呢？
 同样，要给这些元素添加如下属性就可以触发BFC。
@@ -837,7 +937,9 @@ display 属性为 block, list-item, table 的元素，会产生BFC.
 -display为inline-block, table-cell, table-caption, flex, inline-flex
 -overflow不为visible。
 
-### BFC元素所具有的特性
+:::
+
+:::snippet BFC元素所具有的特性
 
 BFC布局规则特性：
 1.在BFC中，盒子从顶端开始垂直地一个接一个地排列.
@@ -850,7 +952,9 @@ BFC布局规则特性：
 它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。
 白话文： 孩子在家里愿意怎么折腾都行，但是出了家门口，你就的乖乖的，不能影响外面的任何人。
 
-### BFC的主要用途
+:::
+
+:::snippet BFC的主要用途
 
 BFC能用来做什么？
 (1) 清除元素内部浮动
@@ -882,7 +986,9 @@ BFC能用来做什么？
 
 ![BFC-use](media/03Html5CSS3BFC/BFC-use.png)
 
-### BFC 总结
+:::
+
+:::snippet BFC 总结
 
 BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。包括浮动，和外边距合并等等，因此，有了这个特性，我们布局的时候就不会出现意外情况了。
 在线性渐变过程中，颜色沿着一条直线过渡：从左侧到右侧、从右侧到左侧、从顶部到底部、从底部到顶部或着沿任何任意轴。如果你曾使用过制作图件，比如说Photoshop，你对线性渐变并不会陌生。
