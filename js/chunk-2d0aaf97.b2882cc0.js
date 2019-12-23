@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0aaf97"],{"12ff":function(e,a){new Vue({el:"#app",data:{message:"Hello Vue!"}})}}]);
-//# sourceMappingURL=chunk-2d0aaf97.b2882cc0.js.map
