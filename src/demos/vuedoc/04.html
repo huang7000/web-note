@@ -13,137 +13,156 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
         window.onload = function () {
-            aa();
-            bb();
+            //aa();
+            //bb();
             cc();
             dd();
             ee();
         }
 
         function aa() {
-            let app01 = new Vue({
-                el: "#app01",
+            //计算属性 reversedMessage。我们提供的函数将用作属性 vm.reversedMessage 的 getter 函数：
+            let vm = new Vue({
+                el: '#example',
                 data: {
-                    message: "翻转字符串"
+                    message: 'Hello'
+                },
+                computed: {
+                    // 计算属性的 getter
+                    reversedMessage: function () {
+                        // `this` 指向 vm 实例
+                        return this.message.split('').reverse().join('')
+                    }
                 }
             })
+            console.log(vm.reversedMessage) // => 'olleH'
+            vm.message = 'Goodbye'
+            console.log(vm.reversedMessage) // => 'eybdooG'
         }
 
         function bb() {
             let indexComputed = 0;
             let indexMethod = 0;
-            let app02 = new Vue({
-                el: "#app02",
+            let app = new Vue({
+                el: "#app",
                 data: {
-                    message: "翻转字符串",
-                    hello: "Hello World",
-                    title: "Hello World"
-
+                    message: "Hello"
                 },
                 computed: {
                     reversedMessage: function () {
-                        //console.log('computed :reversedMessage;date:'+ Date.now());
                         indexComputed++;
-                        return "reversedMessage" + this.message.split('').reverse().join('') + Date.now();
+                        return this.message.split('').reverse().join('') + " indexComputed:" +
+                            indexComputed;
                     },
                 },
                 methods: {
                     reversedFun: function () {
-                        //console.log('methods'+'reversedMessage');
-                        //console.log('methods:reversedMessage;date:'+ Date.now());
                         indexMethod++;
-                        return "reversedFun" + this.message.split('').reverse().join('') + Date.now();
+                        return this.message.split('').reverse().join('') + " indexMethod:" + indexMethod;
                     },
                 },
             })
-
-            // console.log("indexComputed:"+indexComputed+";indexMethod:"+indexMethod);//indexComputed:1;indexMethod:1
-
-            // console.log(app02.reversedMessage);//reversedMessage串符字转翻1548173233202
-            // console.log("indexComputed:"+indexComputed+";indexMethod:"+indexMethod);//indexComputed:1;indexMethod:1
-
-            // console.log(app02.reversedFun());//reversedFun串符字转翻1548173233208
-            // console.log("indexComputed:"+indexComputed+";indexMethod:"+indexMethod);//indexComputed:1;indexMethod:2
-
-            // app02.message = 'message';
-            // console.log("indexComputed:"+indexComputed+";indexMethod:"+indexMethod);//indexComputed:1;indexMethod:2
-
-            // console.log(app02.reversedMessage);
-            // console.log("indexComputed:"+indexComputed+";indexMethod:"+indexMethod);//indexComputed:2;indexMethod:2
-
-            // console.log(app02.reversedFun());
-            // console.log("indexComputed:"+indexComputed+";indexMethod:"+indexMethod);//indexComputed:2;indexMethod:3
-
+            console.log(app.reversedMessage); // olleH indexComputed:1
+            console.log(app.reversedFun()); // olleH indexMethod:2
+            app.message = 'message';
+            console.log(app.reversedMessage); //egassem indexComputed2
+            console.log(app.reversedFun()); //egassem indexMethod3
         }
 
         function cc() {
-
-            let app03 = new Vue({
-                el: "#app03",
+            let indexComputed = 0;
+            let indexWatch = 0;
+            let app2 = new Vue({
+                el: "#app-2",
                 data: {
-                    firstName: 'ningyuan',
-                    lastName: 'xihuang',
-                    fullName: 'ningyuan xihuang',
+                    firstName: '7000',
+                    lastName: 'huang',
+                    quanming: 'Foo Bar'
                 },
                 watch: {
                     firstName: function (val) {
-                        this.fullName = val + ' ' + this.lastName
+                        indexWatch++
+                        console.log('执行' + indexWatch + '次cc的watch的firstName');
+                        this.quanming = val + ' ' + this.lastName
                     },
                     lastName: function (val) {
-                        this.fullName = this.firstName + ' ' + val
+                        indexWatch++;
+                        console.log('执行' + indexWatch + '次cc的wwatch的lastName');
+                        this.quanming = this.firstName + ' ' + val
                     }
                 },
                 computed: {
-
-                    xingming: function () {
-
+                    fullName: function () {
+                        indexComputed++;
+                        console.log('执行' + indexComputed + '次cc的wcomputed的xingming');
                         return this.firstName + ' ' + this.lastName
                     }
-
-
                 }
             })
-            app03.firstName = 'wuming';
-
+            console.log(app2.fullName); // 7000 huang 
+            console.log(app2.firstName); // 7000
+            console.log(app2.lastName); // huang
+            app2.firstName = 'xiqian';
+            console.log(app2.fullName); //xiqian huang 
+            console.log(app2.firstName); // xiqian
+            console.log(app2.lastName); // huang
         }
 
         function dd() {
-
-            let app04 = new Vue({
-                el: "#app04",
+            console.log("dd()"); // huang
+            let indexGet = 0;
+            let indexSet = 0;
+            let indexfirstName = 0;
+            let indexlastName = 0;
+            let app3 = new Vue({
+                el: "#app-3",
                 data: {
-                    firstName: 'ningyuan',
-                    lastName: 'xihuang',
+                    firstName: '7000',
+                    lastName: 'huang',
+                    quanming: 'Foo Bar'
+                },
+                watch: {
+                    firstName: function (val) {
+                        indexfirstName++
+                        console.log('执行' + indexfirstName + '次dd的wwatch的firstName');
+                        this.quanming = val + ' ' + this.lastName
+                    },
+                    lastName: function (val) {
+                        indexlastName++;
+                        console.log('执行' + indexlastName + '次dd的watch的lastName');
+                        this.quanming = this.firstName + ' ' + val
+                    }
                 },
                 computed: {
-
-                    xingming: function () {
-                        return this.firstName + ' ' + this.lastName
-                    },
                     fullName: {
                         // getter
                         get: function () {
+                            indexGet++;
+                            console.log('执行' + indexGet + '次dd的computed的fullName的get');
                             return this.firstName + ' ' + this.lastName
                         },
                         // setter
                         set: function (newValue) {
+                            indexSet++;
+                            console.log('执行' + indexSet + '次dd的computed的fullName的set');
                             var names = newValue.split(' ')
                             this.firstName = names[0]
                             this.lastName = names[names.length - 1]
                         }
                     }
 
-
                 }
             })
-            app04.fullName = '神魔非我 萧无名';
-
+            console.log(app3.fullName); // 7000 huang 
+            console.log(app3.firstName); // 7000
+            console.log(app3.lastName); // huang
+            app3.fullName = 'huang xiqian';
         }
 
         function ee() {
 
-            var app05 = new Vue({
-                el: '#app05',
+            let watchExampleVM = new Vue({
+                el: '#watch-example',
                 data: {
                     question: '',
                     answer: 'I cannot give you an answer until you ask a question!'
@@ -181,33 +200,36 @@
                     }
                 }
             })
+
         }
     </script>
 </head>
 
 <body>
     <h3>04计算属性和侦听器</h3>
-    <div id="app01">
-        {{ message.split('').reverse().join('') }}
+    <div id="example">
+        <p>Original message: "{{ message }}"</p>
+        <p>Computed reversed message: "{{ reversedMessage }}"</p>
     </div>
-    <div id="app02">
+    <hr>
+    <div id="app">
         <p>Original Message：{{message}}</p>
         <p>Computer Reverse Message：{{reversedMessage}}</p>
         <p>reversedFun：{{reversedFun()}}</p>
     </div>
-    <div id="app03">
+    <hr>
+    <div id="app-2">
         <p>firstName：{{firstName}}</p>
         <p>lastName：{{lastName}}</p>
         <p>fullName：{{fullName}}</p>
-        <p>xingming{{xingming}}</p>
     </div>
-    <div id="app04">
+    <hr>
+    <div id="app-3">
         <p>firstName：{{firstName}}</p>
         <p>lastName：{{lastName}}</p>
         <p>fullName：{{fullName}}</p>
-        <p>xingming:{{xingming}}</p>
     </div>
-    <div id="app05">
+    <div id="watch-example">
         <p>
             Ask a yes/no question:
             <input v-model="question">

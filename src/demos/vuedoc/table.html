@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+    <script>
+        window.onload = function () {
+            aa();
+
+        }
+
+        function aa() {
+            let vm = new Vue({
+                el: '#example',
+                data: function () {
+                    return {
+                        formFirst: {
+                            tableData: [{
+                                stuName: "小明",
+                                mathQty: 90,
+                                chineseQty: 90,
+                                avgQty: 90,
+                                sumQty: 180,
+                            }]
+                        },
+                        rules: {
+                            num: [{
+                                required: true,
+                                message: '数量不能为空',
+                                trigger: 'blur'
+                            }]
+                        }
+                    }
+                },
+                methods: {
+                    handleChangeRow(row) {
+                        console.log(this.formFirst);
+                        row.avgQty = (parseInt(row.mathQty) + parseInt(row.chineseQty)) / 2
+                        row.sumQty = (parseInt(row.mathQty) + parseInt(row.chineseQty))
+                    }
+                },
+                watch: {
+                    formFirst: function (val) {
+                        console.log(122);
+                        row.avgQty = (parseInt(row.mathQty) + parseInt(row.chineseQty)) / 2
+                        row.sumQty = (parseInt(row.mathQty) + parseInt(row.chineseQty))
+
+                    }
+                },
+                computed: {
+                    scope: function (row) {
+                        row.avgQty = (parseInt(row.mathQty) + parseInt(row.chineseQty)) / 2
+                        row.sumQty = (parseInt(row.mathQty) + parseInt(row.chineseQty))
+                    }
+                },
+            })
+
+        }
+    </script>
+</head>
+
+<body>
+    <h3>方法 </h3>
+    <div id="example">
+        <el-form :model="formFirst" ref="formFirst">
+            <el-table :data="formFirst.tableData">
+                <el-table-column label="姓名">
+                    <template slot-scope="scope">
+                        <el-form-item :prop="'tableData.'+scope.$index+'.stuName'">
+                            <el-input v-model="scope.row.stuName"></el-input>
+                        </el-form-item>
+                    </template>
+                </el-table-column>
+                <el-table-column label="数学">
+                    <template slot-scope="scope">
+                        <el-form-item :prop="'tableData.'+scope.$index+'.mathQty'" :rules="rules.num">
+
+                            <!-- @change="handleChangeRow(scope.row)" -->
+                            <el-input v-model="scope.row.mathQty" @change="handleChangeRow(scope.row)"></el-input>
+                        </el-form-item>
+                    </template>
+                </el-table-column>
+                <el-table-column label="语文">
+                    <template slot-scope="scope">
+                        <el-form-item :prop="'tableData.'+scope.$index+'.chineseQty'" :rules="rules.num">
+                            <!-- @change="handleChangeRow(scope.row)" -->
+                            <el-input v-model="scope.row.chineseQty"></el-input>
+                        </el-form-item>
+                    </template>
+                </el-table-column>
+                <el-table-column label="平均数">
+                    <template slot-scope="scope">
+                        <el-form-item :prop="'tableData.'+scope.$index+'.avgQty'" :rules="rules.num">
+                            <el-input v-model="scope.row.avgQty" :disabled="true"></el-input>
+                        </el-form-item>
+                    </template>
+                </el-table-column>
+                <el-table-column label="总数">
+                    <template slot-scope="scope">
+                        <el-form-item :prop="'tableData.'+scope.$index+'.sumQty'" :rules="rules.num">
+                            <el-input v-model="scope.row.sumQty" :disabled="true"></el-input>
+                        </el-form-item>
+                    </template>
+                </el-table-column>
+            </el-table>
+        </el-form>
+    </div>
+
+</body>
+
+</html>

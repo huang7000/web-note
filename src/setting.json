@@ -4,6 +4,10 @@
       "name": "Vue 教程"
     },
     {
+      "path": "@/notes/vuecourse/00.md",
+      "name": "学习内容"
+    },
+    {
       "path": "@/notes/vuecourse/01.md",
       "name": "Vue介绍"
     },
