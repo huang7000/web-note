@@ -1,6 +1,69 @@
 {
-  "routes": [
-    { "path": "", "name": "Vue" },
+  "routes": [{
+      "path": "",
+      "name": "Vue教程"
+    },
+    {
+      "path": "@/notes/vuecourse/01.md",
+      "name": "Vue介绍"
+    },
+    {
+      "path": "@/notes/vuecourse/02.md",
+      "name": "Vue实例"
+    },
+    {
+      "path": "@/notes/vuecourse/03.md",
+      "name": "模板语法"
+    },
+    {
+      "path": "@/notes/vuecourse/04.md",
+      "name": "计算属性和侦听器"
+    },
+    {
+      "path": "@/notes/vuecourse/05.md",
+      "name": "Class与Style绑定"
+    },
+    {
+      "path": "@/notes/vuecourse/06.md",
+      "name": "条件渲染"
+    },
+    {
+      "path": "@/notes/vuecourse/07.md",
+      "name": "列表渲染"
+    },
+    {
+      "path": "@/notes/vuecourse/08.md",
+      "name": "事件处理"
+    },
+    {
+      "path": "@/notes/vuecourse/09.md",
+      "name": "表单输入绑定"
+    },
+    {
+      "path": "@/notes/vuecourse/10.md",
+      "name": "组件基础"
+    },
+    {
+      "path": "@/notes/vuecourse/11.md",
+      "name": "组件注册"
+    },
+    {
+      "path": "@/notes/vuecourse/12.md",
+      "name": "Prop"
+    },
+    {
+      "path": "@/notes/vuecourse/13.md",
+      "name": "自定义事件"
+    },
+    {
+      "path": "@/notes/vuecourse/14.md",
+      "name": "14插槽"
+    },
+
+    {
+      "path": "",
+      "name": "Vue"
+    },
     {
       "path": "@/notes/vue/01.md",
       "name": "Vue+Travis自动构建发布"
@@ -17,7 +80,10 @@
       "path": "@/notes/vue/04.md",
       "name": "主题配置+复选框、单选框"
     },
-    { "path": "", "name": "JavaScript" },
+    {
+      "path": "",
+      "name": "JavaScript"
+    },
     {
       "path": "@/notes/javascript/01.md",
       "name": "简介和使用"
