@@ -1,7 +1,7 @@
 {
   "routes": [{
       "path": "",
-      "name": "Vue教程"
+      "name": "Vue 教程"
     },
     {
       "path": "@/notes/vuecourse/01.md",
