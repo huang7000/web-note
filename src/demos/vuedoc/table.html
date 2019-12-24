@@ -49,11 +49,15 @@
                     }
                 },
                 watch: {
-                    formFirst: function (val) {
-                        console.log(122);
-                        row.avgQty = (parseInt(row.mathQty) + parseInt(row.chineseQty)) / 2
-                        row.sumQty = (parseInt(row.mathQty) + parseInt(row.chineseQty))
+                    formFirst: {
+                        deep: true,
+                        handle(val) {
+                            this.formFirst.tableData.forEach(row => {
+                                row.avgQty = (parseInt(row.mathQty) + parseInt(row.chineseQty)) / 2
+                                row.sumQty = (parseInt(row.mathQty) + parseInt(row.chineseQty))
+                            });
 
+                        }
                     }
                 },
                 computed: {
@@ -85,7 +89,7 @@
                         <el-form-item :prop="'tableData.'+scope.$index+'.mathQty'" :rules="rules.num">
 
                             <!-- @change="handleChangeRow(scope.row)" -->
-                            <el-input v-model="scope.row.mathQty" @change="handleChangeRow(scope.row)"></el-input>
+                            <el-input v-model="scope.row.mathQty"></el-input>
                         </el-form-item>
                     </template>
                 </el-table-column>
