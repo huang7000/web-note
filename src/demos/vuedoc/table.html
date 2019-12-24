@@ -15,7 +15,6 @@
     <script>
         window.onload = function () {
             aa();
-
         }
 
         function aa() {
@@ -30,6 +29,13 @@
                                 chineseQty: 90,
                                 avgQty: 90,
                                 sumQty: 180,
+                            },
+                            {
+                                stuName: "小红",
+                                mathQty: 88,
+                                chineseQty: 88,
+                                avgQty: 88,
+                                sumQty: 176,
                             }]
                         },
                         rules: {
@@ -50,21 +56,21 @@
                 },
                 watch: {
                     formFirst: {
-                        deep: true,
-                        handle(val) {
-                            this.formFirst.tableData.forEach(row => {
+                        handler(val, oldval) {
+                            val.tableData.forEach(row => {
                                 row.avgQty = (parseInt(row.mathQty) + parseInt(row.chineseQty)) / 2
                                 row.sumQty = (parseInt(row.mathQty) + parseInt(row.chineseQty))
                             });
-
-                        }
-                    }
+                        },
+                        deep: true 
+                    },
                 },
                 computed: {
-                    scope: function (row) {
-                        row.avgQty = (parseInt(row.mathQty) + parseInt(row.chineseQty)) / 2
-                        row.sumQty = (parseInt(row.mathQty) + parseInt(row.chineseQty))
-                    }
+                    // 计算属性的 getter
+                    formFirstComputed: function () {
+                        //return this.message.split('').reverse().join('')
+                        //怎么使用computer 来实现计算 平均数和总数
+                    },
                 },
             })
 
@@ -87,7 +93,6 @@
                 <el-table-column label="数学">
                     <template slot-scope="scope">
                         <el-form-item :prop="'tableData.'+scope.$index+'.mathQty'" :rules="rules.num">
-
                             <!-- @change="handleChangeRow(scope.row)" -->
                             <el-input v-model="scope.row.mathQty"></el-input>
                         </el-form-item>
@@ -118,7 +123,6 @@
             </el-table>
         </el-form>
     </div>
-
 </body>
 
 </html>
