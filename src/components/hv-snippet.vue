@@ -35,6 +35,13 @@ export default {
       padding: 0;
       margin: 0;
     }
+    code:not([class*="lang"]) {
+      color: #4b00da;
+      font-size: 1.4rem;
+      line-height: 1.6;
+      padding: 0.2rem 0.2rem;
+      margin: 0 0.2rem;
+    }
   }
 
   .hv-snippet--description {
@@ -133,11 +140,13 @@ export default {
     border-radius: 0.15rem;
     color: #4b00da;
     font-family: Consolas, Menlo, Courier, monospace;
-    font-size: 0.9rem;
-    margin: 0 0.1rem;
-    padding: 0.2rem 0.4rem;
+
     word-break: break-all;
     word-wrap: break-word;
+    font-size: 1rem;
+    line-height: 1.8rem;
+    padding: 0rem 0.1rem 0rem;
+    margin: 0 0.2rem 0rem;
   }
   .hv-snippet--table {
     overflow: auto;
