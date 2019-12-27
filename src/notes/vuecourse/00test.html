@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="blog-posts-events-demo" class="demo">
+        <blog-post-event :style="{ fontSize: postFontSize + 'em',width: widthSize+'px', height: heightSize+'px',
+          background: colorValue}" v-for="post in posts" v-bind:key="post.id" v-bind:post="post"
+            v-on:parent-font="postFontSize += 0.2;" 
+            v-on:parent-style="widthSize += $event;"
+            v-on:parent-styles="widthSize += $event[0];heightSize += $event[1];"
+            v-on:parent-style-fun="parentStyleFun"></blog-post-event>
+    </div>
+</body>
+<script>
+    Vue.component("blog-post-event", {
+        props: ["post"],
+        template: `
+    <div class="blog-post">
+      <h3>{{ post.title }}</h3>
+      <button v-on:click="$emit('parent-font')">
+        字体
+      </button>
+      <button v-on:click="$emit('parent-style',10)">
+       一个参数  
+      </button>
+      <button v-on:click="$emit('parent-styles',[10,20])">
+       数组参数
+      </button>
+      <button v-on:click="$emit('parent-style-fun',50,20)">
+       方法
+      </button>
+      <div v-html="post.content"></div>
+    </div>
+ `
+    });
+    let blogPostsEventsDemo = new Vue({
+        el: "#blog-posts-events-demo",
+        data: {
+            posts: [{
+                    id: 1,
+                    title: "博客Vue",
+                    content: "vue 学习笔记"
+                },
+                {
+                    id: 2,
+                    title: "简书Vue",
+                    content: "简书 学习笔记"
+                },
+                {
+                    id: 3,
+                    title: "gitfun",
+                    content: "git 学习笔记"
+                }
+            ],
+            postFontSize: 1,
+            widthSize: 400,
+            heightSize: 160,
+            colorValue: "red"
+        },
+        methods: {
+            parentStyleFun: function (enlargeAmount, enlargeAmount1) {
+               this.heightSize += enlargeAmount;
+               this.widthSize += enlargeAmount1;
+            }
+        }
+    });
+</script>
+<style>
+    .tab-button {
+        padding: 6px 10px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        background: #f0f0f0;
+        margin-bottom: -1px;
+        margin-right: -1px;
+    }
+
+    .tab-button:hover {
+        background: #e0e0e0;
+    }
+
+    .tab-button.active {
+        background: #e0e0e0;
+    }
+
+    .tab {
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+</style>
+
+</html>

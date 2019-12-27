@@ -1,7 +1,7 @@
 <template>
   <div class="hv-snippet">
     <h2 class="hv-snippet--title">
-      <slot name="title">{{title}}</slot>
+      <slot name="title">`·title·`</slot>
     </h2>
     <slot></slot>
   </div>
@@ -140,8 +140,7 @@ export default {
     border-radius: 0.15rem;
     color: #4b00da;
     font-family: Consolas, Menlo, Courier, monospace;
-
-    word-break: break-all;
+    //word-break: break-all;//先注释掉
     word-wrap: break-word;
     font-size: 1rem;
     line-height: 1.8rem;
