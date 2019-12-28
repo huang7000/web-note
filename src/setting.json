@@ -53,17 +53,24 @@
     },
     {
       "path": "@/notes/vuecourse/12.md",
-      "name": "Prop"
+      "name": "组件Prop"
     },
     {
       "path": "@/notes/vuecourse/13.md",
-      "name": "自定义事件"
+      "name": "组件自定义事件"
     },
     {
       "path": "@/notes/vuecourse/14.md",
-      "name": "14插槽"
+      "name": "组件插槽"
     },
-
+    {
+      "path": "@/notes/vuecourse/15.md",
+      "name": "组件动态异步"
+    },
+    {
+      "path": "@/notes/vuecourse/16.md",
+      "name": "组件处理边界情况"
+    },
     {
       "path": "",
       "name": "Vue"
