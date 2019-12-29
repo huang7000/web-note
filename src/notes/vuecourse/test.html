@@ -11,36 +11,65 @@
 </head>
 
 <body>
-    <div id="base-input-demo">
-        <base-input v-model="label" v-bind:label="label" v-on:focus.native="onFocus"></base-input>
+    <div id="todo-list-demo">
+        <todo-list v-bind:todos="todos">
+            <template v-slot:todo="{ todo }">
+                <span v-if="todo.isComplete">✓</span>
+                {{ todo.text }}
+            </template>
+        </todo-list>
     </div>
 </body>
 <script>
-    Vue.component("base-input", {
-        props: ["label", "value"],
-        template: `
-        <label>{{ label }}
-            <input
-            v-bind="$attrs"
-            v-bind:value="value"
-            v-on:input="$emit('input', $event.target.value)"
-            >
-        </label>
-        `
-    });
-    let baseInputDemo = new Vue({
-        el: "#base-input-demo",
-        data: {
-            label: "base-label",
-            value: ""
+    Vue.component("todo-list", {
+        props: ["todos"],
+        data: function () {
+            return {
+                filteredTodos:this.todos
+            };
         },
-        methods: {
-            onFocus() {
-                console.log("onFocus")
-            },
-            input() {
-                console.log("input")
-            }
+        template: `
+        <ul>
+            <li
+                v-for="todo in filteredTodos"
+                v-bind:key="todo.id">
+                <!--我们为每个 todo 准备了一个插槽，将 todo对象作为一个插槽的 prop 传入。 -->
+                <slot name="todo" v-bind:todo="todo">
+                    <!-- 后备内容 -->
+                    {{ todo.text }}
+                </slot>
+            </li>
+        </ul> `
+    });
+    let todoListDemo = new Vue({
+        el: "#todo-list-demo",
+        data: {
+            todos: [{
+                    id: 1,
+                    text: "小白",
+                    isComplete: true
+                },
+                {
+                    id: 2,
+                    text: "小强",
+                    isComplete: true
+                },
+                {
+                    id: 3,
+                    text: "小明",
+                    isComplete: false
+                },
+                {
+                    id: 4,
+                    text: "咪咪",
+                    isComplete: true
+                },
+                {
+                    id: 5,
+                    text: "妹妹",
+                    isComplete: false
+                }
+            ]
         }
     });
 </script>
