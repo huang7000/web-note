@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/demos/vuedoc/my-async-component.js"],"names":["myComponent","template"],"mappings":"gHAAA,WAAIA,EAAc,CACdC,SAAU,+BAECD","file":"js/chunk-2d230a82.d7172c6e.js","sourcesContent":["var myComponent = {\n    template: \"<h3>my-async-component</h3>\"\n  };\nexport default myComponent\n"],"sourceRoot":""}
