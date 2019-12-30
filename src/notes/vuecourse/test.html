@@ -11,70 +11,159 @@
 </head>
 
 <body>
-    <div id="todo-list-demo">
-        <todo-list v-bind:todos="todos">
-            <template v-slot:todo="{ todo }">
-                <span v-if="todo.isComplete">✓</span>
-                {{ todo.text }}
-            </template>
-        </todo-list>
+    <div id="dynamic-component-demo" class="demo">
+        <button v-for="tab in tabs" v-bind:key="tab"
+            v-bind:class="['dynamic-component-demo-tab-button', { 'dynamic-component-demo-active': currentTab === tab }]"
+            v-on:click="currentTab = tab">{{ tab }}</button>
+        <component v-bind:is="currentTabComponent" class="dynamic-component-demo-tab"></component>
+    </div>
+    <br>
+    <div id="dynamic-component-keep-alive-demo" class="demo">
+        <!-- 我们可以用一个 <keep-alive> 元素将其动态组件包裹起来。 失活的组件将会被缓存！-->
+        <button v-for="tab in tabs" v-bind:key="tab"
+            v-bind:class="['dynamic-component-demo-tab-button', { 'dynamic-component-demo-active': currentTab === tab }]"
+            v-on:click="currentTab = tab">{{ tab }}</button>
+        <keep-alive>
+            <component v-bind:is="currentTabComponent" class="dynamic-component-demo-tab"></component>
+        </keep-alive>
     </div>
 </body>
 <script>
-    Vue.component("todo-list", {
-        props: ["todos"],
+    Vue.component('tab-posts', {
         data: function () {
             return {
-                filteredTodos:this.todos
-            };
+                posts: [{
+                        id: 1,
+                        title: '儒释道',
+                        content: '<p>儒心是妖，佛心是魔，道心是鬼。</p>'
+                    },
+                    {
+                        id: 2,
+                        title: '三教',
+                        content: '<p>天地不仁，道吞万物。大爱无情，佛灭众生。 忠义荡然，儒溺千古。</p>'
+                    },
+                    {
+                        id: 3,
+                        title: '神魔非我',
+                        content: '<p>魔心开杀，神意止杀。</p>'
+                    }
+                ],
+                selectedPost: null
+            }
         },
-        template: `
-        <ul>
-            <li
-                v-for="todo in filteredTodos"
-                v-bind:key="todo.id">
-                <!--我们为每个 todo 准备了一个插槽，将 todo对象作为一个插槽的 prop 传入。 -->
-                <slot name="todo" v-bind:todo="todo">
-                    <!-- 后备内容 -->
-                    {{ todo.text }}
-                </slot>
-            </li>
-        </ul> `
-    });
-    let todoListDemo = new Vue({
-        el: "#todo-list-demo",
+        template: `<div class="dynamic-component-demo-posts-tab">
+                      <ul class="dynamic-component-demo-posts-sidebar">
+                        <li
+                          v-for="post in posts"
+                          v-bind:key="post.id"
+                          v-bind:class="{ 'dynamic-component-demo-active': post === selectedPost }"
+                          v-on:click="selectedPost = post"
+                        >
+                          {{ post.title }}
+                        </li>
+                      </ul>
+                      <div class="dynamic-component-demo-post-container">
+                        <div 
+                          v-if="selectedPost"
+                          class="dynamic-component-demo-post"
+                        >
+                          <h3>{{ selectedPost.title }}</h3>
+                          <div v-html="selectedPost.content"></div>
+                        </div>
+                        <strong v-else>
+                            点击左边的博客标题查看。
+                        </strong>
+                      </div>
+                    </div>`
+    })
+    Vue.component('tab-archive', {
+        template: '<div>存档组件</div>'
+    })
+    let dynamicComponentDemo = new Vue({
+        el: '#dynamic-component-demo',
         data: {
-            todos: [{
-                    id: 1,
-                    text: "小白",
-                    isComplete: true
-                },
-                {
-                    id: 2,
-                    text: "小强",
-                    isComplete: true
-                },
-                {
-                    id: 3,
-                    text: "小明",
-                    isComplete: false
-                },
-                {
-                    id: 4,
-                    text: "咪咪",
-                    isComplete: true
-                },
-                {
-                    id: 5,
-                    text: "妹妹",
-                    isComplete: false
-                }
-            ]
+            currentTab: 'Posts',
+            tabs: ['Posts', 'Archive']
+        },
+        computed: {
+            currentTabComponent: function () {
+                return 'tab-' + this.currentTab.toLowerCase()
+            }
         }
-    });
+    })
+    let dynamicComponentKeepAliveDemo = new Vue({
+        el: '#dynamic-component-keep-alive-demo',
+        data: {
+            currentTab: 'Posts',
+            tabs: ['Posts', 'Archive']
+        },
+        computed: {
+            currentTabComponent: function () {
+                return 'tab-' + this.currentTab.toLowerCase()
+            }
+        }
+    })
 </script>
 <style>
+    .dynamic-component-demo-tab-button {
+        padding: 6px 10px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        background: #f0f0f0;
+        margin-bottom: -1px;
+        margin-right: -1px;
+    }
 
+    .dynamic-component-demo-tab-button:hover {
+        background: #e0e0e0;
+    }
+
+    .dynamic-component-demo-tab-button.dynamic-component-demo-active {
+        background: #e0e0e0;
+    }
+
+    .dynamic-component-demo-tab {
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    .dynamic-component-demo-posts-tab {
+        display: flex;
+    }
+
+    .dynamic-component-demo-posts-sidebar {
+        max-width: 40vw;
+        margin: 0 !important;
+        padding: 0 10px 0 0 !important;
+        list-style-type: none;
+        border-right: 1px solid #ccc;
+    }
+
+    .dynamic-component-demo-posts-sidebar li {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .dynamic-component-demo-posts-sidebar li:hover {
+        background: #eee;
+    }
+
+    .dynamic-component-demo-posts-sidebar li.dynamic-component-demo-active {
+        background: lightblue;
+    }
+
+    .dynamic-component-demo-post-container {
+        padding-left: 10px;
+    }
+
+    .dynamic-component-demo-post> :first-child {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
 </style>
 
 </html>
