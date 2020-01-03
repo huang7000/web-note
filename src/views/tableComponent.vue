@@ -16,7 +16,7 @@
         <el-table-column prop="address" label="地址"></el-table-column>
       </el-table>
       <div style="margin-top: 20px">
-        <el-button @click="toggleSelection([tableData[1], tableData[2]])">切换第二、第三行的选中状态</el-button>
+        <el-button @click="toggleSelection([tableData[1], tableData[2]])">选中状态</el-button>
         <el-button @click="toggleSelection()">取消选择</el-button>
       </div>
       <span slot="footer" class="dialog-footer">
@@ -30,7 +30,10 @@
 <script>
 export default {
   props: {
-    dialogVisible: false
+    dialogVisible: {
+      type: Boolean,
+      default: false
+    }
   },
   data() {
     return {
@@ -41,7 +44,6 @@ export default {
 
   methods: {
     handleClose() {
-      console.log(this.multipleSelection);
       this.toggleSelection();
       this.$emit("close");
     },
