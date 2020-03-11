@@ -76,6 +76,14 @@
       "name": "组件处理边界情况"
     },
     {
+      "path": "@/notes/vuecourse/17.md",
+      "name": "列表过度"
+    },
+    {
+      "path": "@/notes/vuecourse/18.md",
+      "name": "状态过度"
+    },
+    {
       "path": "",
       "name": "Vue"
     },
