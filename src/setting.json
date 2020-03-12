@@ -77,11 +77,19 @@
     },
     {
       "path": "@/notes/vuecourse/17.md",
-      "name": "列表过度"
+      "name": "单元素/组件的过渡"
     },
     {
       "path": "@/notes/vuecourse/18.md",
-      "name": "状态过度"
+      "name": "多元素/组件的过渡"
+    },
+    {
+      "path": "@/notes/vuecourse/19.md",
+      "name": "列表过渡"
+    },
+    {
+      "path": "@/notes/vuecourse/20.md",
+      "name": "状态过渡"
     },
     {
       "path": "",
