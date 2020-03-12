@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://www.js-css.cn/jscode/date/date4/css/pikaday.css" />
+  <script type="text/javascript" src="https://www.js-css.cn/jscode/date/date4/js/pikaday.min.js"></script>
+</head>
+
+<body>
+  <div id="transition-demo">
+    <button v-on:click="show= !show">
+      Toggle
+    </button>
+    <h3>transition:</h3>
+    <transition name="fade-if">
+      <p v-if="show">hello if</p>
+    </transition>
+    <h3>transition-group:</h3>
+    <transition-group name="fade-show" tag="p">
+      <p key="spanIf" v-if="show">hello if </p>
+      <p key="spanShow" v-show="show">hello show </p>
+    </transition-group>
+  </div>
+</body>
+<script>
+  // Vue 根实例
+  var transitionDemo = new Vue({
+    el: "#transition-demo",
+    data: {
+      show: true
+    }
+  })
+</script>
+<style>
+  .fade-if-enter-active,
+  .fade-if-leave-active,
+  .fade-show-enter-active,
+  .fade-show-leave-active {
+    transition: opacity .5s;
+  }
+
+  .fade-if-enter,
+  .fade-if-leave-to,
+  .fade-show-enter,
+  .fade-show-leave-to
+
+  /* .fade-leave-active below version 2.1.8 */
+    {
+    opacity: 0;
+  }
+</style>
+
+</html>
