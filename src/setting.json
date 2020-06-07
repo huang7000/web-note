@@ -93,7 +93,23 @@
     },
     {
       "path": "",
-      "name": "Vue"
+      "name": "typeScript"
+    },
+    {
+      "path": "@/notes/typescriptcourse/01.md",
+      "name": "简介和使用"
+    },
+    {
+      "path": "@/notes/typescriptcourse/02.md",
+      "name": "基础类型"
+    },
+    {
+      "path": "@/notes/typescriptcourse/03.md",
+      "name": "操作符"
+    },
+    {
+      "path": "",
+      "name": "Vue项目"
     },
     {
       "path": "@/notes/vue/01.md",
@@ -203,5 +219,6 @@
       "path": "@/notes/javascript/22.md",
       "name": "高级技巧与新兴API"
     }
+
   ]
 }

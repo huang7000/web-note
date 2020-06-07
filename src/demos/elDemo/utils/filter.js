@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import Vue from "vue";
-import common from "@/utils/common";
+import common from "./common";
 Vue.filter("dateFormat", date => {
  return common.dateFormat(date);
 });
