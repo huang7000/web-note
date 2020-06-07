@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d238091"],{fe51:function(n,t,i){"use strict";var e=function(){function n(n,t,i){this.firstName=n,this.middleInitial=t,this.lastName=i,this.fullName=n+" "+t+" "+i}return n}();function s(n){return"Hello！"+n.firstName+" "+n.lastName}var a=new e("7000","","黄");document.body.innerHTML=s(a)}}]);
+//# sourceMappingURL=chunk-2d238091.5068883c.js.map
