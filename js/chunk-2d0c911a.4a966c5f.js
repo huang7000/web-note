@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0c911a"],{5823:function(e,n){throw new Error('Module parse failed: Unexpected token (2:12)\nFile was processed with these loaders:\n * ./node_modules/eslint-loader/index.js\nYou may need an additional loader to handle the result of these loaders.\n| class Student {\n>     fullName: string;\n|     constructor(public firstName, public middleInitial, public lastName) {\n|         this.fullName = firstName + " " + middleInitial + " " + lastName;')}}]);
+//# sourceMappingURL=chunk-2d0c911a.4a966c5f.js.map

@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d230a82"],{ece3:function(n,e,c){"use strict";c.r(e);var a={template:"<h3>my-async-component</h3>"};e["default"]=a}}]);
+//# sourceMappingURL=chunk-2d230a82.74f5f220.js.map

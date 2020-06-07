@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/demos/vuedoc/demo01.js"],"names":["Vue","el","data","message"],"mappings":"iGAAU,IAAIA,IAAI,CACdC,GAAI,OACJC,KAAM,CACFC,QAAS","file":"js/chunk-2d22233b.8956b2bc.js","sourcesContent":["let app = new Vue({\n    el: '#app',\n    data: {\n        message: 'Hello Vue!'\n    }\n})"],"sourceRoot":""}
