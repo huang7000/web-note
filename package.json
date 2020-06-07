@@ -21,6 +21,7 @@
     "url": "https://github.com/huang7000/web-note/issues"
   },
   "scripts": {
+    "dev": "tsc -watch -p ./",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --gh-pages",
     "prerender": "vue-cli-service build --prerender",
