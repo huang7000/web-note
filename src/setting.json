@@ -105,7 +105,11 @@
     },
     {
       "path": "@/notes/typescriptcourse/03.md",
-      "name": "操作符"
+      "name": "变量声明"
+    },
+    {
+      "path": "@/notes/typescriptcourse/04.md",
+      "name": "接口"
     },
     {
       "path": "",

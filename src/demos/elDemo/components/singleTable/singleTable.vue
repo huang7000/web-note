@@ -56,9 +56,9 @@
 </template>
 
 <script>
-import request from "@/utils/request";
-import checkBtn from "@/utils/common";
-import { getToken } from "@/utils/common";
+import request from "@/demos/elDemo/utils/request";
+import checkBtn from "@/demos/elDemo/utils/common";
+import { getToken } from "@/demos/elDemo//utils/common";
 export default {
   props: {
     pageShow: Boolean,
