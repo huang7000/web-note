@@ -6,6 +6,7 @@
     <slot name="buttonSlot" slot="buttonSlot"></slot>
     <!-- 表格 -->
     <el-table
+      size="small"
       ref="singleTable"
       :data="tableData"
       highlight-current-row
@@ -64,8 +65,11 @@ export default {
     pageShow: Boolean,
     tableTitle: Array,
     searchOpt: Object,
+    searchRes: Object,
     deleteOpt: Object,
-    exportOpt: Object
+    deleteRes: Object,
+    exportOpt: Object,
+    exportRes: Object
   },
   data() {
     return {
@@ -118,11 +122,19 @@ export default {
       }
       let promise = request(opt);
       promise.then(function(res) {
-        if (res.code === "00" || res.status === "000") {
-          selfThis.tableData = res.data;
-          selfThis.pageInfo.tatal = res.data;
+        let status = res[selfThis.searchRes.status];
+        let tableData = res[selfThis.searchRes.tableData];
+        let totalCount = res[selfThis.searchRes.totalCount];
+        let message = res[selfThis.searchRes.message];
+        if (status === "00") {
+          if (Array.isArray(tableData) && tableData.length > 0) {
+            selfThis.tableData = tableData;
+          } else {
+            selfThis.tableData = [];
+          }
+          selfThis.pageInfo.tatal = totalCount;
         } else {
-          selfThis.$message.warning(res.message);
+          selfThis.$message.warning(message);
         }
       });
     },
@@ -179,10 +191,13 @@ export default {
           }
           let promise = request(opt);
           promise.then(function(res) {
-            if (res.code === "00" || res.status === "000") {
-              selfThis.$message.success(res.message);
+            let status = res[selfThis.searchRes.status];
+            let statusTrue = selfThis.statusTrue;
+            let message = res[selfThis.searchRes.message];
+            if (status === statusTrue) {
+              selfThis.$message.success(message);
             } else {
-              selfThis.$message.warning(res.message);
+              selfThis.$message.warning(message);
             }
           });
         });
