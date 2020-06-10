@@ -112,6 +112,14 @@
       "name": "接口"
     },
     {
+      "path": "@/notes/typescriptcourse/05.md",
+      "name": "类"
+    },
+    {
+      "path": "@/notes/typescriptcourse/06.md",
+      "name": "函数"
+    },
+    {
       "path": "",
       "name": "Vue项目"
     },
