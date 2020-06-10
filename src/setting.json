@@ -120,6 +120,14 @@
       "name": "函数"
     },
     {
+      "path": "@/notes/typescriptcourse/07.md",
+      "name": "泛型"
+    },
+    {
+      "path": "@/notes/typescriptcourse/08.md",
+      "name": "枚举"
+    },
+    {
       "path": "",
       "name": "Vue项目"
     },
