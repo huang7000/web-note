@@ -4,12 +4,95 @@
 // }
 // console.log(identity(555))
 // console.log(identity({name:"huang 700" ,age:18}))
-var directions = [0 /* Up */, 1 /* Down */, 2 /* Left */, 3 /* Right */];
-console.log(directions);
-var Enum2;
-(function (Enum2) {
-    Enum2[Enum2["A"] = 0] = "A";
-})(Enum2 || (Enum2 = {}));
-var a = Enum2.A;
-var nameOfA = Enum2[a]; // "A"
-console.log(nameOfA);
+// function identitype<T>(ary:T):T{
+//   return ary;
+// }
+// //传入所有的参数，包含类型参数
+// let outputT = identitype<string>("myString"); 
+// //利用了类型推论 -- 即编译器会根据传入的参数自动地帮助我们确定T的类型：
+// let output = identitype("myString"); 
+// console.log(identitype({name:"huang 700" ,age:18,sex:"男"}))
+// function identity<T>(arg: T): T {
+//   return arg;
+// }
+// let myIdentity: <T>(arg: T) => T = identity;
+// let yourIdentity: <U>(arg: U) => U = identity;
+// let myIdentity2: {<T>(arg: T): T} = identity;
+// enum Color {
+//   red, blue
+// }
+// enum Color2 {
+//   red, blue
+// }
+// enum E {
+//   mm,
+//   A = mm+B,  B, // error! 'A' is not constant-initialized, so 'B' needs an initializer
+// }
+// enum E {
+//   Foo,
+//   Bar,
+// }
+// function f(x: E) {
+//   if (x !== E.Foo) {
+//       //             ~~~~~~~~~~~
+//       // Error! Operator '!==' cannot be applied to types 'E.Foo' and 'E.Bar'.
+//   }
+// }
+// const enum Enum {
+//   A = 1,
+//   B = A * 2
+// } 
+// const enum Directions {
+//   Up,
+//   Down,
+//   Left,
+//   Right
+// }
+// let directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right]
+// console.log(directions)
+// enum Enum2 {
+//   A
+// }
+// let a = Enum2.A;
+// let nameOfA = Enum2[a]; // "A"
+// console.log(nameOfA)
+// let x = 3;
+// let someValue: any = "this is a string";
+// let strLength: number = (<string>someValue).length;
+// let strLength2: number = (someValue as string).length;
+var y = [0, 1, null];
+console.log("y的数据类型");
+console.log(typeof y);
+var x = 1;
+console.log("x的数据类型");
+console.log(typeof x);
+var Animal = /** @class */ (function () {
+    function Animal() {
+    }
+    return Animal;
+}());
+var Rhino = /** @class */ (function () {
+    function Rhino() {
+    }
+    return Rhino;
+}());
+var Elephant = /** @class */ (function () {
+    function Elephant() {
+    }
+    return Elephant;
+}());
+var Snake = /** @class */ (function () {
+    function Snake() {
+    }
+    return Snake;
+}());
+var zoo = [new Rhino(), new Elephant(), new Snake()];
+var zoo2 = [new Rhino(), new Elephant(), new Snake()];
+console.log(typeof zoo);
+console.log(typeof zoo2);
+// window.onmousedown = function(mouseEvent) {
+//   console.log(mouseEvent.button);  //<- Error
+// };
+window.onmousedown = function (mouseEvent) {
+    console.log(mouseEvent.button); //<- Now, no error is given
+};

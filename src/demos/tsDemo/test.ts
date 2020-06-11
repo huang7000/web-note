@@ -44,23 +44,50 @@
 //   }
 // }
 
-const enum Enum {
-  A = 1,
-  B = A * 2
-} 
+// const enum Enum {
+//   A = 1,
+//   B = A * 2
+// } 
 
-const enum Directions {
-  Up,
-  Down,
-  Left,
-  Right
-}
+// const enum Directions {
+//   Up,
+//   Down,
+//   Left,
+//   Right
+// }
 
-let directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right]
-console.log(directions)
-enum Enum2 {
-  A
-}
-let a = Enum2.A;
-let nameOfA = Enum2[a]; // "A"
-console.log(nameOfA)
+// let directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right]
+// console.log(directions)
+// enum Enum2 {
+//   A
+// }
+// let a = Enum2.A;
+// let nameOfA = Enum2[a]; // "A"
+// console.log(nameOfA)
+// let x = 3;
+// let someValue: any = "this is a string";
+// let strLength: number = (<string>someValue).length;
+// let strLength2: number = (someValue as string).length;
+
+let y = [0, 1, null];
+console.log("y的数据类型")
+console.log(typeof y)
+
+let x:number|string = 1;
+console.log("x的数据类型")
+console.log(typeof x)
+class Animal{}
+class Rhino{}
+class Elephant{}
+class Snake{}
+let zoo: Animal[] = [new Rhino(), new Elephant(), new Snake()];
+let zoo2 = [new Rhino(), new Elephant(), new Snake()];
+console.log(typeof zoo)
+console.log(typeof zoo2)
+
+// window.onmousedown = function(mouseEvent) {
+//   console.log(mouseEvent.button);  //<- Error
+// };
+window.onmousedown = function(mouseEvent: any) {
+  console.log(mouseEvent.button);  //<- Now, no error is given
+};
