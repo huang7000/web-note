@@ -1,7 +1,7 @@
 // module.exports = {
 //   // github的地址
-//   //github: "https://github.com/kitorv/study-notes",
-//   github: "https://github.com/GhostNonego/study-notes",
+//   //github: "https://github.com/kitorv/web-notes",
+//   github: "https://github.com/GhostNonego/web-notes",
 //   // 1.url：markdown的文件路径，不配置生成分组标题
 //   // 2.name：生成菜单标题或者分组标题，必填
 //   routes: [
@@ -12,13 +12,13 @@
 //   ]
 // };
 //使用const
-export const github = "https://github.com/GhostNonego/study-notes";
+export const github = "https://github.com/huang7000/web-notes";
 
 export const routes = [
 
     {
         path: "",
-        name: "羲皇"
+        name: "huang7000"
     },
     {
         path: "@/notes/xihuang/00study.md",

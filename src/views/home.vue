@@ -28,7 +28,7 @@
          @scroll="handleScroll"
          ref="main">
       <div class="hv-home--banner">
-        <div>Study Notes</div>
+        <div>Web Notes</div>
         <a class="hv-home--banner-link"
            :href="github"><i class="hv-icon-star"></i>Star on GitHub</a>
       </div>
