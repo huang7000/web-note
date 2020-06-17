@@ -69,25 +69,60 @@
 // let strLength: number = (<string>someValue).length;
 // let strLength2: number = (someValue as string).length;
 
-let y = [0, 1, null];
-console.log("y的数据类型")
-console.log(typeof y)
+// let y = [0, 1, null];
+// console.log("y的数据类型")
+// console.log(typeof y)
 
-let x:number|string = 1;
-console.log("x的数据类型")
-console.log(typeof x)
-class Animal{}
-class Rhino{}
-class Elephant{}
-class Snake{}
-let zoo: Animal[] = [new Rhino(), new Elephant(), new Snake()];
-let zoo2 = [new Rhino(), new Elephant(), new Snake()];
-console.log(typeof zoo)
-console.log(typeof zoo2)
+// let x:number|string = 1;
+// console.log("x的数据类型")
+// console.log(typeof x)
+// class Animal{}
+// class Rhino{}
+// class Elephant{}
+// class Snake{}
+// let zoo: Animal[] = [new Rhino(), new Elephant(), new Snake()];
+// let zoo2 = [new Rhino(), new Elephant(), new Snake()];
+// console.log(typeof zoo)
+// console.log(typeof zoo2)
 
-// window.onmousedown = function(mouseEvent) {
-//   console.log(mouseEvent.button);  //<- Error
+// // window.onmousedown = function(mouseEvent) {
+// //   console.log(mouseEvent.button);  //<- Error
+// // };
+// window.onmousedown = function(mouseEvent: any) {
+//   console.log(mouseEvent.button);  //<- Now, no error is given
 // };
-window.onmousedown = function(mouseEvent: any) {
-  console.log(mouseEvent.button);  //<- Now, no error is given
-};
+
+// function invokeLater(args: any[], callback: (...args: any[]) => void) {
+//     /* ... Invoke callback with 'args' ... */
+// }
+
+// // Unsound - invokeLater "might" provide any number of arguments
+// invokeLater([1, 2], (x, y) => console.log(x + ', ' + y));
+
+// // Confusing (x and y are actually required) and undiscoverable
+// invokeLater([1, 2], (x?, y?) => console.log(x + ', ' + y));
+
+// class Animal {
+//   feet: number=5;
+//   constructor(name: string, numFeet: number) { }
+// }
+
+// class Size {
+//   feet: number=6;
+//   constructor(numFeet: number) { }
+// }
+
+// let a: Animal=new Animal("123",456);
+// let s: Size=new Size(123);;
+// a = s;  // OK
+// s = a;  // OK
+
+// interface Empty<T> {
+// }
+// let x: Empty<number>=123;
+// let y: Empty<string>="abc";
+// console.log(x)
+// console.log(y)
+// x = y;  // OK, because y matches structure of x
+// console.log(x)
+// console.log(y)

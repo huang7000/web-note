@@ -128,6 +128,14 @@
       "name": "枚举"
     },
     {
+      "path": "@/notes/typescriptcourse/09.md",
+      "name": "类型推论"
+    },
+    {
+      "path": "@/notes/typescriptcourse/10.md",
+      "name": "类型兼容性"
+    },
+    {
       "path": "",
       "name": "Vue项目"
     },
