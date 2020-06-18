@@ -92,6 +92,26 @@
       "name": "状态过渡"
     },
     {
+      "path": "@/notes/vuecourse/21.md",
+      "name": "混入"
+    },
+    {
+      "path": "@/notes/vuecourse/22.md",
+      "name": "自定义插件"
+    },
+    {
+      "path": "@/notes/vuecourse/23.md",
+      "name": "渲染函数&JSX"
+    },
+    {
+      "path": "@/notes/vuecourse/24.md",
+      "name": "插件"
+    },
+    {
+      "path": "@/notes/vuecourse/25.md",
+      "name": "过滤器"
+    },
+    {
       "path": "",
       "name": "typeScript"
     },

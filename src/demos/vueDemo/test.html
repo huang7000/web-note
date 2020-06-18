@@ -11,36 +11,41 @@
 </head>
 
 <body>
-  <div id="example-4">
-    <button v-on:click="warn('Form cannot be submitted yet.', $event)">
-      Submit
-    </button>
-    {{msg+test}}
-    <p v-html="msg+test"></p>
-    <p v-html="msg_test"></p>
+  <div id="app" class="demo">
+    <p>
+      qty: {{qty}}
+    </p>
+    <p>
+      全局保留整数： {{qty|numFilter}}
+    </p>
+    <p>
+      本地保留两位小数： {{qty|moneyFilter}}
+    </p>
   </div>
 </body>
 <script>
-  let example4 = new Vue({
-    el: "#example-4",
-    methods: {
-      warn: function (message, event) {
-        // 现在我们可以访问原生事件对象
-        if (event) {
-          event.preventDefault();
-        }
-        alert(message);
-      }
-    },
+  Vue.filter('numFilter', function (value) {
+    if (!value) return ''
+    value = value.toFixed(0)
+    return value
+  })
+  new Vue({
+    el: '#app',
     data: {
-      "msg+test": "msg+test ww",
-      "msg-test": "msg-testw ww",
-      msg: "msg",
-      test: "test",
+      qty: 123.4566,
+
+    },
+    filters: {
+      moneyFilter: function (value) {
+        if (!value) return ''
+        value = value.toFixed(2)
+        return value
+      }
     }
-  });
-  console.log(example4["msg+test"]);
-  console.log(example4["msg-test"]);
+  })
 </script>
+<style>
+
+</style>
 
 </html>
