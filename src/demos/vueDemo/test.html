@@ -10,37 +10,70 @@
 </head>
 
 <body>
-  <div id="app" class="demo">
-    <anchored-heading :level="1">第1标题 Hello</anchored-heading>
-    <anchored-heading :level="2">第2标题 Hello</anchored-heading>
-    <anchored-heading :level="4">第4标题 Hello</anchored-heading>
+  <div id="example-template">
+    <input :value="value" @input="input"></input>
+    {{value}}
+    <br>
+    <example-template :value2="value2" @input="input2" ></example-template>
+    {{value2}}
+  </div>
+
+
+  <div id="example-render">
+    <example-render :value="value" @input="input"></example-render>
+    {{value}}
   </div>
 </body>
 <script>
-  Vue.component('anchored-heading', {
-    render:function(createElement) {
-      return createElement(
-        'h' + this.level, //标签名称
-        this.$slots.default //字节点数组
-      )
-    },
-    //简写
-    // render(h) {
-    //   return h(
-    //     'h' + this.level, //标签名称
-    //     this.$slots.default //字节点数组
-    //   )
-    // },
-    props: {
-      level: {
-        type: Number,
-        required: true
-      }
-    }
-  })
+    Vue.component("example-template", {
+    props: ['value2'],
+    template:`<input :value="value2" @input="$emit('input',$event.target.value)"></input>`
+  });
   new Vue({
-        el:'#app'
-    })
+    el: "#example-template",
+    data: {
+      value: "666",
+      value2:"value2"
+    },
+    methods: {
+      input(event) {
+        this.value = event.target.value;
+      },
+      input2(value) {
+       console.log(value);
+        this.value2 =value;
+      }
+    },
+  });
+
+  Vue.component("example-render", {
+    props: ['value'],
+    render: function (createElement) {
+      var self = this
+      return createElement('input', {
+        domProps: {
+          value: self.value
+        },
+        on: {
+          input: function (event) {
+            self.$emit('input', event.target.value)
+          }
+        }
+      })
+    }
+  });
+  new Vue({
+    el: "#example-render",
+    data: {
+      value: "6666",
+    },
+    methods: {
+      input(value) {
+        console.log(value);
+        this.value = value;
+      }
+    },
+  });
 </script>
 <style>
 
