@@ -20,7 +20,7 @@
                 }, 5000);
             });
             new Vue({
-                el: '#async-a-demo'
+                el: '#async-a-demos'
             });
 
             // //将异步组件和 webpack 的 code-splitting 功能一起配合使用
@@ -38,11 +38,11 @@
             );
 
             new Vue({
-                el: '#async-b-demo'
+                el: '#async-b-demos'
             });
 
             new Vue({
-                el: '#async-c-demo',
+                el: '#async-c-demos',
                 components: {
                     'async-c': () => import('./my-async-component.js')
                 }
@@ -69,7 +69,7 @@
             });
 
             new Vue({
-                el: '#my-component-demo',
+                el: '#my-component-demos',
                 components: {
                     myComponent: () => AsyncComponent
                 }
@@ -80,19 +80,19 @@
 </head>
 
 <body>
-    <div id="async-a-demo">
+    <div id="async-a-demos">
         async-a
         <async-a></async-a>
     </div>
-    <div id="async-b-demo">
+    <div id="async-b-demos">
         async-b
         <async-b></async-b>
     </div>
-    <div id="async-c-demo">
+    <div id="async-c-demos">
         async-c
         <async-c></async-c>
     </div>
-    <div id="my-component-demo">
+    <div id="my-component-demos">
         <my-component></my-component>
     </div>
 </body>

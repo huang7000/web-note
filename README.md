@@ -2,7 +2,7 @@
 
 ## 在线效果展示
 
-[https://huang7000.github.io/web-note](https://huang7000.github.io/web-note/)
+[https://huang7000.github.io/web-notes](https://huang7000.github.io/web-notes/)
 
 基于 vue 搭建笔记内容使用`markdown`文件编写，自动编译成网站
 
@@ -86,7 +86,7 @@ let value = 123456;
 
 ## 自动编译成效果
 
-![demo](src/assets/images/readme-01.png)
+![demos](src/assets/images/readme-01.png)
 
 ## `setting.json`文件配置
 
@@ -129,7 +129,7 @@ npm run prerender
 
 ### 3. travis 自动构建 github-pages 在线访问
 
-- github 账号登陆 [https://www.travis-ci.org](https://www.travis-ci.org),开启项目自动构建 `web-note`
+- github 账号登陆 [https://www.travis-ci.org](https://www.travis-ci.org),开启项目自动构建 `web-notes`
 
 ![start](src/assets/images/readme-02.png)
 
@@ -174,10 +174,10 @@ deploy:
     branch: master
 ```
 
-- 提交代码，查看构建状态 [https://www.travis-ci.org/huang7000/web-note/builds](https://www.travis-ci.org/huang7000/web-note/builds)
+- 提交代码，查看构建状态 [https://www.travis-ci.org/huang7000/web-notes/builds](https://www.travis-ci.org/huang7000/web-notes/builds)
 
 ![gh-page](src/assets/images/readme-06.png)
 
-- 构建完成，访问 `gh-page` 地址：[https://huang7000.github.io/web-note](https://huang7000.github.io/web-note)
+- 构建完成，访问 `gh-page` 地址：[https://huang7000.github.io/web-notes](https://huang7000.github.io/web-notes)
 
 ![gh-page](src/assets/images/readme-07.png)

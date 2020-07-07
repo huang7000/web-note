@@ -2,22 +2,10 @@
   "routes": [
     {
       "path": "",
-      "name": "备注"
+      "name": "学习内容"
     },
     {
-      "path": "@/views/test.vue",
-      "name": "test"
-    },
-    {
-      "path": "@/demos/test.vue",
-      "name": "testdemo"
-    },
-    {
-      "path": "@/notes/test.vue",
-      "name": "testnote"
-    },
-    {
-      "path": "@/notes/vue/00.md",
+      "path": "@/notes/00note.md",
       "name": "学习内容"
     },
     {
@@ -25,374 +13,365 @@
       "name": "JavaScript"
     },
     {
-      "path": "@/notes/javascript/01.md",
+      "path": "@/notes/03js/01javascript/01.md",
       "name": "简介和使用",
-      "date": "2020-06-01"
+      "date": "2020-02-18"
     },
     {
-      "path": "@/notes/javascript/02.md",
+      "path": "@/notes/03js/01javascript/02.md",
       "name": "基础类型",
-      "date": "2020-06-02"
+      "date": "2020-02-19"
     },
     {
-      "path": "@/notes/javascript/03.md",
+      "path": "@/notes/03js/01javascript/03.md",
       "name": "操作符",
-      "date": "2020-06-03"
+      "date": "2020-02-20"
     },
     {
-      "path": "@/notes/javascript/04.md",
+      "path": "@/notes/03js/01javascript/04.md",
       "name": "语句和函数",
-      "date": "2020-06-04"
+      "date": "2020-02-21"
     },
     {
-      "path": "@/notes/javascript/05.md",
+      "path": "@/notes/03js/01javascript/05.md",
       "name": "变量、作用域和内存",
-      "date": "2020-06-05"
+      "date": "2020-02-24"
     },
     {
-      "path": "@/notes/javascript/06.md",
+      "path": "@/notes/03js/01javascript/06.md",
       "name": "对象、时间、正则",
-      "date": "2020-06-08"
+      "date": "2020-02-25"
     },
     {
-      "path": "@/notes/javascript/07.md",
+      "path": "@/notes/03js/01javascript/07.md",
       "name": "数组、函数",
-      "date": "2020-06-09"
+      "date": "2020-02-26"
     },
     {
-      "path": "@/notes/javascript/08.md",
+      "path": "@/notes/03js/01javascript/08.md",
       "name": "基本包装类型",
-      "date": "2020-06-10"
+      "date": "2020-02-27"
     },
     {
-      "path": "@/notes/javascript/09.md",
+      "path": "@/notes/03js/01javascript/09.md",
       "name": "面向对象设计",
-      "date": "2020-06-11"
+      "date": "2020-02-28"
     },
     {
-      "path": "@/notes/javascript/10.md",
+      "path": "@/notes/03js/01javascript/10.md",
       "name": "函数表达式",
-      "date": "2020-06-12"
+      "date": "2020-03-02"
     },
     {
-      "path": "@/notes/javascript/11.md",
+      "path": "@/notes/03js/01javascript/11.md",
       "name": "BOM",
-      "date": "2020-06-15"
+      "date": "2020-03-03"
     },
     {
-      "path": "@/notes/javascript/12.md",
+      "path": "@/notes/03js/01javascript/12.md",
       "name": "客户端检测",
-      "date": "2020-06-16"
+      "date": "2020-03-04"
     },
     {
-      "path": "@/notes/javascript/13.md",
+      "path": "@/notes/03js/01javascript/13.md",
       "name": "DOM 类型",
-      "date": "2020-06-17"
+      "date": "2020-03-05"
     },
     {
-      "path": "@/notes/javascript/14.md",
+      "path": "@/notes/03js/01javascript/14.md",
       "name": "DOM 操作",
-      "date": "2020-06-18"
+      "date": "2020-03-06"
     },
     {
-      "path": "@/notes/javascript/15.md",
+      "path": "@/notes/03js/01javascript/15.md",
       "name": "DOM 扩展",
-      "date": "2020-06-19"
+      "date": "2020-03-09"
     },
     {
-      "path": "@/notes/javascript/16.md",
+      "path": "@/notes/03js/01javascript/16.md",
       "name": "DOM2 和 DOM3",
-      "date": "2020-06-22"
+      "date": "2020-03-10"
     },
     {
-      "path": "@/notes/javascript/17.md",
+      "path": "@/notes/03js/01javascript/17.md",
       "name": "事件",
-      "date": "2020-06-23"
+      "date": "2020-03-11"
     },
     {
-      "path": "@/notes/javascript/18.md",
+      "path": "@/notes/03js/01javascript/18.md",
       "name": "表单脚本",
-      "date": "2020-06-24"
+      "date": "2020-03-12"
     },
     {
-      "path": "@/notes/javascript/19.md",
+      "path": "@/notes/03js/01javascript/19.md",
       "name": "Canvas 绘图",
-      "date": "2020-06-25"
+      "date": "2020-03-13"
     },
     {
-      "path": "@/notes/javascript/20.md",
+      "path": "@/notes/03js/01javascript/20.md",
       "name": "Html5脚本编程",
-      "date": "2020-06-26"
+      "date": "2020-03-16"
     },
     {
-      "path": "@/notes/javascript/21.md",
+      "path": "@/notes/03js/01javascript/21.md",
       "name": "XML、JSON和AJAX",
-      "date": "2020-06-29"
+      "date": "2020-03-17"
     },
     {
-      "path": "@/notes/javascript/22.md",
+      "path": "@/notes/03js/01javascript/22.md",
       "name": "高级技巧与新兴API",
-      "date": "2020-06-30"
+      "date": "2020-03-18"
     },
     {
       "path": "",
       "name": "typeScript"
     },
     {
-      "path": "@/notes/typescript/01.md",
+      "path": "@/notes/03js/03typescript/01.md",
       "name": "简介和使用",
-      "date": "2020-07-01"
+      "date": "2020-03-19"
     },
     {
-      "path": "@/notes/typescript/02.md",
+      "path": "@/notes/03js/03typescript/02.md",
       "name": "基础类型",
-      "date": "2020-07-02"
+      "date": "2020-03-20"
     },
     {
-      "path": "@/notes/typescript/03.md",
+      "path": "@/notes/03js/03typescript/03.md",
       "name": "变量声明",
-      "date": "2020-07-03"
+      "date": "2020-03-23"
     },
     {
-      "path": "@/notes/typescript/04.md",
+      "path": "@/notes/03js/03typescript/04.md",
       "name": "接口",
-      "date": "2020-07-06"
+      "date": "2020-03-24"
     },
     {
-      "path": "@/notes/typescript/05.md",
+      "path": "@/notes/03js/03typescript/05.md",
       "name": "类",
-      "date": "2020-07-07"
+      "date": "2020-03-25"
     },
     {
-      "path": "@/notes/typescript/06.md",
+      "path": "@/notes/03js/03typescript/06.md",
       "name": "函数",
-      "date": "2020-07-08"
+      "date": "2020-03-26"
     },
     {
-      "path": "@/notes/typescript/07.md",
+      "path": "@/notes/03js/03typescript/07.md",
       "name": "泛型",
-      "date": "2020-07-09"
+      "date": "2020-03-27"
     },
     {
-      "path": "@/notes/typescript/08.md",
+      "path": "@/notes/03js/03typescript/08.md",
       "name": "枚举",
-      "date": "2020-07-10"
+      "date": "2020-03-30"
     },
 
     {
-      "path": "@/notes/typescript/09.md",
+      "path": "@/notes/03js/03typescript/09.md",
       "name": "类型推论",
-      "date": "2020-07-13"
+      "date": "2020-03-31"
     },
     {
-      "path": "@/notes/typescript/10.md",
+      "path": "@/notes/03js/03typescript/10.md",
       "name": "类型兼容性",
-      "date": "2020-07-14"
+      "date": "2020-04-01"
     },
     {
-      "path": "@/notes/typescript/11.md",
+      "path": "@/notes/03js/03typescript/11.md",
       "name": "高级类型",
-      "date": "2020-07-15"
+      "date": "2020-04-02"
     },
     {
-      "path": "@/notes/typescript/12.md",
+      "path": "@/notes/03js/03typescript/12.md",
       "name": "Symbols",
-      "date": "2020-07-16"
+      "date": "2020-04-03"
     },
     {
-      "path": "@/notes/typescript/13.md",
+      "path": "@/notes/03js/03typescript/13.md",
       "name": "迭代器和生成器",
-      "date": "2020-07-17"
+      "date": "2020-04-07"
     },
 
     {
-      "path": "@/notes/typescript/14.md",
+      "path": "@/notes/03js/03typescript/14.md",
       "name": "模块",
-      "date": "2020-07-20"
+      "date": "2020-04-08"
     },
     {
-      "path": "@/notes/typescript/15.md",
+      "path": "@/notes/03js/03typescript/15.md",
       "name": "命名空间",
-      "date": "2020-07-21"
+      "date": "2020-04-09"
     },
     {
-      "path": "@/notes/typescript/16.md",
+      "path": "@/notes/03js/03typescript/16.md",
       "name": "命名空间和模块",
-      "date": "2020-07-22"
+      "date": "2020-04-10"
     },
     {
-      "path": "@/notes/typescript/17.md",
+      "path": "@/notes/03js/03typescript/17.md",
       "name": "模块解析",
-      "date": "2020-07-23"
+      "date": "2020-04-13"
     },
     {
-      "path": "@/notes/typescript/18.md",
+      "path": "@/notes/03js/03typescript/18.md",
       "name": "声明合并",
-      "date": "2020-07-24"
+      "date": "2020-04-14"
     },
 
     {
-      "path": "@/notes/typescript/19.md",
+      "path": "@/notes/03js/03typescript/19.md",
       "name": "JSX",
-      "date": "2020-07-27"
+      "date": "2020-04-15"
     },
     {
-      "path": "@/notes/typescript/20.md",
+      "path": "@/notes/03js/03typescript/20.md",
       "name": "装饰器",
-      "date": "2020-07-28"
+      "date": "2020-04-16"
     },
     {
-      "path": "@/notes/typescript/21.md",
+      "path": "@/notes/03js/03typescript/21.md",
       "name": "Mixins",
-      "date": "2020-07-29"
+      "date": "2020-04-17"
     },
     {
-      "path": "@/notes/typescript/22.md",
+      "path": "@/notes/03js/03typescript/22.md",
       "name": "三斜线指令",
-      "date": "2020-07-30"
+      "date": "2020-04-20"
     },
     {
-      "path": "@/notes/typescript/23.md",
+      "path": "@/notes/03js/03typescript/23.md",
       "name": "Javascript文件类型检查",
-      "date": "2020-07-31"
+      "date": "2020-04-21"
     },
-
     {
       "path": "",
       "name": "Vue"
     },
     {
-      "path": "@/notes/vue/01.md",
+      "path": "@/notes/04vue/01vue/01.md",
       "name": "Vue介绍",
-      "date": "2020-08-03"
+      "date": "2020-04-22"
     },
     {
-      "path": "@/notes/vue/02.md",
+      "path": "@/notes/04vue/01vue/02.md",
       "name": "Vue实例",
-      "date": "2020-07-02"
+      "date": "2020-04-23"
     },
     {
-      "path": "@/notes/vue/03.md",
+      "path": "@/notes/04vue/01vue/03.md",
       "name": "模板语法",
-      "date": "2020-07-03"
+      "date": "2020-04-26"
     },
     {
-      "path": "@/notes/vue/04.md",
+      "path": "@/notes/04vue/01vue/04.md",
       "name": "计算属性和侦听器",
-      "date": "2020-07-04"
+      "date": "2020-04-27"
     },
     {
-      "path": "@/notes/vue/05.md",
+      "path": "@/notes/04vue/01vue/05.md",
       "name": "Class与Style绑定",
-      "date": "2020-07-05"
+      "date": "2020-04-28"
     },
     {
-      "path": "@/notes/vue/06.md",
+      "path": "@/notes/04vue/01vue/06.md",
       "name": "条件渲染",
-      "date": "2020-07-06"
+      "date": "2020-04-29"
     },
     {
-      "path": "@/notes/vue/07.md",
+      "path": "@/notes/04vue/01vue/07.md",
       "name": "列表渲染",
-      "date": "2020-07-07"
+      "date": "2020-04-30"
     },
     {
-      "path": "@/notes/vue/08.md",
+      "path": "@/notes/04vue/01vue/08.md",
       "name": "事件处理",
-      "date": "2020-07-08"
+      "date": "2020-05-06"
     },
     {
-      "path": "@/notes/vue/09.md",
+      "path": "@/notes/04vue/01vue/09.md",
       "name": "表单输入绑定",
-      "date": "2020-07-09"
+      "date": "2020-05-07"
     },
     {
-      "path": "@/notes/vue/10.md",
+      "path": "@/notes/04vue/01vue/10.md",
       "name": "组件基础",
-      "date": "2020-07-10"
+      "date": "2020-05-08"
     },
     {
-      "path": "@/notes/vue/11.md",
+      "path": "@/notes/04vue/01vue/11.md",
       "name": "组件注册",
-      "date": "2020-07-11"
+      "date": "2020-05-09"
     },
     {
-      "path": "@/notes/vue/12.md",
+      "path": "@/notes/04vue/01vue/12.md",
       "name": "组件Prop",
-      "date": "2020-07-12"
+      "date": "2020-05-11"
     },
     {
-      "path": "@/notes/vue/13.md",
+      "path": "@/notes/04vue/01vue/13.md",
       "name": "组件自定义事件",
-      "date": "2020-07-13"
+      "date": "2020-05-12"
     },
     {
-      "path": "@/notes/vue/14.md",
+      "path": "@/notes/04vue/01vue/14.md",
       "name": "组件插槽",
-      "date": "2020-07-14"
+      "date": "2020-05-13"
     },
     {
-      "path": "@/notes/vue/15.md",
+      "path": "@/notes/04vue/01vue/15.md",
       "name": "组件动态异步",
-      "date": "2020-07-15"
+      "date": "2020-05-14"
     },
     {
-      "path": "@/notes/vue/16.md",
+      "path": "@/notes/04vue/01vue/16.md",
       "name": "组件处理边界情况",
-      "date": "2020-07-16"
+      "date": "2020-05-15"
     },
     {
-      "path": "@/notes/vue/17.md",
+      "path": "@/notes/04vue/01vue/17.md",
       "name": "单元素/组件的过渡",
-      "date": "2020-07-17"
+      "date": "2020-05-18"
     },
     {
-      "path": "@/notes/vue/18.md",
+      "path": "@/notes/04vue/01vue/18.md",
       "name": "多元素/组件的过渡",
-      "date": "2020-07-18"
+      "date": "2020-05-19"
     },
     {
-      "path": "@/notes/vue/19.md",
+      "path": "@/notes/04vue/01vue/19.md",
       "name": "列表过渡",
-      "date": "2020-07-19"
+      "date": "2020-05-20"
     },
     {
-      "path": "@/notes/vue/20.md",
+      "path": "@/notes/04vue/01vue/20.md",
       "name": "状态过渡",
-      "date": "2020-07-20"
+      "date": "2020-05-21"
     },
     {
-      "path": "@/notes/vue/21.md",
+      "path": "@/notes/04vue/01vue/21.md",
       "name": "混入",
-      "date": "2020-07-21"
+      "date": "2020-05-22"
     },
     {
-      "path": "@/notes/vue/22.md",
+      "path": "@/notes/04vue/01vue/22.md",
       "name": "自定义插件",
-      "date": "2020-07-22"
+      "date": "2020-05-25"
     },
     {
-      "path": "@/notes/vue/23.md",
+      "path": "@/notes/04vue/01vue/23.md",
       "name": "渲染函数&JSX",
-      "date": "2020-07-23"
+      "date": "2020-05-26"
     },
     {
-      "path": "@/notes/vue/24.md",
+      "path": "@/notes/04vue/01vue/24.md",
       "name": "插件",
-      "date": "2020-07-24"
+      "date": "2020-05-27"
     },
     {
-      "path": "@/notes/vue/25.md",
+      "path": "@/notes/04vue/01vue/25.md",
       "name": "过滤器",
-      "date": "2020-07-25"
-    },
-    {
-      "path": "",
-      "name": "复习"
-    },
-    {
-      "path": "@/views/plan.vue",
-      "name": "复习"
+      "date": "2020-05-28"
     },
     {
       "path": "",
@@ -418,5 +397,6 @@
       "name": "主题配置+复选框、单选框",
       "date": "2020-09-04"
     }
+
   ]
 }
