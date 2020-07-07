@@ -1,7 +1,7 @@
 <template>
   <div class="hv-snippet">
     <h2 class="hv-snippet--title">
-      <slot name="title">`·title·`</slot>
+      <slot name="title">{{ title }}</slot>
     </h2>
     <slot></slot>
   </div>

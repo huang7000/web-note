@@ -14,6 +14,13 @@ routes.forEach(({ path }) => {
     component: () => import(`.${path.replace(/@/, "")}`)
   });
 });
+
+children.push({
+  path: "/plan",
+  name: "plan",
+  component: () => import("@/views/plan.vue")
+});
+
 let firstRoute = { path: "/", name: "notes", component: children[0].component };
 export default new Router({
   mode: process.argv.includes("--gh-pages") ? "hash" : "history",
