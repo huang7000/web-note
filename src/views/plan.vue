@@ -1,14 +1,18 @@
 <template>
   <div class="hv-plan">
-    <hv-snippet v-for="({date,rows}, index) in planGroupList" :key="index" :title="date">
+    <hv-snippet
+      v-for="({ date, rows }, index) in planGroupList"
+      :key="index"
+      :title="date"
+    >
       <div
-        v-for="({plan:{name,path},day},index) in rows"
+        v-for="({ plan: { name, path, date: createdate }, day }, index) in rows"
         :key="index"
         :class="`hv-plan--item hv-plan--item-color-${index}`"
         @click="handlePalnClick(path)"
       >
-        {{ name }}
-        <div v-if="day==60" class="hv-plan--item-last">LAST</div>
+        {{ name + " " + createdate }}
+        <div v-if="day === 365" class="hv-plan--item-last">LAST</div>
       </div>
     </hv-snippet>
   </div>
@@ -27,10 +31,10 @@ export default {
   computed: {
     planGroupList() {
       let planMap = {};
-      let intervalList = [0, 1, 2, 4, 7, 15, 30, 60];
+      let intervalList = [0, 1, 2, 4, 7, 15, 30, 60, 100, 365];
       this.planList.forEach(plan => {
         const { date, name, path } = plan;
-        if (!path || !date) return;
+        if (!name || !path || !date) return;
         intervalList.forEach(interval => {
           let reviewDate = moment(date).add(interval, "days");
           if (reviewDate.isBefore(moment(), "day")) return;
