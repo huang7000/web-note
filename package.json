@@ -1,5 +1,5 @@
 {
-  "name": "web-notes",
+  "name": "web-note",
   "version": "0.3.0",
   "title": "Web Notes",
   "description": "vue+markdown 学习笔记编译成网站",
@@ -15,10 +15,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/huang7000/web-notes"
+    "url": "https://github.com/huang7000/web-note"
   },
   "bugs": {
-    "url": "https://github.com/huang7000/web-notes/issues"
+    "url": "https://github.com/huang7000/web-note/issues"
   },
   "scripts": {
     "dev": "tsc -watch -p ./",

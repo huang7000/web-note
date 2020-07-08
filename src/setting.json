@@ -372,31 +372,6 @@
       "path": "@/notes/04vue/01vue/25.md",
       "name": "过滤器",
       "date": "2020-05-28"
-    },
-    {
-      "path": "",
-      "name": "Vue项目"
-    },
-    {
-      "path": "@/notes/vueproject/01.md",
-      "name": "Vue+Travis自动构建发布",
-      "date": "2020-09-01"
-    },
-    {
-      "path": "@/notes/vueproject/02.md",
-      "name": "Markddown 文档示例",
-      "date": "2020-09-02"
-    },
-    {
-      "path": "@/notes/vueproject/03.md",
-      "name": "组件开发、发布、安装",
-      "date": "2020-09-03"
-    },
-    {
-      "path": "@/notes/vueproject/04.md",
-      "name": "主题配置+复选框、单选框",
-      "date": "2020-09-04"
     }
-
   ]
 }
