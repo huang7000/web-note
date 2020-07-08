@@ -1,42 +1,56 @@
 <template>
-  <div :class="['hv-home',mediaClass]"
-       :style="{'height':`${windowHeight}px`}"
-       @click="handleClickOutSide">
-
-    <div class="hv-home--sidebar"
-         @click.stop>
-      <button class="hv-home--sidebar-button"
-              @click="showMenu = !showMenu"
-              :class="menuClass"></button>
+  <div
+    :class="['hv-home', mediaClass]"
+    :style="{ height: `${windowHeight}px` }"
+    @click="handleClickOutSide"
+  >
+    <div class="hv-home--sidebar" @click.stop>
+      <button
+        class="hv-home--sidebar-button"
+        @click="showMenu = !showMenu"
+        :class="menuClass"
+      ></button>
       <hv-transition-collapse>
-        <div class="hv-home--sidebar-menu"
-             v-show="showMenu">
-          <template v-for="({path,name},index) in routeList">
-            <h3 class="hv-home--sidebar-title"
-                v-if="!convertUrl(path)"
-                :key="index">{{name}}</h3>
-            <router-link class="hv-home--sidebar-link"
-                         v-else
-                         :key="index"
-                         :to="convertUrl(path)"
-                         @click.native="handleRouteLinkClick">{{name}}</router-link>
+        <div class="hv-home--sidebar-menu" v-show="showMenu">
+          <template v-for="({ path, name }, index) in routeList">
+            <h3
+              class="hv-home--sidebar-title"
+              v-if="!convertUrl(path)"
+              :key="index"
+            >
+              {{ name }}
+            </h3>
+            <router-link
+              class="hv-home--sidebar-link"
+              v-else
+              :key="index"
+              :to="convertUrl(path)"
+              @click.native="handleRouteLinkClick"
+              >{{ name }}</router-link
+            >
           </template>
         </div>
       </hv-transition-collapse>
     </div>
-    <div class="hv-home--content"
-         @scroll="handleScroll"
-         ref="main">
+    <div class="hv-home--content" @scroll="handleScroll" ref="main">
       <div class="hv-home--banner">
-        <div>Web Notes</div>
-        <a class="hv-home--banner-link"
-           :href="github"><i class="hv-icon-star"></i>Star on GitHub</a>
+        <div>Web Note</div>
+        <a class="hv-home--banner-link" :href="github"
+          ><i class="hv-icon-star"></i>Star on GitHub</a
+        >
       </div>
       <div class="hv-home--tags">
-        <div :class="['hv-home--tag',{'hv-home--tag-active':selectTagIndex==index}]"
-             v-for="({name}, index) in tagList"
-             :key="index"
-             @click="selectTagIndex=index">{{name}}</div>
+        <div
+          :class="[
+            'hv-home--tag',
+            { 'hv-home--tag-active': selectTagIndex == index }
+          ]"
+          v-for="({ name }, index) in tagList"
+          :key="index"
+          @click="selectTagIndex = index"
+        >
+          {{ name }}
+        </div>
       </div>
       <div class="hv-home--view">
         <transition name="hv-fade-in">
@@ -44,8 +58,13 @@
         </transition>
       </div>
     </div>
-    <div :class="['hv-home--back-top',{'hv-home--back-top-visiable':showBackToTop}]"
-         @click.stop="handleBackToTop">
+    <div
+      :class="[
+        'hv-home--back-top',
+        { 'hv-home--back-top-visiable': showBackToTop }
+      ]"
+      @click.stop="handleBackToTop"
+    >
       <i class="hv-icon-icon-arrow-up"></i>
     </div>
   </div>

@@ -1,7 +1,7 @@
 {
   "name": "web-note",
   "version": "0.3.0",
-  "title": "Web Notes",
+  "title": "Web Note",
   "description": "vue+markdown 学习笔记编译成网站",
   "homepage": "http://www.huang7000.com",
   "keywords": [

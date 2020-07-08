@@ -1,10 +1,6 @@
 <template>
   <div class="hv-plan">
-    <hv-snippet
-      v-for="({ date, rows }, index) in planGroupList"
-      :key="index"
-      :title="date"
-    >
+    <hv-snippet v-for="({ date, rows }, index) in planGroupList" :key="index" :title="date">
       <div
         v-for="({ plan: { name, path, date: createdate }, day }, index) in rows"
         :key="index"
@@ -12,7 +8,7 @@
         @click="handlePalnClick(path)"
       >
         {{ name + " " + createdate }}
-        <div v-if="day === 365" class="hv-plan--item-last">LAST</div>
+        <div v-if="day === 60" class="hv-plan--item-last">LAST</div>
       </div>
     </hv-snippet>
   </div>
@@ -24,14 +20,36 @@ import { routes } from "@/setting";
 
 export default {
   data() {
+    let firstdate = new Date("2020-07-09");
+    let routescopy = routes.map(item => {
+      if (
+        item.path &&
+        item.path !== "@/views/plan.vue" &&
+        item.path !== "@/notes/00note.md"
+      ) {
+        var year = firstdate.getFullYear();
+        var month = firstdate.getMonth() + 1;
+        var day = firstdate.getDate();
+        if (month >= 1 && month <= 9) {
+          month = "0" + month;
+        }
+        item.date = year + "-" + month + "-" + day;
+        firstdate = firstdate.setDate(firstdate.getDate() + 1);
+        firstdate = new Date(firstdate);
+        return item;
+      } else {
+        return item;
+      }
+    });
+
     return {
-      planList: routes
+      planList: routescopy
     };
   },
   computed: {
     planGroupList() {
       let planMap = {};
-      let intervalList = [0, 1, 2, 4, 7, 15, 30, 60, 100, 365];
+      let intervalList = [0, 1, 2, 4, 7, 15, 30, 60];
       this.planList.forEach(plan => {
         const { date, name, path } = plan;
         if (!name || !path || !date) return;
