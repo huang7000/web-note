@@ -10,6 +10,52 @@
     },
     {
       "path": "",
+      "name": "HTML"
+    },
+    {
+      "path": "@/notes/01html/01.md",
+      "name": "html标签"
+    },
+    {
+      "path": "@/notes/01html/02.md",
+      "name": "html5标签"
+    },
+    {
+      "path": "@/notes/01html/03.md",
+      "name": "属性"
+    },
+    {
+      "path": "@/notes/01html/04.md",
+      "name": "html事件"
+    },
+    {
+      "path": "@/notes/01html/05.md",
+      "name": "html5事件"
+    },
+    {
+      "path": "@/notes/01html/06.md",
+      "name": "http方法"
+    },
+    {
+      "path": "@/notes/01html/07.md",
+      "name": "http消息"
+    },
+    {
+      "path": "@/notes/01html/08.md",
+      "name": "html补充"
+    },
+    {
+      "path": "@/notes/01html/09.md",
+      "name": "html5补充"
+    },
+    {
+      "path": "@/notes/01html/10.md",
+      "name": "案例"
+    },
+
+
+    {
+      "path": "",
       "name": "JavaScript"
     },
     {
