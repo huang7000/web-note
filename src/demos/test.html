@@ -1,22 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>定义标题</title>
-  </head>
-  <body>
-    <!-- 曹雪芹 -->
-    <h1>好了歌</h1>
-    <h3>跛足道人</h3>
-    <hr />
-    <p>
-      世人都晓神仙好,惟有功名忘不了!  古今将相在何方?荒冢一堆草没了。<br />
-      世人都晓神仙好,只有金银忘不了!  终朝只恨聚无多,及到多时眼闭了。<br />
-      世人都晓神仙好,只有娇妻忘不了!  君生日日说恩情,君死又随人去了。<br />
-      世人都晓神仙好,只有儿孙忘不了!  痴心父母古来多,孝顺儿孙谁见了?<br />
-    </p>
-    <hr />
-  </body>
+<html>
+
+<head>
+  <meta name="description" content="免费在线教程">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+  <meta name="author" content="runoob">
+  <meta charset="UTF-8">
+  <title>文档标题</title>
+</head>
+
+<body>
+  原值: <input type="text" id="field1" value="Hello World!"><br>
+  复制: <input type="text" id="field2" disabled>
+  <br><br>
+  <button onclick="copyText()">单击复制文本</button><br>
+  <button ondblclick="copyText()">双击复制文本</button><br>
+  <p id="p1" onmousedown="mouseDown()" onmouseup="mouseUp()">
+    点击文本!
+    在鼠标按下时触发 mouseDown()函数，该函数修改文本样式为红色。
+    在鼠标松开时触发 mouseUp()函数,该函数修改文本样式为绿色。
+  </p>
+  <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="https://www.runoob.com/try/demo_source/smiley.gif" alt="Smiley" width="32"
+    height="32">
+
+  <p>当用户将鼠标移动到图片上时触发 bigImg() 函数。该函数使图片变大。</p>
+  <p>当用户将鼠标移开图片时触发 normalImg() 函数。该函数使图片变回原来大写。</p>
+
+  <img onmousemove="bigImg(this)" onmouseout="normalImg(this)" border="0" src="https://www.runoob.com/try/demo_source/smiley.gif" alt="Smiley" width="32"
+    height="32">
+
+  <p>当用户将鼠标移动到图片时触发 bigImg() 函数。该函数使图片变大。</p>
+  <p>当用户将鼠标移开时触发 normalImg() 函数。该函数使图片变回原来大小。</p>
+
+  <script>
+    function copyText() {
+      document.getElementById("field2").value = document.getElementById("field1").value;
+    }
+
+    function mouseDown() {
+      document.getElementById("p1").style.color = "red";
+    }
+
+    function mouseUp() {
+      document.getElementById("p1").style.color = "green";
+    }
+
+    function bigImg(x) {
+      x.style.height = "64px";
+      x.style.width = "64px";
+    }
+
+    function normalImg(x) {
+      x.style.height = "32px";
+      x.style.width = "32px";
+    }
+  </script>
+
+</body>
+
 </html>
