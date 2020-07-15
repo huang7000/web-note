@@ -52,8 +52,31 @@
       "path": "@/notes/01html/10.md",
       "name": "案例"
     },
-
-
+    {
+      "path": "",
+      "name": "CSS"
+    },
+    {
+      "path": "@/notes/02css/01.md",
+      "name": "css"
+    },
+    {
+      "path": "@/notes/02css/02.md",
+      "name": "css3"
+    },
+    {
+      "path": "@/notes/02css/03.md",
+      "name": "css补充"
+    },
+    {
+      "path": "@/notes/02css/04.md",
+      "name": "css3补充"
+    },
+    {
+      "path": "@/notes/02css/05.md",
+      "name": "案例"
+    },
+   
     {
       "path": "",
       "name": "JavaScript"

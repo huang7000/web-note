@@ -1,58 +1,74 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 
 <head>
-  <meta name="description" content="免费在线教程">
-  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
-  <meta name="author" content="runoob">
-  <meta charset="UTF-8">
-  <title>文档标题</title>
+  <meta charset="utf-8">
+  <title>菜鸟教程(runoob.com)</title>
+  <style>
+    .droptarget {
+      float: left;
+      width: 100px;
+      height: 35px;
+      margin: 15px;
+      padding: 10px;
+      border: 1px solid #aaaaaa;
+    }
+  </style>
 </head>
 
 <body>
-  原值: <input type="text" id="field1" value="Hello World!"><br>
-  复制: <input type="text" id="field2" disabled>
-  <br><br>
-  <button onclick="copyText()">单击复制文本</button><br>
-  <button ondblclick="copyText()">双击复制文本</button><br>
-  <p id="p1" onmousedown="mouseDown()" onmouseup="mouseUp()">
-    点击文本!
-    在鼠标按下时触发 mouseDown()函数，该函数修改文本样式为红色。
-    在鼠标松开时触发 mouseUp()函数,该函数修改文本样式为绿色。
-  </p>
-  <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="https://www.runoob.com/try/demo_source/smiley.gif" alt="Smiley" width="32"
-    height="32">
 
-  <p>当用户将鼠标移动到图片上时触发 bigImg() 函数。该函数使图片变大。</p>
-  <p>当用户将鼠标移开图片时触发 normalImg() 函数。该函数使图片变回原来大写。</p>
-
-  <img onmousemove="bigImg(this)" onmouseout="normalImg(this)" border="0" src="https://www.runoob.com/try/demo_source/smiley.gif" alt="Smiley" width="32"
-    height="32">
-
-  <p>当用户将鼠标移动到图片时触发 bigImg() 函数。该函数使图片变大。</p>
-  <p>当用户将鼠标移开时触发 normalImg() 函数。该函数使图片变回原来大小。</p>
-
+  <p>在两个矩形框中来回拖动 p 元素:</p>
+  <div class="droptarget" ondrop="drop(event)" ondragover="dragOver(event)" ondragenter="dragEnter(event)"
+    ondragleave="dragLeave(event)">
+    <p ondragstart="dragStart(event)" ondrag="drag(event)" ondragend="dragEnd(event)" draggable="true" id="dragtarget">
+      拖动我!</p>
+  </div>
+  <div class="droptarget" ondrop="drop(event)" ondragover="dragOver(event)" ondragenter="dragEnter(event)"
+    ondragleave="dragLeave(event)">
+  </div>
+  <p style="clear:both;"><strong>注意：</strong>Internet Explorer 8 及更早 IE 版本或 Safari 5.1 及更早版本的浏览器不支持 drag 事件。</p>
+  <p id="demo"></p>
   <script>
-    function copyText() {
-      document.getElementById("field2").value = document.getElementById("field1").value;
+    function dragStart(event) {
+      //dataTransfer.setData()方法设置数据类型和拖动的数据
+      event.dataTransfer.setData("Text", event.target.id);
+      // 拖动 p 元素时输出一些文本
+      document.getElementById("demo").innerHTML = "开始拖动 p 元素.";
+      //修改拖动元素的透明度
+      event.target.style.opacity = "0.4";
     }
-
-    function mouseDown() {
-      document.getElementById("p1").style.color = "red";
+    function dragEnd(event) {
+      document.getElementById("demo").innerHTML = "完成 p 元素的拖动";
+      event.target.style.opacity = "1";
     }
-
-    function mouseUp() {
-      document.getElementById("p1").style.color = "green";
+    function drag(event) {
+      document.getElementById("demo").style.color = "red";
+      //document.getElementById("demo").innerHTML = " p 元素正在拖动";
     }
-
-    function bigImg(x) {
-      x.style.height = "64px";
-      x.style.width = "64px";
+    function dragEnter(event) {
+      if (event.target.className == "droptarget") {
+        //document.getElementById("demo").innerHTML = "进入放置区域";
+        event.target.style.border = "3px dotted red";
+      }
     }
-
-    function normalImg(x) {
-      x.style.height = "32px";
-      x.style.width = "32px";
+    function dragLeave(event) {
+      if (event.target.className == "droptarget") {
+        //document.getElementById("demo").innerHTML = "离开放置区域";
+        event.target.style.border = "";
+      }
+    }
+    function dragOver(event) {
+      event.preventDefault();
+    }
+    function drop(event) {
+      event.preventDefault();
+      if (event.target.className == "droptarget") {
+        document.getElementById("demo").style.color = "";
+        event.target.style.border = "";
+        var data = event.dataTransfer.getData("Text");
+        event.target.appendChild(document.getElementById(data));
+      }
     }
   </script>
 
