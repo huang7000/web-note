@@ -1,77 +1,150 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <title>菜鸟教程(runoob.com)</title>
   <style>
-    .droptarget {
+    div.static {
+      position: static;
+      border: 3px solid #73AD21;
+    }
+
+    p.position-fixed {
+      position: fixed;
+      top: 30px;
+      right: 5px;
+    }
+
+    p.position-left {
+      position: relative;
+      left: -20px;
+    }
+
+    p.position-right {
+      position: relative;
+      left: 20px;
+    }
+
+    p.position-top {
+      position: relative;
+      top: -30px;
+    }
+
+    h2.position-absolute {
+      position: absolute;
+      left: 250px;
+      top: 150px;
+    }
+
+    div.sticky {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      padding: 5px;
+      background-color: #cae8ca;
+      border: 2px solid #4CAF50;
+    }
+
+    img.position-clip {
+      position: absolute;
+      clip: rect(0px, 60px, 200px, 0px);
+    }
+
+    p img {
+      float: right;
+    }
+
+    div.scroll {
+      background-color: lightblue;
+      width: 180px;
+      height: 180px;
+      overflow: scroll;
+    }
+
+    p.inline {
+      display: inline
+    }
+
+    img.index {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: -1;
+    }
+
+    img.clear {
       float: left;
-      width: 100px;
-      height: 35px;
-      margin: 15px;
-      padding: 10px;
-      border: 1px solid #aaaaaa;
+    }
+
+    p.clear {
+      clear: both;
     }
   </style>
+
 </head>
 
 <body>
-
-  <p>在两个矩形框中来回拖动 p 元素:</p>
-  <div class="droptarget" ondrop="drop(event)" ondragover="dragOver(event)" ondragenter="dragEnter(event)"
-    ondragleave="dragLeave(event)">
-    <p ondragstart="dragStart(event)" ondrag="drag(event)" ondragend="dragEnd(event)" draggable="true" id="dragtarget">
-      拖动我!</p>
+  <img class="index" src="https://www.runoob.com/try/demo_source/w3css.gif" width="100" height="140" />
+  <p>因为图像元素设置了 z-index 属性值为 -1, 所以它会显示在文字之后。</p>
+  <div class="static">
+    使用 position: static; 定位的元素，无特殊定位，遵循正常的文档流对象:
   </div>
-  <div class="droptarget" ondrop="drop(event)" ondragover="dragOver(event)" ondragenter="dragEnter(event)"
-    ondragleave="dragLeave(event)">
-  </div>
-  <p style="clear:both;"><strong>注意：</strong>Internet Explorer 8 及更早 IE 版本或 Safari 5.1 及更早版本的浏览器不支持 drag 事件。</p>
-  <p id="demo"></p>
-  <script>
-    function dragStart(event) {
-      //dataTransfer.setData()方法设置数据类型和拖动的数据
-      event.dataTransfer.setData("Text", event.target.id);
-      // 拖动 p 元素时输出一些文本
-      document.getElementById("demo").innerHTML = "开始拖动 p 元素.";
-      //修改拖动元素的透明度
-      event.target.style.opacity = "0.4";
-    }
-    function dragEnd(event) {
-      document.getElementById("demo").innerHTML = "完成 p 元素的拖动";
-      event.target.style.opacity = "1";
-    }
-    function drag(event) {
-      document.getElementById("demo").style.color = "red";
-      //document.getElementById("demo").innerHTML = " p 元素正在拖动";
-    }
-    function dragEnter(event) {
-      if (event.target.className == "droptarget") {
-        //document.getElementById("demo").innerHTML = "进入放置区域";
-        event.target.style.border = "3px dotted red";
-      }
-    }
-    function dragLeave(event) {
-      if (event.target.className == "droptarget") {
-        //document.getElementById("demo").innerHTML = "离开放置区域";
-        event.target.style.border = "";
-      }
-    }
-    function dragOver(event) {
-      event.preventDefault();
-    }
-    function drop(event) {
-      event.preventDefault();
-      if (event.target.className == "droptarget") {
-        document.getElementById("demo").style.color = "";
-        event.target.style.border = "";
-        var data = event.dataTransfer.getData("Text");
-        event.target.appendChild(document.getElementById(data));
-      }
-    }
-  </script>
+  <p class="position-fixed">Some more text</p>
+  <p><b>注意:</b> IE7 和 IE8 支持只有一个 !DOCTYPE 指定固定值.</p>
+  <p> 世人都晓神仙好,惟有功名忘不了! <br> 古今将相在何方?荒冢一堆草没了。<br>
+    世人都晓神仙好,只有金银忘不了!  <br>终朝只恨聚无多,及到多时眼闭了。<br>
+    世人都晓神仙好,只有娇妻忘不了!  <br>君生日日说恩情,君死又随人去了。<br>
+    世人都晓神仙好,只有儿孙忘不了!  <br>痴心父母古来多,孝顺儿孙谁见了?<br></p>
 
+  <p>这是位于正常位置的标题</p>
+  <p class="position-left">这个标题相对于其正常位置向左移动</p>
+  <p class="position-right">这个标题相对于其正常位置向右移动</p>
+  <p>这是位于正常位置的标题</p>
+  <p class="position-top">这个标题是根据其正常位置向上移动</p>
+  <p><b>注意:</b> 即使相对定位元素的内容是移动,预留空间的元素仍保存在正常流动。</p>
+  <h2 class="position-absolute">这是一个绝对定位了的文本</h2>
+
+  <div class="sticky">我是粘性定位!</div>
+
+  <div>
+    <p>滚动我</p>
+    <p>来回滚动我</p>
+    <p>滚动我</p>
+    <p>来回滚动我</p>
+    <p>滚动我</p>
+    <p>来回滚动我</p>
+  </div>
+  <img src="https://www.runoob.com/try/demo_source/w3css.gif" width="100" height="140" /><br>
+  <img class="position-clip" src="https://www.runoob.com/try/demo_source/w3css.gif" width="100" height="140" />
+
+  <p style="padding-top: 150px;">
+    <img src="https://www.runoob.com/try/demo_source/logocss.gif" width="95" height="84" />
+    世人都晓神仙好,惟有功名忘不了! 古今将相在何方?荒冢一堆草没了。
+    世人都晓神仙好,只有金银忘不了!  终朝只恨聚无多,及到多时眼闭了。
+    世人都晓神仙好,只有娇妻忘不了!  君生日日说恩情,君死又随人去了。
+    世人都晓神仙好,只有儿孙忘不了!  痴心父母古来多,孝顺儿孙谁见了?
+    世人都晓神仙好,惟有功名忘不了! 古今将相在何方?荒冢一堆草没了。
+    世人都晓神仙好,只有金银忘不了!  终朝只恨聚无多,及到多时眼闭了。
+    世人都晓神仙好,只有娇妻忘不了!  君生日日说恩情,君死又随人去了。
+    世人都晓神仙好,只有儿孙忘不了!  痴心父母古来多,孝顺儿孙谁见了?
+  </p>
+  <div class="scroll"> 世人都晓神仙好,惟有功名忘不了! 古今将相在何方?荒冢一堆草没了。
+    世人都晓神仙好,只有金银忘不了!  终朝只恨聚无多,及到多时眼闭了。
+    世人都晓神仙好,只有娇妻忘不了!  君生日日说恩情,君死又随人去了。
+    世人都晓神仙好,只有儿孙忘不了!  痴心父母古来多,孝顺儿孙谁见了?
+  </div>
+  <span style="cursor:crosshair">crosshair</span><br>
+  <span style="cursor:move">move</span><br>
+  <p class="inline">这两个段落生成内联盒子,和它的结果</p>
+
+  <p class="inline">这两个元素之间没有距离。</p>
+
+  <img class="clear" src="https://www.runoob.com/try/demo_source/logocss.gif" width="95" height="84" />
+  <p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.
+  </p>
+  <p class="clear">This is also some text. This is also some text. This is also some text. This is also some text. This
+    is also some text. This is also some text.</p>
 </body>
 
 </html>
