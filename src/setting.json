@@ -58,25 +58,28 @@
     },
     {
       "path": "@/notes/02css/01.md",
-      "name": "css"
+      "name": "css基础属性"
     },
     {
       "path": "@/notes/02css/02.md",
-      "name": "css3"
+      "name": "css表格定位等属性"
     },
     {
       "path": "@/notes/02css/03.md",
-      "name": "css选择器及函数"
+      "name": "css3补充属性"
     },
     {
       "path": "@/notes/02css/04.md",
-      "name": "css3补充"
+      "name": "css3盒子线框等属性"
     },
     {
       "path": "@/notes/02css/05.md",
-      "name": "案例"
+      "name": "css3多媒体过渡等属性"
     },
-   
+    {
+      "path": "@/notes/02css/06.md",
+      "name": "css选择器及函数"
+    },
     {
       "path": "",
       "name": "JavaScript"

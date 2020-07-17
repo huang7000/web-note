@@ -5,146 +5,96 @@
   <meta charset="utf-8">
   <title>菜鸟教程(runoob.com)</title>
   <style>
-    div.static {
-      position: static;
-      border: 3px solid #73AD21;
+    p.color {
+      color: red;
+      /* color: #00ff00; */
+      /* color: rgb(0, 0, 255); */
     }
 
-    p.position-fixed {
-      position: fixed;
-      top: 30px;
-      right: 5px;
+    p.direction {
+      direction: rtl;
+      unicode-bidi: bidi-override;
     }
 
-    p.position-left {
-      position: relative;
-      left: -20px;
+    p.line-height {
+      line-height: 70%;
+      /* line-height: 25px; */
     }
 
-    p.position-right {
-      position: relative;
-      left: 20px;
+    p.text-transform1 {
+      text-transform: capitalize;
+      /* text-transform: uppercase; */
     }
 
-    p.position-top {
-      position: relative;
-      top: -30px;
+    p.text-indent {
+      text-indent: 50px;
     }
 
-    h2.position-absolute {
-      position: absolute;
-      left: 250px;
-      top: 150px;
+    p.text-decoration {
+      text-decoration: overline;
+      /* text-decoration: underline; */
     }
 
-    div.sticky {
-      position: -webkit-sticky;
-      position: sticky;
-      top: 0;
-      padding: 5px;
-      background-color: #cae8ca;
-      border: 2px solid #4CAF50;
+    p.text-align {
+      text-align: center;
+      /* text-align: left; */
     }
 
-    img.position-clip {
-      position: absolute;
-      clip: rect(0px, 60px, 200px, 0px);
+    img.vertical-align {
+      vertical-align: middle;
+      /* vertical-align: text-top; */
+      /* vertical-align: text-bottom; */
     }
 
-    p img {
-      float: right;
+    p.letter-spacin {
+      letter-spacing: 5px;
+      /* letter-spacing: -3px; */
     }
 
-    div.scroll {
-      background-color: lightblue;
-      width: 180px;
-      height: 180px;
-      overflow: scroll;
+    p.white-space {
+      white-space: nowrap;
     }
 
-    p.inline {
-      display: inline
-    }
-
-    img.index {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      z-index: -1;
-    }
-
-    img.clear {
-      float: left;
-    }
-
-    p.clear {
-      clear: both;
+    p.word-spacing {
+      word-spacing: 30px;
     }
   </style>
-
 </head>
 
 <body>
-  <img class="index" src="https://www.runoob.com/try/demo_source/w3css.gif" width="100" height="140" />
-  <p>因为图像元素设置了 z-index 属性值为 -1, 所以它会显示在文字之后。</p>
-  <div class="static">
-    使用 position: static; 定位的元素，无特殊定位，遵循正常的文档流对象:
-  </div>
-  <p class="position-fixed">Some more text</p>
-  <p><b>注意:</b> IE7 和 IE8 支持只有一个 !DOCTYPE 指定固定值.</p>
-  <p> 世人都晓神仙好,惟有功名忘不了! <br> 古今将相在何方?荒冢一堆草没了。<br>
-    世人都晓神仙好,只有金银忘不了!  <br>终朝只恨聚无多,及到多时眼闭了。<br>
-    世人都晓神仙好,只有娇妻忘不了!  <br>君生日日说恩情,君死又随人去了。<br>
-    世人都晓神仙好,只有儿孙忘不了!  <br>痴心父母古来多,孝顺儿孙谁见了?<br></p>
-
-  <p>这是位于正常位置的标题</p>
-  <p class="position-left">这个标题相对于其正常位置向左移动</p>
-  <p class="position-right">这个标题相对于其正常位置向右移动</p>
-  <p>这是位于正常位置的标题</p>
-  <p class="position-top">这个标题是根据其正常位置向上移动</p>
-  <p><b>注意:</b> 即使相对定位元素的内容是移动,预留空间的元素仍保存在正常流动。</p>
-  <h2 class="position-absolute">这是一个绝对定位了的文本</h2>
-
-  <div class="sticky">我是粘性定位!</div>
-
-  <div>
-    <p>滚动我</p>
-    <p>来回滚动我</p>
-    <p>滚动我</p>
-    <p>来回滚动我</p>
-    <p>滚动我</p>
-    <p>来回滚动我</p>
-  </div>
-  <img src="https://www.runoob.com/try/demo_source/w3css.gif" width="100" height="140" /><br>
-  <img class="position-clip" src="https://www.runoob.com/try/demo_source/w3css.gif" width="100" height="140" />
-
-  <p style="padding-top: 150px;">
-    <img src="https://www.runoob.com/try/demo_source/logocss.gif" width="95" height="84" />
-    世人都晓神仙好,惟有功名忘不了! 古今将相在何方?荒冢一堆草没了。
-    世人都晓神仙好,只有金银忘不了!  终朝只恨聚无多,及到多时眼闭了。
-    世人都晓神仙好,只有娇妻忘不了!  君生日日说恩情,君死又随人去了。
-    世人都晓神仙好,只有儿孙忘不了!  痴心父母古来多,孝顺儿孙谁见了?
-    世人都晓神仙好,惟有功名忘不了! 古今将相在何方?荒冢一堆草没了。
+  <p class="color">这是一个普通的段落red。</p>
+  <p>一些文本。默认的书写方向。</p>
+  <p class="direction">一些文本。 Right-to-left 方向。</p>
+  <p class="line-height">
+    这是一个更小行高的段落。line-height不允许负数<br />
+    这是一个更小行高的段落。<br />
+    这是一个更小行高的段落。<br />
+  </p>
+  <p class="text-transform">This is some text.</p>
+  <p class="text-indent">
+    世人都晓神仙好,惟有功名忘不了!  古今将相在何方?荒冢一堆草没了。<br />
+    世人都晓神仙好,只有金银忘不了!  终朝只恨聚无多,及到多时眼闭了。<br />
+    世人都晓神仙好,只有娇妻忘不了!  君生日日说恩情,君死又随人去了。<br />
+    世人都晓神仙好,只有儿孙忘不了!  痴心父母古来多,孝顺儿孙谁见了?<br />
+  </p>
+  <p class="text-decoration">This is some text.</p>
+  <p class="text-align">This is some text.</p>
+  <p>
+    一个<img class="vertical-align" src="https://www.runoob.com/try/demo_source/logo.png" alt="w3cschool" width="270"
+      height="50" />vertical-align对齐的图像。
+  </p>
+  <p class="letter-spacin">这是一个普通的段落。I Love Chinese</p>
+  <p class="white-space">
+    世人都晓神仙好,惟有功名忘不了!  古今将相在何方?荒冢一堆草没了。
     世人都晓神仙好,只有金银忘不了!  终朝只恨聚无多,及到多时眼闭了。
     世人都晓神仙好,只有娇妻忘不了!  君生日日说恩情,君死又随人去了。
     世人都晓神仙好,只有儿孙忘不了!  痴心父母古来多,孝顺儿孙谁见了?
   </p>
-  <div class="scroll"> 世人都晓神仙好,惟有功名忘不了! 古今将相在何方?荒冢一堆草没了。
-    世人都晓神仙好,只有金银忘不了!  终朝只恨聚无多,及到多时眼闭了。
-    世人都晓神仙好,只有娇妻忘不了!  君生日日说恩情,君死又随人去了。
-    世人都晓神仙好,只有儿孙忘不了!  痴心父母古来多,孝顺儿孙谁见了?
-  </div>
-  <span style="cursor:crosshair">crosshair</span><br>
-  <span style="cursor:move">move</span><br>
-  <p class="inline">这两个段落生成内联盒子,和它的结果</p>
-
-  <p class="inline">这两个元素之间没有距离。</p>
-
-  <img class="clear" src="https://www.runoob.com/try/demo_source/logocss.gif" width="95" height="84" />
-  <p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.
+  <p class="word-spacing">
+    世人都晓神仙好,惟有功名忘不了!  古 今 将 相 在 何 方 ? 荒 冢 一堆草没了。 This
+    is some text.
   </p>
-  <p class="clear">This is also some text. This is also some text. This is also some text. This is also some text. This
-    is also some text. This is also some text.</p>
+
 </body>
 
 </html>

@@ -1,4 +1,5 @@
 :::snippet 主要学习内容 vue+webpack+node
+
 - html [https://www.runoob.com/html/html-tutorial.html](https://www.runoob.com/html/html-tutorial.html)
 - css [https://www.runoob.com/css/css-tutorial.html](https://www.runoob.com/css/css-tutorial.html)
 - JavaScript 文档地址：[https://wangdoc.com/javascript/basic/grammar.html](https://wangdoc.com/javascript/basic/grammar.html)
@@ -13,4 +14,32 @@
 - node 文档：[http://nodejs.cn/learn](http://nodejs.cn/learn)
 - npm 文档：[https://www.npmjs.cn/](https://www.npmjs.cn/)
 - axios 文档：[http://www.axios-js.com/zh-cn/docs/](http://www.axios-js.com/zh-cn/docs/)
-  :::
+
+```html
+<p>我是段落</p>
+```
+
+```javascript
+let a="123258";
+console.log(a)
+```
+
+```css
+body{
+  width:auto;
+}
+#app{
+  color:red;
+}
+```
+
+```cssshow
+body{
+  width:auto;
+}
+#app{
+  color:red;
+}
+```
+
+:::

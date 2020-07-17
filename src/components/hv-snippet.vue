@@ -1,7 +1,7 @@
 <template>
   <div class="hv-snippet">
     <h2 class="hv-snippet--title">
-      <slot name="title">{{ title }}</slot>
+      <slot name="title" @click="code">{{ title }}</slot>
     </h2>
     <slot></slot>
   </div>
@@ -145,7 +145,7 @@ export default {
     font-size: 1rem;
     line-height: 1.8rem;
     padding: 0rem 0.1rem 0rem;
-    margin: 0 0.2rem 0rem;
+    margin: 0 0.1rem 0rem;
   }
   .hv-snippet--table {
     overflow: auto;
@@ -164,7 +164,7 @@ export default {
         color: #314659;
         border: 1px solid #95bae0;
         text-align: left;
-        padding: 10px 15px;
+        padding: 2px 10px;
         word-break: break-all;
         word-wrap: break-word;
       }
@@ -219,7 +219,7 @@ export default {
     font-family: Consolas, Menlo, Courier, monospace;
     font-size: 1rem;
     hyphens: none;
-    line-height: 1.5;
+    line-height: 1.4;
     margin: 0;
     tab-size: 4;
     text-align: left;
