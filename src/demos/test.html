@@ -5,95 +5,141 @@
   <meta charset="utf-8">
   <title>菜鸟教程(runoob.com)</title>
   <style>
-    p.color {
-      color: red;
-      /* color: #00ff00; */
-      /* color: rgb(0, 0, 255); */
+    div.justify-content {
+      width: 500px;
+      height: 150px;
+      border: 1px solid #c3c3c3;
+      display: -webkit-flex;
+      /* Safari */
+      -webkit-justify-content: space-around;
+      /* Safari 6.1+ */
+      display: flex;
+      justify-content: space-around;
     }
 
-    p.direction {
-      direction: rtl;
-      unicode-bidi: bidi-override;
+    div.justify-content div {
+      width: 80px;
+      height: 80px;
     }
 
-    p.line-height {
-      line-height: 70%;
-      /* line-height: 25px; */
+    /* Safari 6.1+ */
+    div#myRedDIV {
+      order: 2;
+      -webkit-order: 2;
     }
 
-    p.text-transform1 {
-      text-transform: capitalize;
-      /* text-transform: uppercase; */
+    div#myBlueDIV {
+      order: 4;
+      -webkit-order: 4;
     }
 
-    p.text-indent {
-      text-indent: 50px;
+    div#myGreenDIV {
+      order: 3;
+      -webkit-order: 3;
     }
 
-    p.text-decoration {
-      text-decoration: overline;
-      /* text-decoration: underline; */
+    div#myPinkDIV {
+      order: 1;
+      -webkit-order: 1;
     }
 
-    p.text-align {
-      text-align: center;
-      /* text-align: left; */
+    div.flex {
+      width: 220px;
+      height: 300px;
+      border: 1px solid black;
+      display: flex;
     }
 
-    img.vertical-align {
-      vertical-align: middle;
-      /* vertical-align: text-top; */
-      /* vertical-align: text-bottom; */
+    div.flex div {
+      flex: 1;
+      -webkit-flex: 1;
     }
 
-    p.letter-spacin {
-      letter-spacing: 5px;
-      /* letter-spacing: -3px; */
+    div.flex-wrap {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #c3c3c3;
+      display: -webkit-flex;
+      /* Safari */
+      -webkit-flex-wrap: wrap;
+      /* Safari 6.1+ */
+      display: flex;
+      flex-wrap: wrap;
+      /* 元素内弹性盒元素的方向为相反的顺序 */
+      flex-direction: row-reverse;
+      -webkit-flex-direction: row-reverse;
+      /* Safari 6.1+ */
+      /* 让弹性盒的元素以相反的顺序显示，且在必要的时候进行拆行 */
+      flex-flow: row-reverse wrap;
+      -webkit-flex-flow: row-reverse wrap;
     }
 
-    p.white-space {
-      white-space: nowrap;
+    div.flex-wrap div {
+      width: 50px;
+      height: 50px;
     }
 
-    p.word-spacing {
-      word-spacing: 30px;
+    div.flex-grow {
+      width: 350px;
+      height: 100px;
+      border: 1px solid #c3c3c3;
+      display: flex;
+    }
+
+    div.flex-grow div:nth-of-type(1) {
+      flex-grow: 1;
+    }
+
+    div.flex-grow div:nth-of-type(2) {
+      flex-grow: 3;
+    }
+
+    div.flex-grow div:nth-of-type(3) {
+      flex-grow: 1;
+      -webkit-flex-basis: 80px;
+      flex-basis: 80px;
+    }
+
+    div.flex-grow div:nth-of-type(4) {
+      flex-grow: 1;
+    }
+
+    div.flex-grow div:nth-of-type(5) {
+      flex-grow: 1;
     }
   </style>
 </head>
 
 <body>
-  <p class="color">这是一个普通的段落red。</p>
-  <p>一些文本。默认的书写方向。</p>
-  <p class="direction">一些文本。 Right-to-left 方向。</p>
-  <p class="line-height">
-    这是一个更小行高的段落。line-height不允许负数<br />
-    这是一个更小行高的段落。<br />
-    这是一个更小行高的段落。<br />
-  </p>
-  <p class="text-transform">This is some text.</p>
-  <p class="text-indent">
-    世人都晓神仙好,惟有功名忘不了!  古今将相在何方?荒冢一堆草没了。<br />
-    世人都晓神仙好,只有金银忘不了!  终朝只恨聚无多,及到多时眼闭了。<br />
-    世人都晓神仙好,只有娇妻忘不了!  君生日日说恩情,君死又随人去了。<br />
-    世人都晓神仙好,只有儿孙忘不了!  痴心父母古来多,孝顺儿孙谁见了?<br />
-  </p>
-  <p class="text-decoration">This is some text.</p>
-  <p class="text-align">This is some text.</p>
-  <p>
-    一个<img class="vertical-align" src="https://www.runoob.com/try/demo_source/logo.png" alt="w3cschool" width="270"
-      height="50" />vertical-align对齐的图像。
-  </p>
-  <p class="letter-spacin">这是一个普通的段落。I Love Chinese</p>
-  <p class="white-space">
-    世人都晓神仙好,惟有功名忘不了!  古今将相在何方?荒冢一堆草没了。
-    世人都晓神仙好,只有金银忘不了!  终朝只恨聚无多,及到多时眼闭了。
-    世人都晓神仙好,只有娇妻忘不了!  君生日日说恩情,君死又随人去了。
-    世人都晓神仙好,只有儿孙忘不了!  痴心父母古来多,孝顺儿孙谁见了?
-  </p>
-  <p class="word-spacing">
-    世人都晓神仙好,惟有功名忘不了!  古 今 将 相 在 何 方 ? 荒 冢 一堆草没了。 This
-    is some text.
-  </p>
+  <div class="justify-content">
+    <div style="background-color:coral;" id="myRedDIV">元素第1。order:2。</div>
+    <div style="background-color:lightblue;" id="myBlueDIV">元素第2。order:4。</div>
+    <div style="background-color:lightgreen;" id="myGreenDIV">元素第3。order:3。</div>
+    <div style="background-color:pink;" id="myPinkDIV">元素第4。order:1。</div>
+  </div>
+  <br>
+  <div class="flex">
+    <div style="background-color:coral;">红色</div>
+    <div style="background-color:lightblue;">蓝色</div>
+    <div style="background-color:lightgreen;">带有更多内容的绿色 div</div>
+  </div>
+  <br>
+  <div class="flex-wrap">
+    <div style="background-color:coral;">A</div>
+    <div style="background-color:lightblue;">B</div>
+    <div style="background-color:khaki;">C</div>
+    <div style="background-color:pink;">D</div>
+    <div style="background-color:lightgrey;">E</div>
+    <div style="background-color:lightgreen;">F</div>
+  </div>
+  <br>
+  <div class="flex-grow">
+    <div style="background-color:coral;"></div>
+    <div style="background-color:lightblue;"></div>
+    <div style="background-color:khaki;"></div>
+    <div style="background-color:pink;"></div>
+    <div style="background-color:lightgrey;"></div>
+  </div>
 
 </body>
 

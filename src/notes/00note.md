@@ -33,13 +33,4 @@ body{
 }
 ```
 
-```cssshow
-body{
-  width:auto;
-}
-#app{
-  color:red;
-}
-```
-
 :::
