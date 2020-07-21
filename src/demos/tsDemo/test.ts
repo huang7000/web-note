@@ -126,3 +126,53 @@
 // x = y;  // OK, because y matches structure of x
 // console.log(x)
 // console.log(y)
+
+// function extend<T, U>(first: T, second: U): T & U {
+//     let result = <T & U>{};
+//     for (let id in first) {
+//         (<any>result)[id] = (<any>first)[id];
+//     }
+//     for (let id in second) {
+//         if (!result.hasOwnProperty(id)) {
+//             (<any>result)[id] = (<any>second)[id];
+//         }
+//     }
+//     return result;
+// }
+
+// class Person {
+//     constructor(public name: string) { }
+// }
+// interface Loggable {
+//     log(): void;
+// }
+// class ConsoleLogger implements Loggable {
+//     constructor(public id: Number) { }
+//     log() {
+//         console.log(this.id)
+//         // ...
+//     }
+// }
+// var jim = extend(new Person("Jim"), new ConsoleLogger(123));
+// var n = jim.name;
+// jim.log();
+// console.log(jim)
+
+// let index:Number|string;
+// index="hello"
+// index=123
+// index=[] //error
+type Name = string;
+type NameResolver = () => string;
+type NameOrResolver = Name | NameResolver;
+function getName(n: NameOrResolver): Name {
+    if (typeof n === 'string') {
+        return n;
+    }
+    else {
+        return n();
+    }
+}
+type Container<T> = { value: T };
+//类型别名不能出现在声明右侧的任何地方。
+type Names = Array<Names>; // error
