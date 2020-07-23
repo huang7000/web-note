@@ -162,17 +162,32 @@
 // index="hello"
 // index=123
 // index=[] //error
-type Name = string;
-type NameResolver = () => string;
-type NameOrResolver = Name | NameResolver;
-function getName(n: NameOrResolver): Name {
-    if (typeof n === 'string') {
-        return n;
-    }
-    else {
-        return n();
-    }
+// type Name = string;
+// type NameResolver = () => string;
+// type NameOrResolver = Name | NameResolver;
+// function getName(n: NameOrResolver): Name {
+//     if (typeof n === 'string') {
+//         return n;
+//     }
+//     else {
+//         return n();
+//     }
+// }
+// type Container<T> = { value: T };
+// //类型别名不能出现在声明右侧的任何地方。
+// type Names = Array<Names>; // error
+
+
+// let s1 = Symbol('foo');
+// Symbol.keyFor(s1) // undefined
+// let s2 = Symbol('foo');
+// console.log(s1 === s2)
+// //注意，Symbol.for()为 Symbol 值登记的名字，是全局环境的，不管有没有在全局环境运行。
+// let sfor1 = Symbol.for('foo');
+// Symbol.keyFor(sfor1) // "foo"
+// let sfor2 = Symbol.for('foo');
+// console.log(sfor1 === sfor2)
+let numbers = [1, 2, 3];
+for (let num of numbers) {
+    console.log(num);
 }
-type Container<T> = { value: T };
-//类型别名不能出现在声明右侧的任何地方。
-type Names = Array<Names>; // error
