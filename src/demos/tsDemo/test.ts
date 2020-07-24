@@ -187,7 +187,22 @@
 // Symbol.keyFor(sfor1) // "foo"
 // let sfor2 = Symbol.for('foo');
 // console.log(sfor1 === sfor2)
-let numbers = [1, 2, 3];
-for (let num of numbers) {
-    console.log(num);
-}
+// let numbers = [1, 2, 3];
+// for (let num of numbers) {
+//     console.log(num);
+// }
+
+
+// let arr1 = ["c", "d"];
+// ["a", "b"].concat(arr1, "e"); // ['a', 'b', 'c', 'd', 'e']
+// console.log(arr1[Symbol.isConcatSpreadable]); // undefined
+// let arr2 = ["c", "d"];
+// arr2[Symbol.isConcatSpreadable] = false;
+// ["a", "b"].concat(arr2, "e"); // ['a', 'b', ['c','d'], 'e']
+// let obj = { length: 2, 0: "c", 1: "d" };
+// ["a", "b"].concat(obj, "e"); // ['a', 'b', obj, 'e']
+// console.log(["a", "b"].concat(obj, "e") )
+// console.log(obj[Symbol.isConcatSpreadable]); // undefined
+// obj[Symbol.isConcatSpreadable] = true;
+// ["a", "b"].concat(obj, "e"); // ['a', 'b', 'c', 'd', 'e']
+// console.log(["a", "b"].concat(obj, "e") )

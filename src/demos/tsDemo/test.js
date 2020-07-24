@@ -8,9 +8,9 @@
 //   return ary;
 // }
 // //传入所有的参数，包含类型参数
-// let outputT = identitype<string>("myString"); 
+// let outputT = identitype<string>("myString");
 // //利用了类型推论 -- 即编译器会根据传入的参数自动地帮助我们确定T的类型：
-// let output = identitype("myString"); 
+// let output = identitype("myString");
 // console.log(identitype({name:"huang 700" ,age:18,sex:"男"}))
 // function identity<T>(arg: T): T {
 //   return arg;
@@ -41,7 +41,7 @@
 // const enum Enum {
 //   A = 1,
 //   B = A * 2
-// } 
+// }
 // const enum Directions {
 //   Up,
 //   Down,
@@ -164,8 +164,20 @@
 // Symbol.keyFor(sfor1) // "foo"
 // let sfor2 = Symbol.for('foo');
 // console.log(sfor1 === sfor2)
-var numbers = [1, 2, 3];
-for (var _i = 0, numbers_1 = numbers; _i < numbers_1.length; _i++) {
-    var num = numbers_1[_i];
-    console.log(num);
-}
+// let numbers = [1, 2, 3];
+// for (let num of numbers) {
+//     console.log(num);
+// }
+// let arr1 = ["c", "d"];
+// ["a", "b"].concat(arr1, "e"); // ['a', 'b', 'c', 'd', 'e']
+// console.log(arr1[Symbol.isConcatSpreadable]); // undefined
+// let arr2 = ["c", "d"];
+// arr2[Symbol.isConcatSpreadable] = false;
+// ["a", "b"].concat(arr2, "e"); // ['a', 'b', ['c','d'], 'e']
+// let obj = { length: 2, 0: "c", 1: "d" };
+// ["a", "b"].concat(obj, "e"); // ['a', 'b', obj, 'e']
+// console.log(["a", "b"].concat(obj, "e") )
+// console.log(obj[Symbol.isConcatSpreadable]); // undefined
+// obj[Symbol.isConcatSpreadable] = true;
+// ["a", "b"].concat(obj, "e"); // ['a', 'b', 'c', 'd', 'e']
+// console.log(["a", "b"].concat(obj, "e") )
