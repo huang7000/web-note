@@ -8,9 +8,9 @@
 //   return ary;
 // }
 // //传入所有的参数，包含类型参数
-// let outputT = identitype<string>("myString"); 
+// let outputT = identitype<string>("myString");
 // //利用了类型推论 -- 即编译器会根据传入的参数自动地帮助我们确定T的类型：
-// let output = identitype("myString"); 
+// let output = identitype("myString");
 // console.log(identitype({name:"huang 700" ,age:18,sex:"男"}))
 
 // function identity<T>(arg: T): T {
@@ -47,7 +47,7 @@
 // const enum Enum {
 //   A = 1,
 //   B = A * 2
-// } 
+// }
 
 // const enum Directions {
 //   Up,
@@ -206,3 +206,13 @@
 // obj[Symbol.isConcatSpreadable] = true;
 // ["a", "b"].concat(obj, "e"); // ['a', 'b', 'c', 'd', 'e']
 // console.log(["a", "b"].concat(obj, "e") )
+
+/** @type {number} */
+var x;
+
+x = 0;      // OK
+console.log(x);
+x = false;  // Error: boolean is not assignable to number
+console.log(x);
+x=!x;
+console.log(x);

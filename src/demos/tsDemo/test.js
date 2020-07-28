@@ -181,3 +181,11 @@
 // obj[Symbol.isConcatSpreadable] = true;
 // ["a", "b"].concat(obj, "e"); // ['a', 'b', 'c', 'd', 'e']
 // console.log(["a", "b"].concat(obj, "e") )
+/** @type {number} */
+var x;
+x = 0; // OK
+console.log(x);
+x = false; // Error: boolean is not assignable to number
+console.log(x);
+x = !x;
+console.log(x);
