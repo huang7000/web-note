@@ -6,14 +6,14 @@
 - ECMAScript 文档地址：[https://es6.ruanyifeng.com/](https://es6.ruanyifeng.com/)
 - TypeScript 文档地址：[https://www.tslang.cn/docs/home.html](https://www.tslang.cn/docs/home.html)
 - vue 文档地址：[https://cn.vuejs.org/v2/guide/](https://cn.vuejs.org/v2/guide/)
-- Vue.js实战
-- vuex 文档地址：[https://vuex.vuejs.org/zh/guide/](https://vuex.vuejs.org/zh/guide/)
 - vue router 文档地址：[https://router.vuejs.org/zh/](https://router.vuejs.org/zh/)
+- vuex 文档地址：[https://vuex.vuejs.org/zh/guide/](https://vuex.vuejs.org/zh/guide/)
 - vue SSR 文档地址：[https://ssr.vuejs.org/zh/](https://ssr.vuejs.org/zh/)
+- axios 文档：[http://www.axios-js.com/zh-cn/docs/](http://www.axios-js.com/zh-cn/docs/)
 - webpack 文档地址：[https://www.webpackjs.com/concepts/](https://www.webpackjs.com/concepts/)
 - node 文档：[http://nodejs.cn/learn](http://nodejs.cn/learn)
 - npm 文档：[https://www.npmjs.cn/](https://www.npmjs.cn/)
-- axios 文档：[http://www.axios-js.com/zh-cn/docs/](http://www.axios-js.com/zh-cn/docs/)
+- Vue.js实战
 
 ```html
 <p>我是段落</p>

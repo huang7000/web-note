@@ -382,6 +382,62 @@
     {
       "path": "@/notes/04vue/01vue/25.md",
       "name": "过滤器"
+    },
+    {
+      "path": "",
+      "name": "Vue Router"
+    },
+    {
+      "path": "@/notes/04vue/02router/01.md",
+      "name": "Router基础"
+    },
+    {
+      "path": "@/notes/04vue/02router/02.md",
+      "name": "Router进阶"
+    },
+    {
+      "path": "@/notes/04vue/02router/03.md",
+      "name": "Router导航守卫"
+    },
+    {
+      "path": "@/notes/04vue/02router/04.md",
+      "name": "Router高级"
+    },
+    {
+      "path": "",
+      "name": "Vuex"
+    },
+    {
+      "path": "@/notes/04vue/03vuex/01.md",
+      "name": "Vuex基础"
+    },
+    {
+      "path": "@/notes/04vue/03vuex/02.md",
+      "name": "核心概念State"
+    },
+    {
+      "path": "@/notes/04vue/03vuex/03.md",
+      "name": "核心概念Getter"
+    },
+    {
+      "path": "@/notes/04vue/03vuex/04.md",
+      "name": "核心概念Mutation"
+    },
+    {
+      "path": "@/notes/04vue/03vuex/05.md",
+      "name": "核心概念Action"
+    },
+    {
+      "path": "@/notes/04vue/03vuex/06.md",
+      "name": "核心概念Module"
+    },
+    {
+      "path": "@/notes/04vue/03vuex/07.md",
+      "name": "进阶"
+    },
+    {
+      "path": "@/notes/04vue/03vuex/08.md",
+      "name": "测试"
     }
   ]
 }
