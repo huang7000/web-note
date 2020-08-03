@@ -5,7 +5,7 @@ import { routes } from "./setting";
 Vue.use(Router);
 routes.push({
   path: "",
-  name: "复习"
+  name: "review"
 });
 routes.push({
   path: "@/views/plan.vue",

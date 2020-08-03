@@ -10,6 +10,7 @@
 <body>
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
   <div id="app">
     <button @click="handleRouter()">点击跳转</button>
@@ -133,6 +134,19 @@
         }
       },
     });
+
+    // 为给定 ID 的 user 创建请求
+    axios.get('https://github.com/axios/axios/api/user?ID=12345')
+      .then(function (response) {
+        console.log("response");
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log("error");
+        console.log(error);
+      });
+
+
   </script>
 </body>
 

@@ -2,15 +2,7 @@
   "routes": [
     {
       "path": "",
-      "name": "学习内容"
-    },
-    {
-      "path": "@/notes/00note.md",
-      "name": "学习内容"
-    },
-    {
-      "path": "",
-      "name": "HTML"
+      "name": "BASE"
     },
     {
       "path": "@/notes/01base/01html/01.md",
@@ -34,27 +26,15 @@
     },
     {
       "path": "@/notes/01base/01html/06.md",
-      "name": "http方法"
+      "name": "http方法消息"
     },
     {
       "path": "@/notes/01base/01html/07.md",
-      "name": "http消息"
-    },
-    {
-      "path": "@/notes/01base/01html/08.md",
       "name": "html补充"
     },
     {
-      "path": "@/notes/01base/01html/09.md",
-      "name": "html5补充"
-    },
-    {
-      "path": "@/notes/01base/01html/10.md",
-      "name": "案例"
-    },
-    {
-      "path": "",
-      "name": "CSS"
+      "path": "@/notes/01base/01html/08.md",
+      "name": "html案例"
     },
     {
       "path": "@/notes/01base/02css/01.md",
@@ -82,11 +62,7 @@
     },
     {
       "path": "@/notes/01base/02css/07.md",
-      "name": "css补充"
-    },
-    {
-      "path": "@/notes/01base/02css/08.md",
-      "name": "css案例"
+      "name": "css补充及案例"
     },
     {
       "path": "",
@@ -385,59 +361,59 @@
     },
     {
       "path": "",
-      "name": "Vue Router"
+      "name": "Vues"
     },
     {
       "path": "@/notes/02vue/02router/01.md",
-      "name": "Router起步"
+      "name": "router起步"
     },
     {
       "path": "@/notes/02vue/02router/02.md",
-      "name": "Router基础"
+      "name": "router基础"
     },
     {
       "path": "@/notes/02vue/02router/03.md",
-      "name": "Router导航守卫"
+      "name": "router导航守卫"
     },
     {
       "path": "@/notes/02vue/02router/04.md",
-      "name": "Router进阶"
-    },
-    {
-      "path": "",
-      "name": "Vuex"
+      "name": "router进阶"
     },
     {
       "path": "@/notes/02vue/03vuex/01.md",
-      "name": "Vuex基础"
+      "name": "vuex基础"
     },
     {
       "path": "@/notes/02vue/03vuex/02.md",
-      "name": "核心概念State"
+      "name": "vuex-State"
     },
     {
       "path": "@/notes/02vue/03vuex/03.md",
-      "name": "核心概念Getter"
+      "name": "vuex-Getter"
     },
     {
       "path": "@/notes/02vue/03vuex/04.md",
-      "name": "核心概念Mutation"
+      "name": "vuex-Mutation"
     },
     {
       "path": "@/notes/02vue/03vuex/05.md",
-      "name": "核心概念Action"
+      "name": "vuex-Action"
     },
     {
       "path": "@/notes/02vue/03vuex/06.md",
-      "name": "核心概念Module"
-    },
-    {
-      "path": "",
-      "name": "Vue SSR"
+      "name": "vuex-Module"
     },
     {
       "path": "@/notes/02vue/04ssr/01.md",
-      "name": "Vue SSR基础"
+      "name": "ssr基础"
+    },
+    {
+      "path": "@/notes/02vue/05axios/01.md",
+      "name": "axios基础"
+    },
+    {
+      "path": "@/notes/02vue/05axios/02.md",
+      "name": "axios进阶"
     }
   ]
 }
