@@ -420,8 +420,16 @@
       "name": "Node"
     },
     {
+      "path": "@/notes/03node/01node/01.md",
+      "name": "node基础"
+    },
+    {
       "path": "@/notes/03node/02webpack/01.md",
       "name": "webpack基础"
+    },
+    {
+      "path": "@/notes/03node/03npm/01.md",
+      "name": "npm基础"
     }
   ]
 }
