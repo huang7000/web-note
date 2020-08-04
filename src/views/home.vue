@@ -221,7 +221,7 @@ export default {
   font-size: 0.95rem;
   font-weight: 500;
   margin-right: -0.75rem;
-  padding: 0.75rem 1.5rem 0.75rem 0.75rem;
+  padding: 0.25rem 0.25rem 0.25rem 0.25rem;
   overflow-wrap: break-word;
   text-decoration: none;
   word-wrap: break-word;
@@ -249,13 +249,13 @@ export default {
   background: #5b67ff;
   background: linear-gradient(25deg, #95e2ff, #5f79ff, #8ed5ff);
   color: #ffffff;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   overflow: hidden;
-  padding: 5rem 1rem 4rem;
+  padding: 2rem 1rem 2rem;
   position: relative;
   text-align: center;
   z-index: 1;
-  font-size: 4rem;
+  font-size: 3rem;
 
   &:after {
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 12'%3E%3Cpath d='M12 0l12 12H0z' fill='%23f2f3f8'/%3E%3C/svg%3E");
@@ -275,7 +275,7 @@ export default {
   text-decoration: none;
   background: none;
   color: #ffffff;
-  padding: 10px 20px;
+  padding: 8px 10px;
   white-space: nowrap;
   border-radius: 4px;
   transition: background-color 0.12s, color 0.12s, border-color 0.12s;
@@ -317,7 +317,7 @@ export default {
   outline: 0;
   user-select: none;
   cursor: pointer;
-  margin-bottom: 1rem;
+  // margin-bottom: 1rem;
   margin-right: 1rem;
   border-radius: 0.2rem;
   height: 2rem;

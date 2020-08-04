@@ -414,6 +414,14 @@
     {
       "path": "@/notes/02vue/05axios/02.md",
       "name": "axios进阶"
+    },
+    {
+      "path": "",
+      "name": "Node"
+    },
+    {
+      "path": "@/notes/03node/02webpack/01.md",
+      "name": "webpack基础"
     }
   ]
 }
