@@ -14,3 +14,10 @@
 - webpack 文档地址：[https://www.webpackjs.com/concepts/](https://www.webpackjs.com/concepts/)
 - npm 文档：[https://www.npmjs.cn/](https://www.npmjs.cn/)
 - Vue.js实战
+
+安装IIS
+https://cloud.tencent.com/document/product/213/2755
+
+https://jingyan.baidu.com/article/647f0115fb61417f2148a88a.html
+
+https://cloud.tencent.com/document/product/213/31527
