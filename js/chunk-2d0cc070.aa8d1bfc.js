@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0cc070"],{"4bd0":function(o,n){n.world=function(){console.log("Hello World")}}}]);
+//# sourceMappingURL=chunk-2d0cc070.aa8d1bfc.js.map

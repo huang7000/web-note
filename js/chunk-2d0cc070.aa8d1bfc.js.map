@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/demos/nodeDemo/hello.js"],"names":["exports","world","console","log"],"mappings":"mGAAAA,EAAQC,MAAQ,WACZC,QAAQC,IAAI","file":"js/chunk-2d0cc070.aa8d1bfc.js","sourcesContent":["exports.world = function() {\n    console.log('Hello World');\n  }"],"sourceRoot":""}
