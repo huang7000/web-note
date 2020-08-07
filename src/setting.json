@@ -424,6 +424,18 @@
       "name": "node基础"
     },
     {
+      "path": "@/notes/03node/01node/02.md",
+      "name": "nodeEventEmitter"
+    },
+    {
+      "path": "@/notes/03node/01node/03.md",
+      "name": "nodeBuffer(缓冲区)"
+    },
+    {
+      "path": "@/notes/03node/01node/04.md",
+      "name": "nodeStream(流)"
+    },
+    {
       "path": "@/notes/03node/02webpack/01.md",
       "name": "webpack基础"
     },
