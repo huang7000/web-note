@@ -5,6 +5,10 @@
       "name": "BASE"
     },
     {
+      "path": "@/notes/testIndex.vue",
+      "name": "测试"
+    },
+    {
       "path": "@/notes/01base/01html/01.md",
       "name": "html标签"
     },

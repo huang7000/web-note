@@ -63,8 +63,12 @@
 
 <script>
 import request from "@/demos/elDemo/utils/request";
-import checkBtn from "@/demos/elDemo/utils/common";
-import { getToken } from "@/demos/elDemo//utils/common";
+import {
+  searchTableData,
+  deleteTableData,
+  exportData,
+  getTableWidth,
+} from "@/demos/elDemo/utils/table";
 export default {
   props: {
     reserve: Boolean, //记忆多选
@@ -78,7 +82,7 @@ export default {
     deleteOpt: Object,
     deleteRes: Object,
     exportOpt: Object,
-    exportRes: Object
+    exportRes: Object,
   },
   data() {
     return {
@@ -90,8 +94,8 @@ export default {
         pageNum: 1,
         pageSize: 10,
         total: null,
-        pageSizeArr: [10, 20, 30, 40, 50, 100]
-      }
+        pageSizeArr: [10, 20, 30, 40, 50, 100],
+      },
     };
   },
 
@@ -120,54 +124,7 @@ export default {
     // 查询方法
     handleGetTableData() {
       let selfThis = this;
-      selfThis.loading = true;
-      let data = selfThis.searchModel;
-      if (this.isPage) {
-        data.pageSize = selfThis.pageInfo.pageSize;
-        data.pageNum = selfThis.pageInfo.pageNum;
-      }
-      let opt = {
-        url: selfThis.searchOpt.url,
-        method: selfThis.searchOpt.method
-      };
-      if (selfThis.searchOpt.method == "post") {
-        opt["data"] = data;
-      } else {
-        opt["params"] = data;
-      }
-      let promise = request(opt);
-      promise.then(function(res) {
-        let status = res[selfThis.searchRes.status];
-        let statusTrue = selfThis.statusTrue;
-        let tableData = res[selfThis.searchRes.tableData];
-        let totalCount = res[selfThis.searchRes.totalCount];
-        let message = res[selfThis.searchRes.message];
-        let selectData = res[selfThis.searchRes.selectData];
-        if (status === statusTrue) {
-          selfThis.pageInfo.tatal = totalCount;
-          if (selfThis.echoMark && selfThis.echo) {
-            selfThis.$nextTick(function() {
-              selfThis.tableData = tableData;
-            });
-            if (Array.isArray(selectData) && selectData.length > 0) {
-              selfThis.$nextTick(function() {
-                selfThis.multipleSelection = selectData;
-                selfThis.multipleSelection.forEach(row => {
-                  selfThis.$refs.multipleTable.toggleRowSelection(row, true);
-                });
-              });
-            }
-          } else {
-            if (Array.isArray(tableData) && tableData.length > 0) {
-              selfThis.tableData = tableData;
-            } else {
-              selfThis.tableData = [];
-            }
-          }
-        } else {
-          selfThis.$message.warning(message);
-        }
-      });
+      searchTableData(selfThis, selfThis.pageShow);
     },
     //pageNum
     handleSizeChange(val) {
@@ -211,40 +168,19 @@ export default {
         selfThis.$message.warning("请选择数据删除");
         return;
       }
-      selfThis
-        .$confirm("确定删除选中项吗？", "操作提示", {
-          confirmButtonText: "确定",
-          cancelButtonText: "确定",
-          type: "warning"
-        })
-        .then(() => {
-          var data = selfThis.multipleSelection;
-          let opt = {
-            url: selfThis.deleteOpt.url,
-            method: selfThis.deleteOpt.method
-          };
-          if (selfThis.deleteOpt.method == "post") {
-            opt["data"] = data;
-          } else {
-            opt["params"] = data;
-          }
-          let promise = request(opt);
-          promise.then(function(res) {
-            let status = res[selfThis.searchRes.status];
-            let statusTrue = selfThis.statusTrue;
-            let message = res[selfThis.searchRes.message];
-            if (status === statusTrue) {
-              selfThis.$message.success(message);
-            } else {
-              selfThis.$message.warning(message);
-            }
-          });
-        });
+      deleteTableData(selfThis, selfThis.multipleSelection);
     },
     handleExoprt() {
       let selfThis = this;
       let data = selfThis.searchModel;
-      selfThis.exportData(data);
+      exportData(
+        selfThis,
+        "数据导出中，请稍后...",
+        data,
+        selfThis.exportOpt.url,
+        selfThis.exportOpt.method,
+        selfThis.exportOpt.name
+      );
     },
     handleExoprtInfo() {
       let selfThis = this;
@@ -252,47 +188,14 @@ export default {
         selfThis.$message.warning("请选择需要导出的数据");
         return;
       }
-      selfThis.exportData(selfThis.currentRow);
-    },
-    exportData(data) {
-      let selfThis = this;
-      selfThis.$loading({ text: "文件导出中，请稍后...", fullscreen: true });
-      let opt = {
-        url: selfThis.exportOpt.url,
-        method: selfThis.exportOpt.method,
-        responseType: "blob",
-        token: getToken()
-      };
-      if (selfThis.exportOpt.method == "post") {
-        opt["data"] = data;
-      } else {
-        opt["params"] = data;
-      }
-      let name = selfThis.exportOpt.name + selfThis.exportOpt.docType;
-      let promise = request(opt);
-      promise
-        .then(function(res) {
-          const link = document.create.createElement("a");
-          const blob = new Blob([res], { type: "application/vnd.ms-excel" });
-          if ("download" in link) {
-            link.style.display = "none";
-            link.href = URL.createObjectURL(blob);
-            link.setAttribute("download", name);
-            document.body.append(link);
-            link.click();
-            document.body.removeChild(link);
-          } else {
-            // IE10+下载
-            window.navigator.msSaveOrOpenBlob(blob, name);
-          }
-          selfThis.$loading().close();
-        })
-        .catch(function() {
-          selfThis.$loading().close();
-        });
-    },
-    checkBtn(btnId) {
-      return checkBtn(btnId);
+      exportData(
+        selfThis,
+        "数据导出中，请稍后...",
+        selfThis.multipleSelection[0],
+        selfThis.exportOpt.url,
+        selfThis.exportOpt.method,
+        selfThis.exportOpt.name
+      );
     }
   }
 };
