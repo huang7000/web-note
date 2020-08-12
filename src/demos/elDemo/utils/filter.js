@@ -7,6 +7,9 @@ Vue.filter("dateFormat", (date,mark) => {
 Vue.filter("dateCNFormat", date => {
     return format.dateCNFormat(date);
 });
+Vue.filter("timeFormat", date => {
+    return format.timeFormat(date);
+});
 Vue.filter("dateTimeFormat",  (date,mark)  => {
     return format.dateTimeFormat(date,mark);
 });
@@ -28,28 +31,24 @@ Vue.filter("yearCNFormat", date => {
     return format.yearCNFormat(date);
 });
 
-Vue.filter("toNumFormat", (num, thousand, fixedNum, defaultText) => {
-    return format.toNumFormat(num, thousand, fixedNum, defaultText);
+Vue.filter("numFormat", (num, mark, fixed, def) => {
+    return format.toNumFormat(num, mark, fixed, def);
 });
 
-Vue.filter("toThousandFormat", (num, thousand, fixedNum, defaultText) => {
-    return format.toThousandFormat(num, thousand, fixedNum, defaultText);
+Vue.filter("moneyFormat", (num, mark, fixed, def) => {
+    return format.moneyFormat(num, mark, fixed, def);
 });
 
-Vue.filter("toPercentageFormat", (num, thousand, fixedNum, defaultText) => {
-    return format.toPercentageFormat(num, thousand, fixedNum, defaultText);
+Vue.filter("percentageFormat", (num, mark, fixed, def) => {
+    return format.percentageFormat(num, mark, fixed, def);
 });
-
-
-Vue.filter("isToValue", (text, arr) => {
-    return format.isToValue(text, arr);
+Vue.filter("isFormat", (value, arr) => {
+    return format.isFormat(value, arr);
 });
-
-Vue.filter("isToText", (text, arr) => {
-    return format.isToText(text, arr);
-
+Vue.filter("selectFormat", (value, arr) => {
+    return format.selectFormat(value, arr);
 });
+Vue.filter("selectListFormat", (value, arr,split,join) => {
+    return format.selectListFormat(value, arr,split,join);
 
-Vue.filter("isToValue", (text, arr) => {
-    return format.isToValue(text, arr);
 });

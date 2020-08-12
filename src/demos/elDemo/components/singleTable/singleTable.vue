@@ -27,15 +27,18 @@
         show-overflow-tooltip
       >
         <template slot-scope="scope">
+          <span v-if="item.type.endsWith('selectFormat')">{{ scope.row[item.prop] | item.type }}</span>
           <span
-            v-if="item.filter && item.filter === 'thousandToNumFormat'"
-          >{{ scope.row[item.prop] | thousandToNumFormat }}</span>
-          <span
-            v-else-if="item.filter && item.filter === 'dateFormat'"
-          >{{ scope.row[item.prop] | dateFormat }}</span>
-          <span v-else-if="item.filter && item.filter === 'fileFormat'">
-            <a style="text-decoration:underline" @click="uploadDownload"></a>
+            v-else-if="item.type.endsWith('selectListFormat')"
+          >{{ scope.row[item.prop] | item.type }}</span>
+          <span v-else-if="item.type.endsWith('fileFormat')">
+            <a
+              v-if="scope.row[item.prop]!=null&&scope.row[item.prop]!==undefined"
+              @click="uploadFile(scope.row[item.prop])"
+              class="file-class"
+            >{{ scope.row[item.prop].fullName }}</a>
           </span>
+          <span v-else-if="item.type.endsWith('Format')">{{ scope.row[item.prop] | item.type }}</span>
           <span v-else>{{ scope.row[item.prop] }}</span>
         </template>
         <slot name="append" slot="append"></slot>
@@ -57,7 +60,6 @@
 </template>
 
 <script>
-import request from "@/demos/elDemo/utils/request";
 import {
   searchTableData,
   deleteTableData,
@@ -67,6 +69,9 @@ import {
 export default {
   props: {
     pageShow: Boolean,
+    fontModel: Object,
+    formatModel: Object,
+    alignModel: Object,
     tableTitle: Array,
     searchOpt: Object,
     searchRes: Object,
@@ -91,7 +96,22 @@ export default {
       },
     };
   },
-
+  watch: {
+    tableData: {
+      // eslint-disable-next-line no-unused-vars
+      handler(val, oldval) {
+        const selfThis = this;
+        //getTableWidth(tableData, tableTitle, fontModel, formatModel, alignModel)
+        selfThis.tableTitle = getTableWidth(
+          selfThis.tableData,
+          selfThis.tableTitle,
+          selfThis.fontModel,
+          selfThis.formatModel,
+          selfThis.alignModel
+        );
+      },
+    },
+  },
   methods: {
     // 行单击选中事件
     rowClick(row) {
@@ -175,7 +195,7 @@ export default {
         selfThis.exportInfoOpt.method,
         selfThis.exportInfoOpt.name
       );
-    }
+    },
   },
 };
 </script>

@@ -5,7 +5,7 @@ import {
     dateFormat,
     dateTimeFormat,
     toThousandFormat,
-    toPercentageFormat,
+    percentageFormat,
 } from "@/demos/elDemo/utils/format";
 // multiple查询方法
 function searchTableData(selfThis, isPage) {
@@ -156,12 +156,12 @@ function getTdMaxLength(arr, type, fontModel, formatModel) {
 function getTdWidth(value, type, fontModel, formatModel) {
     let str = "";
     if (value !== null && value !== undefined) {
-        if (type === "money") {
+        if (type === "moneyFormat") {
             str = toThousandFormat(value, formatModel.moneyMark, formatModel.moneyFixed, formatModel.moneyText)
-        } else if (type === "number") {
+        } else if (type === "numFormat") {
             str = toThousandFormat(value, formatModel.numMark, formatModel.numFixed, formatModel.numText)
-        } else if (type === "percentage") {
-            str = toPercentageFormat(value, formatModel.percentageFixed, formatModel.percentageText)
+        } else if (type === "percentageFormat") {
+            str = percentageFormat(value, formatModel.percentageFixed, formatModel.percentageText)
         } else {
             str = value.toString();
         }
@@ -232,43 +232,50 @@ function colWidth(tableData, fontModel, formatModel, alignModel, colTitle) {
     let align = alignModel.align || "center";
     colTitle.header = header;
     colTitle.align = align;
+    const alignLeftArr = ["left"];
+    const alignRightArr = ["right", "numFormat", "moneyFormat", "percentageFormat"];
+    const alignCenterArr = ["center", "self",
+        "dateFormat", "dateCNFormat", "timeFormat",
+        "dateTimeFormat", "dateTimeCNFormat",
+        "monthFormat", "monthCNFormat",
+        "yearFormat", "yearCNFormat",
+        "isFormat","selectFormat", "selectListFormat"
+    ];
 
-    if (alignModel.leftArr.includes(colTitle.type)) {
-        colTitle.align = "left";
-    } else if (alignModel.rightArr.includes(colTitle.type)) {
-        colTitle.align = "right";
-    } else if (alignModel.centerArr.includes(colTitle.type)) {
-        colTitle.align = "center";
+    if (alignLeftArr.includes(colTitle.type)) {
+        colTitle.align =colTitle.align|| "left";
+    } else if (alignRightArr.includes(colTitle.type)) {
+        colTitle.align =colTitle.align|| "right";
+    } else if (alignCenterArr.includes(colTitle.type)) {
+        colTitle.align = colTitle.align||"center";
     }
 
     if (isNaN(colTitle.width) && isNaN(colTitle.minWidth)) {
-        thWidth = getTextWidth();
+        thWidth = getTrLength(colTitle, fontModel);
     } else {
         //一旦指定宽度不再计算宽度直接返回
         return colTitle;
     }
-    if (["number", "money", "rate", "self"].includes(colTitle.type)) {
+    if (["numFormat", "moneyFormat", "percentageFormat", "self"].includes(colTitle.type)) {
         const arr = tableData.map(x => x[colTitle.prop]);
         tdWidth = getTdMaxLength(arr, colTitle.type, fontModel, formatModel)
-    } else if (colTitle.type === "date") {
+    } else if (colTitle.type === "dateFormat") {
         tdWidth = getTextWidth("2020-01-01", fontModel.tdBorder, fontModel.tdFont, fontModel.tdWeight);
-    } else if (colTitle.type === "time") {
+    } else if (colTitle.type === "timeFormat") {
         tdWidth = getTextWidth("12:01:01", fontModel.tdBorder, fontModel.tdFont, fontModel.tdWeight);
-    } else if (colTitle.type === "dateTime") {
+    } else if (colTitle.type === "dateTimeFormat") {
         tdWidth = getTextWidth("2020-01-01 12:01:01", fontModel.tdBorder, fontModel.tdFont, fontModel.tdWeight);
-    } else if (colTitle.type === "year") {
+    } else if (colTitle.type === "yearFormat") {
         tdWidth = getTextWidth("2020", fontModel.tdBorder, fontModel.tdFont, fontModel.tdWeight);
-    } else if (colTitle.type === "month") {
+    } else if (colTitle.type === "monthFormat") {
         tdWidth = getTextWidth("2020-01", fontModel.tdBorder, fontModel.tdFont, fontModel.tdWeight);
-    } else if (colTitle.type === "dateCN") {
+    } else if (colTitle.type === "dateCNFormat") {
         tdWidth = getTextWidth("2020年01月01日", fontModel.tdBorder, fontModel.tdFont, fontModel.tdWeight);
-    } else if (colTitle.type === "timeCN") {
-        tdWidth = getTextWidth("12:01:01", fontModel.tdBorder, fontModel.tdFont, fontModel.tdWeight);
-    } else if (colTitle.type === "dateTimeCN") {
+    } else if (colTitle.type === "dateTimeCNFormat") {
         tdWidth = getTextWidth("2020年01月01日 12:01:01", fontModel.tdBorder, fontModel.tdFont, fontModel.tdWeight);
-    } else if (colTitle.type === "yearCN") {
+    } else if (colTitle.type === "yearCNFormat") {
         tdWidth = getTextWidth("2020年", fontModel.tdBorder, fontModel.tdFont, fontModel.tdWeight);
-    } else if (colTitle.type === "monthCN") {
+    } else if (colTitle.type === "monthCNFormat") {
         tdWidth = getTextWidth("2020年01", fontModel.tdBorder, fontModel.tdFont, fontModel.tdWeight);
     } else {
         colTitle.minWidth = tdWidth > thWidth ? tdWidth : thWidth;
