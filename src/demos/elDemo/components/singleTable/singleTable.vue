@@ -1,28 +1,26 @@
 <template>
   <div>
     <!-- 查询条件 -->
-    <slot name="searchSlot" slot="searchSlot"></slot>
+    <slot name="searchslot" slot="searchslot"></slot>
     <!-- 按钮 -->
-    <slot name="buttonSlot" slot="buttonSlot"></slot>
-    <!-- 表格 -->
+    <slot name="buttonslot" slot="buttonslot"></slot>
+    <!-- 表格 @row-dblclick="rowdbClick"-->
     <el-table
       size="small"
       ref="singleTable"
       :data="tableData"
       highlight-current-row
       @current-change="rowClick"
-      @row-dblclick="rowdbClick"
-      :rew-key="getRowKeys"
       style="width: 100%"
     >
       <el-table-column
-        header-align="center"
         v-for="(item, index) in tableTitle"
+        :header-align="item.headAlign"
         :key="index"
         :prop="item.prop"
         :label="item.label"
-        :min-width="handleTableWidth"
-        :width="item.width ? item.width : handleTableWidth"
+        :min-width="item.minWidth"
+        :width="item.width ? item.width : item.minWidth"
         :align="item.align"
         show-overflow-tooltip
       >
@@ -45,7 +43,7 @@
       </el-table-column>
     </el-table>
     <!-- 分页 -->
-    <el-pagination
+    <!-- <el-pagination
       v-if="pageShow"
       @sise-change="handleSizeChange"
       @current-change="handleCurrentChange"
@@ -55,7 +53,7 @@
       :total="pageInfo.total"
       layout="tatal,sizes,prev,pager,next,jumper"
       style="text-algin:right;paddding:10px;"
-    ></el-pagination>
+    ></el-pagination>-->
   </div>
 </template>
 
@@ -66,12 +64,10 @@ import {
   exportData,
   getTableWidth,
 } from "@/demos/elDemo/utils/table";
+import { styleModel } from "@/demos/elDemo/utils/styleModel";
 export default {
   props: {
     pageShow: Boolean,
-    fontModel: Object,
-    formatModel: Object,
-    alignModel: Object,
     tableTitle: Array,
     searchOpt: Object,
     searchRes: Object,
@@ -86,7 +82,8 @@ export default {
     return {
       loading: false,
       currentRow: null,
-      tableData: Array,
+      tableData: [],
+      styleModel: styleModel,
       searchModel: {},
       pageInfo: {
         pageNum: 1,
@@ -101,18 +98,20 @@ export default {
       // eslint-disable-next-line no-unused-vars
       handler(val, oldval) {
         const selfThis = this;
-        //getTableWidth(tableData, tableTitle, fontModel, formatModel, alignModel)
-        selfThis.tableTitle = getTableWidth(
-          selfThis.tableData,
-          selfThis.tableTitle,
-          selfThis.fontModel,
-          selfThis.formatModel,
-          selfThis.alignModel
-        );
+        if (Array.isArray(selfThis.tableData)) {
+          selfThis.tableTitle = getTableWidth(
+            selfThis.tableData,
+            selfThis.styleModel,
+            selfThis.tableTitle
+          );
+        }
+        console.log("tableData");
+        console.log(selfThis.tableTitle);
       },
     },
   },
   methods: {
+    getRowKeys() {},
     // 行单击选中事件
     rowClick(row) {
       this.currentRow = row;
@@ -126,7 +125,19 @@ export default {
     // 查询方法
     handleSearch() {
       this.pageInfo.pageNum = 1;
-      this.handleGetTableData();
+      let row = {
+        name: "小明",
+        birthday: "2001-01-01",
+        address: "福建省厦门市软件园二期",
+        company: "中国建设银行",
+        position: "软件工程师",
+        workYears: "5",
+        wages: "15000",
+      };
+      let tableData = this.tableData;
+      tableData.push(row);
+      this.tableData = tableData;
+      //this.handleGetTableData();
     },
     // 查询方法
     handleGetTableData() {
@@ -176,6 +187,7 @@ export default {
         selfThis,
         "数据导出中，请稍后...",
         data,
+        { url: "", method: "", name: "" },
         selfThis.exportOpt.url,
         selfThis.exportOpt.method,
         selfThis.exportOpt.name
@@ -196,6 +208,9 @@ export default {
         selfThis.exportInfoOpt.name
       );
     },
+  },
+  created() {
+    this.handleSearch();
   },
 };
 </script>

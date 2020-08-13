@@ -1,84 +1,58 @@
 <template>
   <div>
-    <div style="margin-bottom: 20px;">
-      <el-button size="small" @click="addTab(editableTabsValue)">add tab</el-button>
-    </div>
-    <el-tabs v-model="editableTabsValue" type="card" closable @tab-remove="removeTab">
-      <el-tab-pane
-        v-for="(item, index) in editableTabs"
-        :key="item.name"
-        :label="item.title"
-        :name="item.name"
-      >{{item.content}}
-      {{item.user}}
-        {{item.user.name}}
-        <testSon :rowInfo="item"></testSon>
-      </el-tab-pane>
-    </el-tabs>
+    <div style="margin-bottom: 20px;">表格单选</div>
+    <singleTable
+      :pageShow="pageShow"
+      :tableTitle="tableTitle"
+      :searchOpt="searchOpt"
+      :searchRes="searchRes"
+      :deleteOpt="deleteOpt"
+      :deleteRes="deleteRes"
+      :exportOpt="exportOpt"
+      :exportRes="exportRes"
+      :exportInfoOpt="exportInfoOpt"
+      :exportInfoRes="exportInfoRes"
+    >
+      <template v-slot:searchslot>
+        <h1>Here might be a page title</h1>
+        <el-button>查询</el-button>
+      </template>
+    </singleTable>
   </div>
 </template>
 
 <script>
-import testSon from "./testSon";
+import singleTable from "@/demos/elDemo/components/singleTable/singleTable.vue";
 export default {
   components: {
-    testSon,
+    singleTable,
   },
   data() {
+    let tableTitle = [
+      { prop: "name", label: "姓名", type: "self" },
+      { prop: "birthday", label: "生日", type: "dateFormat" },
+      { prop: "address", label: "地址", type: "left" },
+      { prop: "company", label: "公司", type: "center" },
+      { prop: "position", label: "职位", type: "selectFormat" },
+      { prop: "workYears", label: "工龄", type: "numFormat" },
+      { prop: "wages", label: "工资", type: "moneyFormat" },
+    ];
     return {
-      editableTabsValue: "2",
-      editableTabs: [
-        {
-          title: "Tab 1",
-          name: "1",
-          content: "Tab 1 content",
-          user: {
-            name: "小强",
-            sex: "男",
-            age: "18"
-          }
-        },
-        {
-          title: "Tab 2",
-          name: "2",
-          content: "Tab 2 content",
-          user: {
-            name: "小红",
-            sex: "女",
-            age: "17"
-          }
-        }
-      ],
-      tabIndex: 2
+      pageShow: true,
+      tableTitle: tableTitle,
+      searchOpt: { url: "", method: "", name: "" },
+      searchRes: { status: "", message: "", tableData: "", totalCount: "" },
+      deleteOpt: { url: "", method: "", name: "" },
+      deleteRes: { status: "", message: "" },
+      exportOpt: { url: "", method: "", name: "" },
+      exportRes: {},
+      exportInfoOpt: { url: "", method: "", name: "" },
+      exportInfoRes: {},
     };
   },
-  methods: {
-    addTab(targetName) {
-      let newTabName = ++this.tabIndex + "";
-      this.editableTabs.push({
-        title: "New Tab",
-        name: newTabName,
-        content: "New Tab content",
-      });
-      this.editableTabsValue = newTabName;
-    },
-    removeTab(targetName) {
-      let tabs = this.editableTabs;
-      let activeName = this.editableTabsValue;
-      if (activeName === targetName) {
-        tabs.forEach((tab, index) => {
-          if (tab.name === targetName) {
-            let nextTab = tabs[index + 1] || tabs[index - 1];
-            if (nextTab) {
-              activeName = nextTab.name;
-            }
-          }
-        });
-      }
-
-      this.editableTabsValue = activeName;
-      this.editableTabs = tabs.filter((tab) => tab.name !== targetName);
-    },
+  methods: {},
+  created() {
+    //this.handleSearch();
   },
 };
 </script>
