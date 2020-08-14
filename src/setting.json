@@ -441,19 +441,19 @@
     },
     {
       "path": "@/notes/03node/01node/05.md",
-      "name": "nodeModule(模块)"
+      "name": "node模块函数路由"
     },
     {
       "path": "@/notes/03node/01node/06.md",
-      "name": "node函数"
-    },
-    {
-      "path": "@/notes/03node/01node/07.md",
       "name": "node全局对象"
     },
     {
-      "path": "@/notes/03node/01node/08.md",
+      "path": "@/notes/03node/01node/07.md",
       "name": "node常用工具"
+    },
+    {
+      "path": "@/notes/03node/01node/08.md",
+      "name": "node文件系统"
     },
     {
       "path": "@/notes/03node/02webpack/01.md",
