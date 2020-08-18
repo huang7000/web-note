@@ -445,15 +445,31 @@
     },
     {
       "path": "@/notes/03node/01node/06.md",
-      "name": "node全局对象"
+      "name": "node全局对象和util"
     },
     {
       "path": "@/notes/03node/01node/07.md",
-      "name": "node常用工具"
+      "name": "node文件系统"
     },
     {
       "path": "@/notes/03node/01node/08.md",
       "name": "node文件系统"
+    },
+    {
+      "path": "@/notes/03node/01node/09.md",
+      "name": "Express 框架"
+    },
+    {
+      "path": "@/notes/03node/01node/10.md",
+      "name": "多进程"
+    },
+    {
+      "path": "@/notes/03node/01node/11.md",
+      "name": "MySQL"
+    },
+    {
+      "path": "@/notes/03node/01node/12.md",
+      "name": "MongoDB"
     },
     {
       "path": "@/notes/03node/02webpack/01.md",
