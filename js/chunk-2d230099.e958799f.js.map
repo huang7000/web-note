@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/assets/images/web_architecture.jpg"],"names":["module","exports"],"mappings":"mGAAAA,EAAOC,QAAU,IAA0B","file":"js/chunk-2d230099.e958799f.js","sourcesContent":["module.exports = __webpack_public_path__ + \"img/web_architecture.60a0258a.jpg\";"],"sourceRoot":""}

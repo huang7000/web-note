@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-891d50dc"],{"01a7":function(e,n,t){var o=t("9490"),r=t("3e8f"),i=t("0b16");o.createServer((function(e,n){var t=i.parse(e.url).pathname;console.log("Request for "+t+" received."),r.readFile(t.substr(1),(function(e,t){e?(console.log(e),n.writeHead(404,{"Content-Type":"text/html"})):(n.writeHead(200,{"Content-Type":"text/html"}),n.write(t.toString())),n.end()}))})).listen(8080),console.log("Server running at http://127.0.0.1:8080/")},"3e8f":function(e,n){}}]);
+//# sourceMappingURL=chunk-891d50dc.bb2e0e11.js.map

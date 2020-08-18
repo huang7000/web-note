@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d2288f0"],{da63:function(o,e){console.log("Hello log"),console.info("Hello info"),console.error("Hello error"),console.log("Hello world"),console.trace(),console.info("程序开始执行：");var n=10;function l(){}console.log("计数: %d",n),console.time("获取数据"),setTimeout(l,2e3),console.timeEnd("获取数据"),console.info("程序执行完毕。")}}]);
-//# sourceMappingURL=chunk-2d2288f0.b9d6ad06.js.map

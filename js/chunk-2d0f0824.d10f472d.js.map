@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/demos/nodeDemo/public/images/web_architecture.jpg"],"names":["module","exports"],"mappings":"qGAAAA,EAAOC,QAAU,IAA0B","file":"js/chunk-2d0f0824.d10f472d.js","sourcesContent":["module.exports = __webpack_public_path__ + \"img/web_architecture.60a0258a.jpg\";"],"sourceRoot":""}
