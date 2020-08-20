@@ -13,6 +13,7 @@
 - node 文档：[http://nodejs.cn/learn](http://nodejs.cn/learn)
 - webpack 文档地址：[https://www.webpackjs.com/concepts/](https://www.webpackjs.com/concepts/)
 - npm 文档：[https://www.npmjs.cn/](https://www.npmjs.cn/)
+- mssql 文档：[https://www.npmjs.com/package/mssql/](https://www.npmjs.com/package/mssql)
 - Vue.js实战
 
 安装IIS

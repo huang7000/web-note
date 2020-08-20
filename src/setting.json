@@ -465,11 +465,7 @@
     },
     {
       "path": "@/notes/03node/01node/11.md",
-      "name": "MySQL"
-    },
-    {
-      "path": "@/notes/03node/01node/12.md",
-      "name": "MongoDB"
+      "name": "MSSQL"
     },
     {
       "path": "@/notes/03node/02webpack/01.md",

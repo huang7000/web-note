@@ -1,11 +1,104 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>菜鸟教程(runoob.com)</title>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
 </head>
+
 <body>
     <h1>我的第一个标题</h1>
     <p>我的第一个段落。</p>
+    <script>
+        //批量合并数据
+        function mergeObjs(targetTable, mergeObjs, whereStr, uFields, iFields, isDelete) {
+            let sql = "";
+            let rowIndex = 1;
+            sql = sql + `
+            ( `
+            mergeObjs.forEach(mergeObj => {
+                sql = sql + `
+                (SELECT `;
+                for (let index in mergeObj) {
+                    sql =sql+ ` '${mergeObj[index]}' AS  ${index},`;
+                }
+                if (sql.endsWith(",")) {
+                    sql = sql.substring(0, sql.length - 1) + ") AS t_" + rowIndex + " UNION ";
+                }
+                rowIndex++;
+            });
+            if (sql.endsWith(" UNION ")) {
+                sql =` ${sql.substring(0, sql.length - " UNION ".length)} 
+            ) AS sourceTable `;
+            }
+            let result = merge(targetTable, sql, whereStr, uFields, iFields, isDelete);
+            return result;
+        };
+
+        //批量合并数据
+        function merge(targetTable, sourceTable, whereStr, uFields, iFields, isDelete) {
+            //mergeObjs先插入临时表， 在
+            let sql = "";
+            sql =sql+ `
+            MERGE INTO ${targetTable}  as T
+            USING  (Select  * From ${sourceTable}  ) as S 
+            ON 2>1 ${(typeof whereStr==='string'&&whereStr!=="")?whereStr:""}`
+            //U匹对修改
+            if (Array.isArray(uFields) && uFields !== []) {
+                sql = sql + `
+                WHEN MATCHED `
+                sql = sql + `
+                Then UpDate set `
+                for (let field of uFields) {
+                    sql = sql + `T.${field}=S.${field} ,`;
+                }
+                if (sql.endsWith(",")) {
+                    sql = sql.substring(0, sql.length - 1) + "";
+                }
+            }
+            //I匹对新增
+            if (Array.isArray(iFields) && iFields !== []) {
+                sql = sql + `
+                When Not Matched `;
+                sql = sql + `
+                Then Insert(${ iFields.join(",")  })`;
+                sql = sql + `Values(`;
+                for (let field of iFields) {
+                    sql = sql + `S.${field} ,`;
+                }
+                if (sql.endsWith(",")) {
+                    sql = sql.substring(0, sql.length - 1) + ")";
+                }
+            }
+            if (isDelete) {
+                sql = sql + `
+                Then Delete`;
+            }
+            sql = sql + `;`;
+            // logger.info(sql);
+
+            return sql;
+        };
+        let objs = [{
+            id: 1,
+            name: "小明",
+            age: 18
+        }, {
+            id: 2,
+            name: "小红 ",
+            age: 17
+        }, {
+            id: 3,
+            name: "小强",
+            age: 20
+        }];
+        let res = merge("targetTable", "sourceTable", " AND T.id=S.id", ["id", "name", "age"], ["id", "name", "age"],
+            true);
+        let res2 = mergeObjs("targetTable", objs, " AND T.id=S.id", ["id", "name", "age"], ["id", "name",
+            "age"], true);
+        console.log(res);
+         console.log(res2);
+    </script>
 </body>
+
 </html>
