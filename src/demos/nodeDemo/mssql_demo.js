@@ -243,17 +243,18 @@ let mergeObjs = async function (targetTable, mergeObjs, whereStr, uFields, iFiel
     ( `
     mergeObjs.forEach(mergeObj => {
         sql = sql + `
-        (SELECT `;
+        SELECT  * FROM (SELECT `;
         for (let index in mergeObj) {
             sql = sql + ` '${mergeObj[index]}' AS  ${index},`;
         }
         if (sql.endsWith(",")) {
-            sql = sql.substring(0, sql.length - 1) + ") AS t_" + rowIndex + " UNION ";
+            sql = sql.substring(0, sql.length - 1) + ") AS t_" + rowIndex +`
+            UNION ALL `;
         }
         rowIndex++;
     });
-    if (sql.endsWith(" UNION ")) {
-        sql = ` ${sql.substring(0, sql.length - " UNION ".length)} 
+    if (sql.endsWith(" UNION ALL ")) {
+        sql = ` ${sql.substring(0, sql.length - " UNION ALL ".length)} 
     ) AS sourceTable `;
     }
     let result = merge(targetTable, sql, whereStr, uFields, iFields, isDelete);
@@ -267,15 +268,15 @@ let merge = async function (targetTable, sourceTable, whereStr, uFields, iFields
     //mergeObjs先插入临时表， 在
     let sql = "";
     sql = sql + `
-    MERGE INTO ${targetTable}  as T
-    USING  (Select  * From ${sourceTable}  ) as S 
+    MERGE INTO ${targetTable}  AS T
+    USING  (SELECT  * FROM ${sourceTable}  ) AS S 
     ON 2>1 ${(typeof whereStr==='string'&&whereStr!=="")?whereStr:""}`
     //U匹对修改
     if (Array.isArray(uFields) && uFields !== []) {
         sql = sql + `
-        WHEN MATCHED `
+        WHEN MATCHED Then`
         sql = sql + `
-        Then UpDate set `
+        UPDATE SET `
         for (let field of uFields) {
             sql = sql + `T.${field}=S.${field} ,`;
         }
@@ -286,10 +287,10 @@ let merge = async function (targetTable, sourceTable, whereStr, uFields, iFields
     //I匹对新增
     if (Array.isArray(iFields) && iFields !== []) {
         sql = sql + `
-        When Not Matched `;
+        WHEN NOT MATCHED  BY TARGET THEN `;
         sql = sql + `
-        Then Insert(${ iFields.join(",")  })`;
-        sql = sql + `Values(`;
+        INSERT(${ iFields.join(",")  })`;
+        sql = sql + `VALUES(`;
         for (let field of iFields) {
             sql = sql + `S.${field} ,`;
         }
@@ -299,7 +300,8 @@ let merge = async function (targetTable, sourceTable, whereStr, uFields, iFields
     }
     if (isDelete) {
         sql = sql + `
-        Then Delete`;
+        WHEN NOT MATCHED BY SOURCE THEN
+        Delete`;
     }
     sql = sql + `;`;
     // logger.info(sql);
