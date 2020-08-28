@@ -1,0 +1,2 @@
+[2020-08-28T17:13:02.104] [DEBUG] dbUtil - sql to execute: SELECT * FROM t_targetTable
+[2020-08-28T17:13:05.475] [DEBUG] dbUtil - sql executed result, rowsAffected:3
