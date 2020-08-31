@@ -45,11 +45,7 @@ let queryModel = async function (tableName, whereObj) {
     let sql = `SELECT * FROM ${tableName} WHERE 1=1 `;
     if (typeof whereObj === "object" && whereObj !== {}) {
         for (let index in whereObj) {
-            if (typeof whereObj[index] === "number") {
-                request.input(index + 'Where', whereObj[index]);
-            } else if (typeof whereObj[index] === "string") {
-                request.input(index + 'Where', whereObj[index]);
-            }
+            request.input(index + 'Where', whereObj[index]);
             sql += ` AND ${index} = @${index}Where`
         }
     }
@@ -73,11 +69,7 @@ let insertModel = async function (addObj, tableName, whereObj) { //添加数据
     IF NOT EXISTS (SELECT 1 FROM ${tableName} WHERE 1 > 0`;
     if (typeof whereObj === "object" && whereObj !== {}) {
         for (let index in whereObj) {
-            if (typeof addObj[index] === "number") {
-                request.input(index + 'Where', whereObj[index]);
-            } else if (typeof addObj[index] === "string") {
-                request.input(index + 'Where', whereObj[index]);
-            }
+            request.input(index + 'Where', whereObj[index]);
             sql += ` AND ${index} = @${index}Where`
         }
     } else {
@@ -117,13 +109,8 @@ let updateModel = async function (updateObj, tableName, whereObj) {
     let sql = `UPDATE ${tableName} SET `;
     if (updateObj) {
         for (let index in updateObj) {
-            if (typeof updateObj[index] === "number") {
-                request.input(index, updateObj[index]);
-                sql += index + "=@" + index + ",";
-            } else if (typeof updateObj[index] === "string") {
-                request.input(index, updateObj[index]);
-                sql += index + "=@" + index + ",";
-            }
+            request.input(index, updateObj[index]);
+            sql += index + "=@" + index + ",";
         }
     }
     if (sql.endsWith(",")) {
@@ -132,13 +119,8 @@ let updateModel = async function (updateObj, tableName, whereObj) {
     sql = sql + " WHERE 1=1 ";
     if (whereObj) {
         for (let index in whereObj) {
-            if (typeof whereObj[index] === "number") {
-                request.input(index, whereObj[index]);
-                sql += " AND " + index + "=@" + index + "";
-            } else if (typeof whereObj[index] === "string") {
-                request.input(index, whereObj[index]);
-                sql += " AND " + index + "=@" + index + "";
-            }
+            request.input(index, whereObj[index]);
+            sql += " AND " + index + "=@" + index + "";
         }
     }
     if (sql.endsWith(" AND ")) {
@@ -158,13 +140,8 @@ let deleteModel = async function (tableName, whereObj) {
     sql = sql + " WHERE 1=1 ";
     if (whereObj) {
         for (let index in whereObj) {
-            if (typeof whereObj[index] === "number") {
-                request.input(index, whereObj[index]);
-                sql += " AND " + index + "=@" + index + "";
-            } else if (typeof whereObj[index] === "string") {
-                request.input(index, whereObj[index]);
-                sql += " AND " + index + "=@" + index + "";
-            }
+            request.input(index, whereObj[index]);
+            sql += " AND " + index + "=@" + index + "";
         }
     }
     if (sql.endsWith(" AND ")) {
