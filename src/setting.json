@@ -474,6 +474,18 @@
     {
       "path": "@/notes/03node/03npm/01.md",
       "name": "npm基础"
+    },
+    {
+      "path": "",
+      "name": "Demo"
+    },
+    {
+      "path": "@/notes/04demo/00.md",
+      "name": "案例"
+    },
+    {
+      "path": "@/notes/04demo/01.vue",
+      "name": "单表"
     }
   ]
 }
