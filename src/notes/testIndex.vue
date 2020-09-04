@@ -17,16 +17,18 @@
         <h1>Here might be a page title</h1>
         <el-button>查询</el-button>
       </template>
-      <!-- <template v-slot:searchslot>
+      <!-- 
+      <template v-slot:searchslot>
         <h1>Here might be a page title</h1>
         <el-button>查询</el-button>
-      </template>-->
+      </template>
+      -->
     </singleTable>
   </div>
 </template>
 
 <script>
-import singleTable from "@/demos/elDemo/components/singleTable/singleTable.vue";
+//import singleTable from "@/demos/elDemo/components/singleTable/singleTable.vue";
 export default {
   components: {
     singleTable,
