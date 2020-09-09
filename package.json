@@ -12,7 +12,7 @@
     "frontend"
   ],
   "author": "huang7000",
-  "license": "MIT",
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "https://github.com/huang7000/web-note"
@@ -20,17 +20,22 @@
   "bugs": {
     "url": "https://github.com/huang7000/web-note/issues"
   },
+  "main": "demo/server.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --gh-pages",
     "prerender": "vue-cli-service build --prerender",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "prestart": "yarn install",
+    "start": "node ./src/server/index.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
     "dayjs": "^1.7.7",
     "vue": "^2.5.17",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "log4js": "^3.0.6",
+    "mssql": "^6.2.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.2.0",
