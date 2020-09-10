@@ -27,7 +27,8 @@ router.get("/getUserList",async (req, res) => {
     console.log(req.query);
     console.log(req.body);
     console.log(queryObj);
-    let sqlStr="select *from T_User";
+    //t_targetTable T_User
+    let sqlStr="select *from t_targetTable";
     let result = await dbUtil.queryList(sqlStr);
     res.send(result);
 });

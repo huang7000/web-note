@@ -474,6 +474,14 @@
     {
       "path": "@/notes/03node/03npm/01.md",
       "name": "npm基础"
+    },
+    {
+      "path": "",
+      "name": "el-ui"
+    },
+    {
+      "path": "@/client/views/table.vue",
+      "name": "table"
     }
   ]
 }

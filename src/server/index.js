@@ -3,7 +3,7 @@
 /* eslint-disable prettier/prettier */
 //
 const log4js = require('log4js');
-const dbUtil = require('./dbSQL/dbUtil');
+const dbUtil = require('./db/dbUtil');
 const mssql = require('mssql');
 // config log4js
 log4js.configure({
