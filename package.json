@@ -20,13 +20,11 @@
   "bugs": {
     "url": "https://github.com/huang7000/web-note/issues"
   },
-  "main": "demo/server.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --gh-pages",
     "prerender": "vue-cli-service build --prerender",
     "lint": "vue-cli-service lint",
-    "prestart": "yarn install",
     "start": "node ./src/server/index.js"
   },
   "dependencies": {

@@ -4,7 +4,7 @@
 //
 const log4js = require('log4js');
 const dbUtil = require('./dbSQL/dbUtil');
-
+const mssql = require('mssql');
 // config log4js
 log4js.configure({
   appenders: {
@@ -21,6 +21,7 @@ log4js.configure({
     }
   }
 });
+
 
 (async () => {
   //查询
@@ -83,15 +84,25 @@ log4js.configure({
       age: 23
     }
   ]
+  //primary: true
+  let columns=[
+    {name:"id",type:mssql.Int,remark:{nullable:true}},
+    {name:"name",type:mssql.VarChar(50),remark:{nullable:true}},
+    {name:"age",type:mssql.Int,remark:{nullable:true}}
+  ]
   // let results_mergeObjs = await dbUtil.mergeObjs("t_targetTable", objs, " AND T.id=S.id", ["id", "name", "age"], ["id", "name",
   //   "age"
   // ], true,);
   // let results_merge = await dbUtil.merge(results_mergeObjs);
   // console.log(results_merge)
-  let results_mergeTemp = await dbUtil.mergeTemp("t_targetTable", objs, " AND T.id=S.id", ["id", "name", "age"], ["id", "name",
+  let results_mergeTemp = await dbUtil.mergeTemp([],[],"t_targetTable", objs,columns, " AND T.id=S.id", ["id", "name", "age"], ["id", "name",
     "age"
   ], true, );
   console.log(results_mergeTemp)
+  // let results_mergeSql = await dbUtil.mergeSql("t_targetTable","UserInfoTest", " AND T.id=S.id", ["id", "name", "age"], ["id", "name",
+  //   "age"
+  // ], true, );
+  // console.log(results_mergeSql)
   // let results_4 = await dbUtil.query(`SELECT * FROM t_targetTable`)
 
   // let sqlObjs = [{
