@@ -34,9 +34,7 @@
     "dayjs": "^1.7.7",
     "log4js": "^3.0.6",
     "mssql": "^6.2.1",
-    "express": "^4.17.1",
-    "awilix": "^4.2.6",
-    "awilix-express": "^3.0.0"
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.2.0",
