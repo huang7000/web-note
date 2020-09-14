@@ -13,6 +13,13 @@ if (process.env.NODE_ENV === 'development') {
 axios.defaults.timeout = 10000
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8;multipart/form-data'
 
+//创建axios实例
+const service = axios.create({
+    baseURL: process.env.BASE_API, //api的base_url
+    timeout: 10000, //请求超时时间
+    withCredentials: true, //携带cookie
+    crossDomain: true
+});
 // // 请求拦截器
 // axios.interceptors.request.use(
 //   config => {
@@ -99,7 +106,7 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
  * @param {String} url [请求的url地址]
  * @param {Object} params [请求时携带的参数]
  */
-let axiosGet = async function (url, data) {
+service.axiosGet = async function (url, data) {
     try {
         let res = await axios.get(url, {
             params: data
@@ -123,7 +130,7 @@ let axiosGet = async function (url, data) {
  * @param {String} url [请求的url地址]
  * @param {Object} params [请求时携带的参数]
  */
-let axiosDelete = async function (url, data) {
+service.axiosDelete = async function (url, data) {
     try {
         let res = await axios.delete(url, {
             params: data
@@ -147,7 +154,7 @@ let axiosDelete = async function (url, data) {
  * @param {String} url [请求的url地址]
  * @param {Object} params [请求时携带的参数]
  */
-let axiosPost = async function (url, data) {
+service.axiosPost = async function (url, data) {
     try {
         //let res = await axios.post(url, qs.stringify(data))
         let res = await axios.post(url, data)
@@ -170,7 +177,7 @@ let axiosPost = async function (url, data) {
  * @param {String} url [请求的url地址]
  * @param {Object} params [请求时携带的参数]
  */
-let axiosPut = async function (url, data) {
+service.axiosPut = async function (url, data) {
     try {
         //let res = await axios.post(url, qs.stringify(data))
         let res = await axios.put(url, data)
@@ -189,7 +196,8 @@ let axiosPut = async function (url, data) {
     }
 }
 //正常的get put post delete
-exports.axiosGet = axiosGet;
-exports.axiosPost = axiosPost;
-exports.axiosDelete = axiosDelete;
-exports.axiosPut = axiosPut;
+// exports.axiosGet = axiosGet;
+// exports.axiosPost = axiosPost;
+// exports.axiosDelete = axiosDelete;
+// exports.axiosPut = axiosPut;
+export default service;
