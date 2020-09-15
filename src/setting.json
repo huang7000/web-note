@@ -482,6 +482,10 @@
     {
       "path": "@/client/views/table.vue",
       "name": "table"
+    },
+    {
+      "path": "@/client/views/single.vue",
+      "name": "single"
     }
   ]
 }
