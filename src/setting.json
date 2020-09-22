@@ -486,6 +486,49 @@
     {
       "path": "@/client/views/single.vue",
       "name": "single"
+    },  
+    {
+      "path": "",
+      "name": "Vue3.0"
+    },
+    {
+      "path": "@/notes/02vue/vue3.0/01.md",
+      "name": "Vue介绍"
+    },
+    {
+      "path": "@/notes/02vue/vue3.0/02.md",
+      "name": "Vue实例"
+    },    {
+      "path": "@/notes/02vue/vue3.0/03.md",
+      "name": "模板语法"
+    },
+    {
+      "path": "@/notes/02vue/vue3.0/04.md",
+      "name": "计算属性和侦听器"
+    },
+    {
+      "path": "@/notes/02vue/vue3.0/05.md",
+      "name": "Class与Style绑定"
+    },
+    {
+      "path": "@/notes/02vue/vue3.0/06.md",
+      "name": "条件渲染"
+    },
+    {
+      "path": "@/notes/02vue/vue3.0/07.md",
+      "name": "列表渲染"
+    },
+    {
+      "path": "@/notes/02vue/vue3.0/08.md",
+      "name": "事件处理"
+    },
+    {
+      "path": "@/notes/02vue/vue3.0/09.md",
+      "name": "表单输入绑定"
+    },
+    {
+      "path": "@/notes/02vue/vue3.0/10.md",
+      "name": "组件基础"
     }
   ]
 }
