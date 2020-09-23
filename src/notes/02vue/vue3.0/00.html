@@ -10,9 +10,9 @@
 
 <body>
     <div id="app">
-        <p>firstName: <input v-model="firstName"></p>
-        <p>lastName: <input v-model="lastName"></p>
-        <p>fullName: {{ fullName }}</p>
+        <component-demo class="baz boo" v-bind:style="[styleObject,mainObejct]"></component-demo>
+        <component-demo class="baz boo" v-bind:style="{ color: colorValue, fontSize: fontSize + 'px' }">
+        </component-demo>
     </div>
 
 </body>
@@ -29,11 +29,11 @@
             let firstName = ref("7000");
             let lastName = ref("huang");
             let fullName = ref("");
-            watch(firstName, (val,oldVal) => {
-                fullName.value = val+ ' ' + lastName.value
+            watch(firstName, (val, oldVal) => {
+                fullName.value = val + ' ' + lastName.value
             })
             watch(lastName, (val) => {
-                fullName.value = firstName.value+ ' ' +val
+                fullName.value = firstName.value + ' ' + val
             })
             return {
                 firstName,
@@ -45,22 +45,26 @@
     const appOptions = {
         data() {
             return {
-                firstName: 'Foo',
-                lastName: 'Bar',
-                fullName: ''
-            }
-        },
-        watch: {
-            firstName(val) {
-                this.fullName = val + ' ' + this.lastName
-            },
-            lastName(val) {
-                this.fullName = this.firstName + ' ' + val
+                styleObject: {
+                    color: "red",
+                    fontSize: "18px",
+                },
+                mainObejct: {
+                    border: "1px",
+                    fontSize: "36px",
+                },
+                colorValue: "blue",
+                fontSize: 25,
             }
         }
     }
-    Vue.createApp(appComposition).mount('#app')
-    //Vue.createApp(appOptions).mount('#app')
+    const app = Vue.createApp(appOptions)
+
+    app.component('component-demo', {
+        template: '<p class="foo bar">hello  </p>',
+    })
+    app.mount('#app')
+    //Vue.createApp(appComposition).mount('#app')
 </script>
 <style>
     .demo {
