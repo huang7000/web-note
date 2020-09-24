@@ -11,16 +11,12 @@
 <body>
     <script src="https://unpkg.com/vue@next"></script>
     <div id="app">
-        <h2>for if show</h2>
-        <ul v-if="todos.length>0">
-            <!-- v-if="!todo.isComplete" 会报错 -->
-            <!-- v-show="!todo.isComplete" 没问题 -->
-            <li v-for="todo in todos" v-if="!todo.isComplete">
-                {{ todo }}
-            </li>
-        </ul>
-        <p v-else>No todos left!</p>
-        <button @click="changeTodes()">切换</button>
+        <input v-model.lazy="message" placeholder="edit me" />
+        <p>Message length: {{ message.length }}</p>
+        <input v-model.number="age" type="number" />
+        <p>age is: {{ age }}</p>
+        <input v-model.trim="msg" />
+        <p>msg length: {{ msg.length }}</p>
     </div>
 </body>
 <script src="https://unpkg.com/vue@next"></script>
@@ -33,53 +29,25 @@
     } = Vue;
     let appComposition = {
         setup() {
-            let firstName = ref("7000");
-            let lastName = ref("huang");
-            let fullName = ref("");
-            watch(firstName, (val, oldVal) => {
-                fullName.value = val + ' ' + lastName.value
-            })
-            watch(lastName, (val) => {
-                fullName.value = firstName.value + ' ' + val
-            })
+            let checked = ref(true);
+            let checkedNames = ref(["Jack"]);
+            let toggle = ref("已选中");
+
             return {
-                firstName,
-                lastName,
-                fullName,
+                checked,
+                checkedNames,
+                toggle,
             }
         },
     };
 
-    Vue.createApp({
+    let app = Vue.createApp({
         data() {
             return {
-                todos: [],
+                message: "",
+                age: 0,
+                msg: "",
             };
-        },
-        methods: {
-            changeTodes() {
-                this.todos = [{
-                        msg: "shenme",
-                        isComplete: true,
-                    },
-                    {
-                        msg: "dongxi",
-                        isComplete: false,
-                    },
-                    {
-                        msg: "nubi",
-                        isComplete: true,
-                    },
-                    {
-                        msg: "laji",
-                        isComplete: false,
-                    },
-                    {
-                        msg: "hello",
-                        isComplete: true,
-                    },
-                ]
-            }
         },
     }).mount('#app')
 
@@ -94,7 +62,19 @@
     //     props: ['title']
     // })
     // app.mount('#app')
-    //Vue.createApp(appComposition).mount('#app')
+    // Vue.createApp({
+    //     setup() {
+    //         let checked = ref(true);
+    //         let checkedNames = ref(["Jack"]);
+    //         let toggle = ref("已选中");
+
+    //         return {
+    //             checked,
+    //             checkedNames,
+    //             toggle,
+    //         }
+    //     },
+    // }).mount('#app')
 </script>
 <style>
     .demo {
