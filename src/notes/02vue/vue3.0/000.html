@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>vue3.0</title>
+</head>
+
+<body>
+    <script src="https://unpkg.com/vue@next"></script>
+    <div id="app">
+        <h2>for if show</h2>
+        <ul v-if="todos.length>0">
+            <!-- v-if="!todo.isComplete" 会报错 -->
+            <!-- v-show="!todo.isComplete" 没问题 -->
+            <li v-for="todo in todos" v-if="!todo.isComplete">
+                {{ todo }}
+            </li>
+        </ul>
+        <p v-else>No todos left!</p>
+        <button @click="changeTodes()">切换</button>
+    </div>
+</body>
+<script src="https://unpkg.com/vue@next"></script>
+<script>
+    const {
+        reactive,
+        ref,
+        computed,
+        watch
+    } = Vue;
+    let appComposition = {
+        setup() {
+            let firstName = ref("7000");
+            let lastName = ref("huang");
+            let fullName = ref("");
+            watch(firstName, (val, oldVal) => {
+                fullName.value = val + ' ' + lastName.value
+            })
+            watch(lastName, (val) => {
+                fullName.value = firstName.value + ' ' + val
+            })
+            return {
+                firstName,
+                lastName,
+                fullName,
+            }
+        },
+    };
+
+    Vue.createApp({
+        data() {
+            return {
+                todos: [],
+            };
+        },
+        methods: {
+            changeTodes() {
+                this.todos = [{
+                        msg: "shenme",
+                        isComplete: true,
+                    },
+                    {
+                        msg: "dongxi",
+                        isComplete: false,
+                    },
+                    {
+                        msg: "nubi",
+                        isComplete: true,
+                    },
+                    {
+                        msg: "laji",
+                        isComplete: false,
+                    },
+                    {
+                        msg: "hello",
+                        isComplete: true,
+                    },
+                ]
+            }
+        },
+    }).mount('#app')
+
+    // const app = Vue.createApp(appOptions)
+    // app.component('todo-item', {
+    //     template: `
+    //         <li>
+    //             {{ title }}
+    //             <button @click="$emit('remove')">Remove</button>
+    //         </li>
+    //     `,
+    //     props: ['title']
+    // })
+    // app.mount('#app')
+    //Vue.createApp(appComposition).mount('#app')
+</script>
+<style>
+    .demo {
+        font-family: sans-serif;
+        border: 1px solid #eee;
+        border-radius: 2px;
+        padding: 20px 30px;
+        margin-top: 1em;
+        margin-bottom: 40px;
+        user-select: none;
+        overflow-x: auto;
+    }
+</style>
+
+</html>

@@ -2,81 +2,70 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>vue2.x</title>
 </head>
 
 <body>
-    <div id="app">
-        <component-demo class="baz boo" v-bind:style="[styleObject,mainObejct]"></component-demo>
-        <component-demo class="baz boo" v-bind:style="{ color: colorValue, fontSize: fontSize + 'px' }">
-        </component-demo>
-    </div>
+  <div id="app">
 
+    <ul v-if="items.length">
+      <li v-for="item in items" v-if="item.isshow">
+        {{ item }}
+      </li>
+    </ul>
+    <p v-else>No items left!</p>
+
+  </div>
 </body>
-<script src="https://unpkg.com/vue@next"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
-    const {
-        reactive,
-        ref,
-        computed,
-        watch
-    } = Vue;
-    let appComposition = {
-        setup() {
-            let firstName = ref("7000");
-            let lastName = ref("huang");
-            let fullName = ref("");
-            watch(firstName, (val, oldVal) => {
-                fullName.value = val + ' ' + lastName.value
-            })
-            watch(lastName, (val) => {
-                fullName.value = firstName.value + ' ' + val
-            })
-            return {
-                firstName,
-                lastName,
-                fullName,
-            }
-        },
-    };
-    const appOptions = {
-        data() {
-            return {
-                styleObject: {
-                    color: "red",
-                    fontSize: "18px",
-                },
-                mainObejct: {
-                    border: "1px",
-                    fontSize: "36px",
-                },
-                colorValue: "blue",
-                fontSize: 25,
-            }
-        }
-    }
-    const app = Vue.createApp(appOptions)
-
-    app.component('component-demo', {
-        template: '<p class="foo bar">hello  </p>',
-    })
-    app.mount('#app')
-    //Vue.createApp(appComposition).mount('#app')
+let app= new Vue({
+  el: "#app",
+  data: {
+    items: [
+      {
+        msg: "shenme",
+        id: 1,
+        isshow: true
+      },
+      {
+        msg: "dongxi",
+        id: 2,
+        isshow: true
+      },
+      {
+        msg: "nubi",
+        id: 4,
+        isshow: false
+      },
+      {
+        msg: "laji",
+        id: 5,
+        isshow: false
+      },
+      {
+        msg: "sb",
+        id: 8,
+        isshow: true
+      }
+    ]
+  }
+});
 </script>
 <style>
-    .demo {
-        font-family: sans-serif;
-        border: 1px solid #eee;
-        border-radius: 2px;
-        padding: 20px 30px;
-        margin-top: 1em;
-        margin-bottom: 40px;
-        user-select: none;
-        overflow-x: auto;
-    }
+  .demo {
+    font-family: sans-serif;
+    border: 1px solid #eee;
+    border-radius: 2px;
+    padding: 20px 30px;
+    margin-top: 1em;
+    margin-bottom: 40px;
+    user-select: none;
+    overflow-x: auto;
+  }
 </style>
 
 </html>
