@@ -9,26 +9,46 @@
 </head>
 
 <body>
-  <div id="example-9">
-    <input v-model.lazy="message" placeholder="edit me" />
-    <p>Message length: {{ message.length }}</p>
-    <input v-model.number="age" type="number" />
-    <p>age is: {{ age }}</p>
-    <input v-model.trim="msg" />
-    <p>msg length: {{ msg.length }}</p>
+  <div id="app">
+    <h2>组件</h2>
+    <blog-post title="My journey with Vue"></blog-post>
+    <blog-post title="Blogging with Vue"></blog-post>
+    <blog-post title="Why Vue is so fun"></blog-post>
+    <h2>循环组件</h2>
+    <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:title="post.title" v-bind:content="post.content">
+    </blog-post>
   </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
-
-let example9 = new Vue({
-  el: "#example-9",
-  data: {
-    message: "",
-    age: null,
-    msg: ""
-  }
-});
+  Vue.component("blog-post", {
+    template: `<div>
+           <h3>{{title}}</h3>
+           <p>{{content}}</p>
+          </div>`,
+    props: ['title', 'content']
+  });
+  let blogPostDemo = new Vue({
+    el: "#app",
+    data: {
+      posts: [{
+          id: 1,
+          title: "js",
+          content: "JavaScript是世界上最好的语言"
+        },
+        {
+          id: 2,
+          title: "ts",
+          content: "TypeScript是JavaScript的超集"
+        },
+        {
+          id: 3,
+          title: "Vue",
+          content: "Vue是前端三大框架之一"
+        },
+      ]
+    }
+  });
 </script>
 <style>
   .demo {

@@ -11,12 +11,14 @@
 <body>
     <script src="https://unpkg.com/vue@next"></script>
     <div id="app">
-        <input v-model.lazy="message" placeholder="edit me" />
-        <p>Message length: {{ message.length }}</p>
-        <input v-model.number="age" type="number" />
-        <p>age is: {{ age }}</p>
-        <input v-model.trim="msg" />
-        <p>msg length: {{ msg.length }}</p>
+        <h2>组件</h2>
+        <blog-post title="My journey with Vue"></blog-post>
+        <blog-post title="Blogging with Vue"></blog-post>
+        <blog-post title="Why Vue is so fun"></blog-post>
+        <h2>循环组件</h2>
+        <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:title="post.title"
+        v-bind:content="post.content"
+        ></blog-post>
     </div>
 </body>
 <script src="https://unpkg.com/vue@next"></script>
@@ -25,43 +27,18 @@
         reactive,
         ref,
         computed,
-        watch
+        watch,
+        defineComponent,
     } = Vue;
-    let appComposition = {
-        setup() {
-            let checked = ref(true);
-            let checkedNames = ref(["Jack"]);
-            let toggle = ref("已选中");
-
-            return {
-                checked,
-                checkedNames,
-                toggle,
-            }
-        },
-    };
-
-    let app = Vue.createApp({
-        data() {
-            return {
-                message: "",
-                age: 0,
-                msg: "",
-            };
-        },
-    }).mount('#app')
-
-    // const app = Vue.createApp(appOptions)
-    // app.component('todo-item', {
-    //     template: `
-    //         <li>
-    //             {{ title }}
-    //             <button @click="$emit('remove')">Remove</button>
-    //         </li>
-    //     `,
-    //     props: ['title']
-    // })
-    // app.mount('#app')
+    // Vue.createApp({
+    //     data() {
+    //         return {
+    //             message: "",
+    //             age: 0,
+    //             msg: "",
+    //         };
+    //     },
+    // }).mount('#app')
     // Vue.createApp({
     //     setup() {
     //         let checked = ref(true);
@@ -75,6 +52,39 @@
     //         }
     //     },
     // }).mount('#app')
+    const app = Vue.createApp({
+        data() {
+            return {
+                posts: [{
+                        id: 1,
+                        title: "js",
+                        content:"JavaScript是世界上最好的语言"
+                    },
+                    {
+                        id: 2,
+                        title: "ts",
+                        content:"TypeScript是JavaScript的超集"
+                    },
+                    {
+                        id: 3,
+                        title: "Vue"
+                        ,
+                        content:"Vue是前端三大框架之一"
+                    },
+                ]
+            }
+        }
+    })
+    app.component('blog-post', {
+        template: `
+           <h3>{{title}}</h3>
+           <p>{{content}}</p>
+        `,
+        props: ['title', 'content']
+    })
+    app.mount('#app')
+
+    
 </script>
 <style>
     .demo {
