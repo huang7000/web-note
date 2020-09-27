@@ -10,16 +10,17 @@
 
 <body>
     <script src="https://unpkg.com/vue@next"></script>
-    <div id="app">
-        <h2>组件</h2>
-        <blog-post title="My journey with Vue"></blog-post>
-        <blog-post title="Blogging with Vue"></blog-post>
-        <blog-post title="Why Vue is so fun"></blog-post>
-        <h2>循环组件</h2>
-        <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:title="post.title"
-        v-bind:content="post.content"
-        ></blog-post>
-    </div>
+    <div id="app" class="demo">
+        <button
+           v-for="tab in tabs"
+           v-bind:key="tab"
+           v-bind:class="['tab-button', { active: currentTab === tab }]"
+           v-on:click="currentTab = tab"
+         >
+          {{ tab }}
+        </button>
+        <component v-bind:is="currentTabComponent" class="tab"></component>
+      </div>
 </body>
 <script src="https://unpkg.com/vue@next"></script>
 <script>
@@ -53,50 +54,62 @@
     //     },
     // }).mount('#app')
     const app = Vue.createApp({
-        data() {
-            return {
-                posts: [{
-                        id: 1,
-                        title: "js",
-                        content:"JavaScript是世界上最好的语言"
-                    },
-                    {
-                        id: 2,
-                        title: "ts",
-                        content:"TypeScript是JavaScript的超集"
-                    },
-                    {
-                        id: 3,
-                        title: "Vue"
-                        ,
-                        content:"Vue是前端三大框架之一"
-                    },
-                ]
-            }
-        }
-    })
-    app.component('blog-post', {
-        template: `
-           <h3>{{title}}</h3>
-           <p>{{content}}</p>
-        `,
-        props: ['title', 'content']
-    })
-    app.mount('#app')
+  data() {
+    return {
+      currentTab: 'Home',
+      tabs: ['Home', 'Posts', 'Archive']
+    }
+  },
+  computed: {
+    currentTabComponent() {
+      return 'tab-' + this.currentTab.toLowerCase()
+    }
+  }
+})
 
-    
+app.component('tab-home', {
+  template: `<div class="demo-tab">Home component</div>`
+})
+app.component('tab-posts', {
+  template: `<div class="demo-tab">Posts component</div>`
+})
+app.component('tab-archive', {
+  template: `<div class="demo-tab">Archive component</div>`
+})
+    app.mount('#app')
 </script>
 <style>
-    .demo {
-        font-family: sans-serif;
-        border: 1px solid #eee;
-        border-radius: 2px;
-        padding: 20px 30px;
-        margin-top: 1em;
-        margin-bottom: 40px;
-        user-select: none;
-        overflow-x: auto;
-    }
+   .demo {
+  font-family: sans-serif;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  padding: 20px 30px;
+  margin-top: 1em;
+  margin-bottom: 40px;
+  user-select: none;
+  overflow-x: auto;
+}
+
+.tab-button {
+  padding: 6px 10px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background: #f0f0f0;
+  margin-bottom: -1px;
+  margin-right: -1px;
+}
+.tab-button:hover {
+  background: #e0e0e0;
+}
+.tab-button.active {
+  background: #e0e0e0;
+}
+.demo-tab {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
 </style>
 
 </html>
