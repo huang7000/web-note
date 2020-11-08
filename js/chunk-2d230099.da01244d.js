@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d230099"],{eb28:function(p,e,n){p.exports=n.p+"img/web_architecture.60a0258a.jpg"}}]);
+//# sourceMappingURL=chunk-2d230099.da01244d.js.map
