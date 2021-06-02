@@ -43,7 +43,7 @@
         <div
           :class="[
             'hv-home--tag',
-            { 'hv-home--tag-active': selectTagIndex == index }
+            { 'hv-home--tag-active': selectTagIndex == index },
           ]"
           v-for="({ name }, index) in tagList"
           :key="index"
@@ -55,13 +55,14 @@
       <div class="hv-home--view">
         <transition name="hv-fade-in">
           <router-view></router-view>
+
         </transition>
       </div>
     </div>
     <div
       :class="[
         'hv-home--back-top',
-        { 'hv-home--back-top-visiable': showBackToTop }
+        { 'hv-home--back-top-visiable': showBackToTop },
       ]"
       @click.stop="handleBackToTop"
     >
@@ -89,7 +90,7 @@ export default {
       github: repository.url,
       showBackToTop: false,
       selectTagIndex: 0,
-      windowHeight: windowHeight
+      windowHeight: windowHeight,
     };
   },
   computed: {
@@ -106,8 +107,8 @@ export default {
       return this.showMenu ? "hv-icon-close" : "hv-icon-menu";
     },
     tagList() {
-      return [{ name: "ALL" }, ...routes.filter(m => !m.path)];
-    }
+      return [{ name: "ALL" }, ...routes.filter((m) => !m.path)];
+    },
   },
   methods: {
     handleClickOutSide() {
@@ -128,7 +129,7 @@ export default {
     handleBackToTop() {
       let scrollTop = this.$refs.main.scrollTop;
       scrollToTop(this.$refs.main, scrollTop, 0);
-    }
+    },
   },
   watch: {
     selectTagIndex(index) {
@@ -138,7 +139,7 @@ export default {
       }
       let currIndex = 0;
       let routeList = [];
-      routes.forEach(route => {
+      routes.forEach((route) => {
         if (!route.path) {
           currIndex++;
         }
@@ -148,7 +149,7 @@ export default {
         routeList[currIndex].push(route);
       });
       this.routeList = routeList[index];
-    }
+    },
   },
   mounted() {
     window.addEventListener("resize", () => {
@@ -156,7 +157,7 @@ export default {
       this.windowWidth = window.innerWidth;
       this.showMenu = this.windowWidth > 992;
     });
-  }
+  },
 };
 </script>
 
@@ -406,6 +407,22 @@ export default {
     max-width: 64rem;
     margin: 0 auto;
   }
+  .foot_bot {
+    max-width: 64rem;
+    width: 100px;
+    margin: 0 auto;
+    position: fixed;
+    z-index: 302;
+    bottom: 0px;
+    left: 200px;
+    height: 39px;
+    padding-top: 1px;
+    overflow: hidden;
+    zoom: 1;
+    margin: 0;
+    line-height: 39px;
+    background: #fff;
+  }
 }
 
 // 分辨率大于1440
@@ -481,4 +498,5 @@ export default {
   visibility: visible;
   opacity: 1;
 }
+
 </style>
